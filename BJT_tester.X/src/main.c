@@ -14,6 +14,9 @@ int main(void) {
     uart1_init(1666);
     
     uart1_send_string("t0.txt=\"OK\"");
+    uart1_send_byte(0xff);
+    uart1_send_byte(0xff);
+    uart1_send_byte(0xff);
     
     return 0;
 }
