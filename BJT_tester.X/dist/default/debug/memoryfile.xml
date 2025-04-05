@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?> 
 <project>                                  
-  <executable name="dist/default/debug/BP.X.debug.elf">                 
+  <executable name="dist/default/debug/BJT_tester.X.debug.elf">                 
     <memory name="program">              
       <units>bytes</units>                 
       <length>65536</length>                 
-      <used>230</used>                     
-      <free>65306</free>                     
+      <used>360</used>                     
+      <free>65176</free>                     
     </memory>                              
     <memory name="data">                 
       <units>bytes</units>                 
