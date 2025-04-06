@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?> 
 <project>                                  
-  <executable name="dist/default/debug/BJT_tester.X.debug.elf">                 
+  <executable name="dist/default/production/BJT_tester.X.production.elf">                 
     <memory name="program">              
       <units>bytes</units>                 
       <length>65536</length>                 
