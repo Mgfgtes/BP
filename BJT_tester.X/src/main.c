@@ -14,15 +14,35 @@ int main(void) {
     
     uart1_init(BAUD_9600);
     
-    _delay_ms(2000);
-    
     uart1_send_string("t0.txt=\"OK\"");
     uart1_send_byte(0xff);
     uart1_send_byte(0xff);
     uart1_send_byte(0xff);
     
-    char string[10];
-    uart1_receive_string(string,10,0);
+    _delay_ms(500);
+    
+    uint8_t string[10]={1,1,1,1,1,1,1,1,1,0};
+    uint8_t i=0;
+    
+    USART1_RXDATAL=0;
+    USART1_RXDATAH &= 0xFE;
+    
+    while (i<10) {
+        uart1_send_string("t0.txt=\"wait\"");
+        
+        uart1_send_byte(0xff);
+        uart1_send_byte(0xff);
+        uart1_send_byte(0xff);
+        _delay_ms(500);
+        if (uart1_data_available()){
+            string[i]=uart1_receive_byte();
+            if(string[i]==0) break;
+            i++;
+        }
+        
+        _delay_ms(500);
+    }
+
     
     uart1_send_string("t0.txt=\"");
     uart1_send_string(string);
@@ -30,6 +50,7 @@ int main(void) {
     uart1_send_byte(0xff);
     uart1_send_byte(0xff);
     uart1_send_byte(0xff);
+    _delay_ms(500);
     
     return 0;
 }

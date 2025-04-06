@@ -1,8 +1,8 @@
 /**
- * AVR64DA28 UART knihovna - Hlavi?kový soubor
+ * AVR64DA28 UART knihovna
  * 
- * Jednoduchá knihovna pro komunikaci p?es UART rozhraní na mikrokontroléru AVR64DA28
- * Podporuje základní nastavení a p?enos dat
+ * Jednoducha knihovna pro komunikaci pres UART rozhraní na mikrokontroleru AVR64DA28
+ * Podporuje zakladní nastavení a prenos dat
  */
 
 #ifndef UART_H
@@ -14,7 +14,7 @@
 /**
  * Nastavení baudrate pro UART komunikaci
  * 
- * Pro 16MHz oscilátor:
+ * Pro 16MHz:
  * 9600   - 1666
  * 19200  - 833
  * 38400  - 416
@@ -39,23 +39,23 @@ typedef enum {
 void uart0_init(uart_baud_t baud_rate);
 
 /**
- * Odeslání jednoho bajtu p?es UART0
+ * Odeslani jednoho bajtu pres UART0
  * 
- * @param data Bajt k odeslání
+ * @param data Bajt k odeslani
  */
 void uart0_send_byte(uint8_t data);
 
 /**
- * Odeslání ?et?zce p?es UART0
+ * Odeslani retezce pees UART0
  * 
- * @param str ?et?zec k odeslání
+ * @param str retezec k odeslani
  */
 void uart0_send_string(const char* str);
 
 /**
- * P?íjem jednoho bajtu p?es UART0
+ * Prijem jednoho bajtu pres UART0
  * 
- * @return P?ijatý bajt
+ * @return Prijaty bajt
  */
 uint8_t uart0_receive_byte(void);
 

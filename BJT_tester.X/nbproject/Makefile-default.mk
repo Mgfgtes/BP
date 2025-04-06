@@ -51,17 +51,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=src/main.c lib/uart/uart.c
+SOURCEFILES_QUOTED_IF_SPACED=src/main.c lib/uart/uart.c lib/i2c/i2c.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/src/main.o ${OBJECTDIR}/lib/uart/uart.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/src/main.o.d ${OBJECTDIR}/lib/uart/uart.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/src/main.o ${OBJECTDIR}/lib/uart/uart.o ${OBJECTDIR}/lib/i2c/i2c.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/src/main.o.d ${OBJECTDIR}/lib/uart/uart.o.d ${OBJECTDIR}/lib/i2c/i2c.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/src/main.o ${OBJECTDIR}/lib/uart/uart.o
+OBJECTFILES=${OBJECTDIR}/src/main.o ${OBJECTDIR}/lib/uart/uart.o ${OBJECTDIR}/lib/i2c/i2c.o
 
 # Source Files
-SOURCEFILES=src/main.c lib/uart/uart.c
+SOURCEFILES=src/main.c lib/uart/uart.c lib/i2c/i2c.c
 
 
 
@@ -100,6 +100,12 @@ ${OBJECTDIR}/lib/uart/uart.o: lib/uart/uart.c  .generated_files/flags/default/50
 	@${RM} ${OBJECTDIR}/lib/uart/uart.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mconst-data-in-progmem -mno-const-data-in-config-mapped-progmem     -MD -MP -MF "${OBJECTDIR}/lib/uart/uart.o.d" -MT "${OBJECTDIR}/lib/uart/uart.o.d" -MT ${OBJECTDIR}/lib/uart/uart.o -o ${OBJECTDIR}/lib/uart/uart.o lib/uart/uart.c 
 	
+${OBJECTDIR}/lib/i2c/i2c.o: lib/i2c/i2c.c  .generated_files/flags/default/d53693dc95ce4dc0c192df102c67dfe3905374df .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}/lib/i2c" 
+	@${RM} ${OBJECTDIR}/lib/i2c/i2c.o.d 
+	@${RM} ${OBJECTDIR}/lib/i2c/i2c.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mconst-data-in-progmem -mno-const-data-in-config-mapped-progmem     -MD -MP -MF "${OBJECTDIR}/lib/i2c/i2c.o.d" -MT "${OBJECTDIR}/lib/i2c/i2c.o.d" -MT ${OBJECTDIR}/lib/i2c/i2c.o -o ${OBJECTDIR}/lib/i2c/i2c.o lib/i2c/i2c.c 
+	
 else
 ${OBJECTDIR}/src/main.o: src/main.c  .generated_files/flags/default/bd69b5e7b671b3e940c3692beb9898655e113d50 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}/src" 
@@ -112,6 +118,12 @@ ${OBJECTDIR}/lib/uart/uart.o: lib/uart/uart.c  .generated_files/flags/default/d7
 	@${RM} ${OBJECTDIR}/lib/uart/uart.o.d 
 	@${RM} ${OBJECTDIR}/lib/uart/uart.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mconst-data-in-progmem -mno-const-data-in-config-mapped-progmem     -MD -MP -MF "${OBJECTDIR}/lib/uart/uart.o.d" -MT "${OBJECTDIR}/lib/uart/uart.o.d" -MT ${OBJECTDIR}/lib/uart/uart.o -o ${OBJECTDIR}/lib/uart/uart.o lib/uart/uart.c 
+	
+${OBJECTDIR}/lib/i2c/i2c.o: lib/i2c/i2c.c  .generated_files/flags/default/2ab26f3d59af0eff34b2afb32aaed91d843d7c9 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}/lib/i2c" 
+	@${RM} ${OBJECTDIR}/lib/i2c/i2c.o.d 
+	@${RM} ${OBJECTDIR}/lib/i2c/i2c.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mconst-data-in-progmem -mno-const-data-in-config-mapped-progmem     -MD -MP -MF "${OBJECTDIR}/lib/i2c/i2c.o.d" -MT "${OBJECTDIR}/lib/i2c/i2c.o.d" -MT ${OBJECTDIR}/lib/i2c/i2c.o -o ${OBJECTDIR}/lib/i2c/i2c.o lib/i2c/i2c.c 
 	
 endif
 

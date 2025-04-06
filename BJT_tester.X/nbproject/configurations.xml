@@ -5,6 +5,7 @@
                    displayName="Header Files"
                    projectFiles="true">
       <itemPath>lib/uart/uart.h</itemPath>
+      <itemPath>lib/i2c/i2c.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -15,6 +16,7 @@
                    projectFiles="true">
       <itemPath>src/main.c</itemPath>
       <itemPath>lib/uart/uart.c</itemPath>
+      <itemPath>lib/i2c/i2c.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -136,6 +138,9 @@
         <property key="user-pack-device-support" value=""/>
         <property key="wpo-lto" value="false"/>
       </XC8-config-global>
+      <pk4hybrid>
+        <property key="debugoptions.useswbreakpoints" value="true"/>
+      </pk4hybrid>
     </conf>
   </confs>
 </configurationDescriptor>
