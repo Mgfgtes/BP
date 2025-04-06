@@ -1,8 +1,8 @@
 /**
  * AVR64DA28 UART knihovna - Implementace
  * 
- * Jednoduchá knihovna pro komunikaci p?es UART rozhraní na mikrokontroléru AVR64DA28
- * Podporuje základní nastavení a p?enos dat
+ * Jednoducha knihovna pro komunikaci pres UART rozhrani na mikrokontroleru AVR64DA28
+ * Podporuje zakladní nastaveni a prenos dat
  */
 
 #include "uart.h"
@@ -13,37 +13,40 @@
  * @param baud_rate Hodnota baudrate z enum uart_baud_t
  */
 void uart0_init(uart_baud_t baud_rate) {
-    // Nastavení pin? pro TX (PA0) a RX (PA1)
-    PORTA.DIRSET = PIN0_bm;  // TX jako výstup
+    // Nastaveni pinu pro TX (PA0) a RX (PA1)
+    PORTA.DIRSET = PIN0_bm;  // TX jako vystup
     PORTA.DIRCLR = PIN1_bm;  // RX jako vstup
     
-    // Nastavení baudrate
+    // Nastaveni baudrate
     USART0.BAUD = baud_rate;
     
-    // Povolení vysíla?e a p?ijíma?e
+    //Povoleni preruseni
+    USART0.CTRLA = USART_RXCIE_bm;
+    
+    // Povoleni vysilace a prijimace
     USART0.CTRLB = USART_TXEN_bm | USART_RXEN_bm;
     
-    // Formát dat: 8 bit?, bez parity, 1 stop bit
+    // Format dat: 8 bit, bez parity, 1 stop bit
     USART0.CTRLC = USART_CHSIZE_8BIT_gc;
 }
 
 /**
- * Odeslání jednoho bajtu p?es UART
+ * Odeslani jednoho bajtu pres UART
  * 
- * @param data Bajt k odeslání
+ * @param data Bajt k odeslani
  */
 void uart0_send_byte(uint8_t data) {
-    // ?ekání na uvoln?ní vysílacího bufferu
+    // Cekani na uvolneni vysilaciho bufferu
     while (!(USART0.STATUS & USART_DREIF_bm));
     
-    // Odeslání bajtu
+    // Odeslani bajtu
     USART0.TXDATAL = data;
 }
 
 /**
- * Odeslání ?et?zce p?es UART
+ * Odeslání retezce pres UART
  * 
- * @param str ?et?zec k odeslání
+ * @param str retezec k odeslani
  */
 void uart0_send_string(const char* str) {
     while(*str) {
@@ -52,20 +55,20 @@ void uart0_send_string(const char* str) {
 }
 
 /**
- * P?íjem jednoho bajtu p?es UART
+ * Prijem jednoho bajtu pres UART
  * 
- * @return P?ijatý bajt
+ * @return Prijaty bajt
  */
 uint8_t uart0_receive_byte(void) {
-    // ?ekání na p?íjem dat
+    // Cekani na prijem dat
     while (!(USART0.STATUS & USART_RXCIF_bm));
     
-    // Vrácení p?ijatého bajtu
+    // Vraceni prijateho bajtu
     return USART0.RXDATAL;
 }
 
 /**
- * Kontrola, zda jsou k dispozici data k p?e?tení
+ * Kontrola, zda jsou k dispozici data k precteni
  * 
  * @return 1 pokud jsou data k dispozici, jinak 0
  */
@@ -74,12 +77,12 @@ uint8_t uart0_data_available(void) {
 }
 
 /**
- * P?íjem ?et?zce p?es UART s ?asovým limitem
+ * Príjem retezce pres UART s casovym limitem
  * 
- * @param buffer Buffer pro ulo?ení p?ijatých dat
- * @param max_length Maximální délka bufferu
- * @param timeout Po?et cykl? pro timeout (0 = bez timeoutu)
- * @return Po?et p?ijatých znak?
+ * @param buffer Buffer pro ulození prijatych dat
+ * @param max_length Maximalni delka bufferu
+ * @param timeout Pocet cyklu pro timeout (0 = bez timeoutu)
+ * @return Pocet prijatych znaku
  */
 uint16_t uart0_receive_string(char* buffer, uint16_t max_length, uint16_t timeout) {
     uint16_t count = 0;
@@ -89,7 +92,7 @@ uint16_t uart0_receive_string(char* buffer, uint16_t max_length, uint16_t timeou
         if (uart0_data_available()) {
             buffer[count] = uart0_receive_byte();
             
-            // Kontrola ukon?ení ?et?zce
+            // Kontrola ukonceni retezce
             if (buffer[count] == '\n' || buffer[count] == '\r') {
                 buffer[count] = '\0';
                 return count;
@@ -112,43 +115,46 @@ uint16_t uart0_receive_string(char* buffer, uint16_t max_length, uint16_t timeou
 }
 
 /**
- * Inicializace UART1 (druhý UART kanál na jiných pinech)
+ * Inicializace UART1 (druhy UART kanal na jinych pinech)
  * 
  * @param baud_rate Hodnota baudrate z enum uart_baud_t
  */
 void uart1_init(uart_baud_t baud_rate) {
-    // Nastavení pin? pro TX (PC0) a RX (PC1)
-    PORTC.DIRSET = PIN0_bm;  // TX jako výstup
+    // Nastaveni pinu pro TX (PC0) a RX (PC1)
+    PORTC.DIRSET = PIN0_bm;  // TX jako vystup
     PORTC.DIRCLR = PIN1_bm;  // RX jako vstup
     
-    // Nastavení baudrate
+    // Nastaveni baudrate
     USART1.BAUD = baud_rate;
     
-    // Povolení vysíla?e a p?ijíma?e
+    //Povoleni preruseni
+    USART1.CTRLA = USART_RXCIE_bm;
+    
+    // Povoleni vysilace a prijimace
     USART1.CTRLB = USART_TXEN_bm | USART_RXEN_bm;
     
-    // Formát dat: 8 bit?, bez parity, 1 stop bit
+    // Format dat: 8 bit, bez parity, 1 stop bit
     USART1.CTRLC = USART_CHSIZE_8BIT_gc;
 }
 
 
 /**
- * Odeslání jednoho bajtu p?es UART1
+ * Odeslani jednoho bajtu pres UART1
  * 
- * @param data Bajt k odeslání
+ * @param data Bajt k odeslani
  */
 void uart1_send_byte(uint8_t data) {
-    // ?ekání na uvoln?ní vysílacího bufferu
+    // Cekani na uvolneni vysilaciho bufferu
     while (!(USART1.STATUS & USART_DREIF_bm));
     
-    // Odeslání bajtu
+    // Odeslani bajtu
     USART1.TXDATAL = data;
 }
 
 /**
- * Odeslání ?et?zce p?es UART
+ * Odeslání retezce pres UART
  * 
- * @param str ?et?zec k odeslání
+ * @param str retezec k odeslani
  */
 void uart1_send_string(const char* str) {
     while(*str) {
@@ -157,20 +163,20 @@ void uart1_send_string(const char* str) {
 }
 
 /**
- * P?íjem jednoho bajtu p?es UART1
+ * Prijem jednoho bajtu pres UART1
  * 
- * @return P?ijatý bajt
+ * @return Prijaty bajt
  */
 uint8_t uart1_receive_byte(void) {
-    // ?ekání na p?íjem dat
+    // Cekani na prijem dat
     while (!(USART1.STATUS & USART_RXCIF_bm));
     
-    // Vrácení p?ijatého bajtu
+    // Vraceni prijateho bajtu
     return USART1.RXDATAL;
 }
 
 /**
- * Kontrola, zda jsou k dispozici data k p?e?tení
+ * Kontrola, zda jsou k dispozici data k precteni
  * 
  * @return 1 pokud jsou data k dispozici, jinak 0
  */
@@ -179,12 +185,12 @@ uint8_t uart1_data_available(void) {
 }
 
 /**
- * P?íjem ?et?zce p?es UART s ?asovým limitem
+ * Prijem retezce pres UART s casovým limitem
  * 
- * @param buffer Buffer pro ulo?ení p?ijatých dat
- * @param max_length Maximální délka bufferu
- * @param timeout Po?et cykl? pro timeout (0 = bez timeoutu)
- * @return Po?et p?ijatých znak?
+ * @param buffer Buffer pro ulozeni prijatych dat
+ * @param max_length Maximalni delka bufferu
+ * @param timeout Pocet cyklu pro timeout (0 = bez timeoutu)
+ * @return Pocet prijatých znaku
  */
 uint16_t uart1_receive_string(char* buffer, uint16_t max_length, uint16_t timeout) {
     uint16_t count = 0;
@@ -194,7 +200,7 @@ uint16_t uart1_receive_string(char* buffer, uint16_t max_length, uint16_t timeou
         if (uart1_data_available()) {
             buffer[count] = uart1_receive_byte();
             
-            // Kontrola ukon?ení ?et?zce
+            // Kontrola ukonceni retezce
             if (buffer[count] == '\n' || buffer[count] == '\r') {
                 buffer[count] = '\0';
                 return count;
