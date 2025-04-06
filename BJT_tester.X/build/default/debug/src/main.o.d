@@ -16,7 +16,7 @@ build/default/debug/src/main.o.d build/default/debug/src/main.o: \
  d:\produktivni\ programy\mplab\xc8\v2.41\avr\avr\include\avr\xmega.h \
  d:\produktivni\ programy\mplab\xc8\v2.41\avr\avr\include\avr\fuse.h \
  d:\produktivni\ programy\mplab\xc8\v2.41\avr\avr\include\avr\lock.h \
- src/../lib/uart.h \
+ src/../lib/uart/uart.h \
  d:\produktivni\ programy\mplab\xc8\v2.41\avr\avr\include\util\delay.h \
  d:\produktivni\ programy\mplab\xc8\v2.41\avr\avr\include\util\delay_basic.h \
  d:\produktivni\ programy\mplab\xc8\v2.41\avr\avr\include\math.h
@@ -53,7 +53,7 @@ d:\produktivni\ programy\mplab\xc8\v2.41\avr\avr\include\avr\fuse.h:
 
 d:\produktivni\ programy\mplab\xc8\v2.41\avr\avr\include\avr\lock.h:
 
-src/../lib/uart.h:
+src/../lib/uart/uart.h:
 
 d:\produktivni\ programy\mplab\xc8\v2.41\avr\avr\include\util\delay.h:
 
