@@ -60,19 +60,19 @@ void uart0_send_string(const char* str);
 uint8_t uart0_receive_byte(void);
 
 /**
- * Kontrola, zda jsou k dispozici data k p?e?tení p?es UART0
+ * Kontrola, zda jsou k dispozici data k precteni pres UART0
  * 
  * @return 1 pokud jsou data k dispozici, jinak 0
  */
 uint8_t uart0_data_available(void);
 
 /**
- * P?íjem ?et?zce p?es UART0 s ?asovým limitem
+ * Prijem retezce pres UART0 s casovym limitem
  * 
- * @param buffer Buffer pro ulo?ení p?ijatých dat
- * @param max_length Maximální délka bufferu
- * @param timeout Po?et cykl? pro timeout (0 = bez timeoutu)
- * @return Po?et p?ijatých znak?
+ * @param buffer Buffer pro ulorení prijatych dat
+ * @param max_length Maximalni delka bufferu
+ * @param timeout Pocet cyklu pro timeout (0 = bez timeoutu)
+ * @return Pocet prijatych znaku
  */
 uint16_t uart0_receive_string(char* buffer, uint16_t max_length, uint16_t timeout);
 
@@ -125,6 +125,6 @@ uint8_t uart1_data_available(void);
  * @param timeout Po?et cykl? pro timeout (0 = bez timeoutu)
  * @return Po?et p?ijatých znak?
  */
-uint16_t uart1_receive_string(char* buffer, uint16_t max_length, uint16_t timeout);
+uint8_t uart1_receive_string(uint8_t* buffer, uint8_t max_length, uint8_t timeout);
 
 #endif // UART_H

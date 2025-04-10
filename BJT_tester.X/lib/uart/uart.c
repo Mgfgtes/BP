@@ -181,7 +181,8 @@ uint8_t uart1_receive_byte(void) {
  * @return 1 pokud jsou data k dispozici, jinak 0
  */
 uint8_t uart1_data_available(void) {
-    return (USART1.STATUS & USART_RXCIF_bm) ? 1 : 0;
+    if(USART1.STATUS & USART_RXCIF_bm) return 1;
+    return 0;
 }
 
 /**
@@ -192,17 +193,16 @@ uint8_t uart1_data_available(void) {
  * @param timeout Pocet cyklu pro timeout (0 = bez timeoutu)
  * @return Pocet prijatých znaku
  */
-uint16_t uart1_receive_string(char* buffer, uint16_t max_length, uint16_t timeout) {
-    uint16_t count = 0;
-    uint16_t timer = 0;
+uint8_t uart1_receive_string(uint8_t* buffer, uint8_t max_length, uint8_t timeout) {
+    uint8_t count = 0;
+    uint8_t timer = 0;
     
     while(count < max_length - 1) {
         if (uart1_data_available()) {
-            buffer[count] = uart1_receive_byte();
+            buffer[count] = USART1.RXDATAL;
             
             // Kontrola ukonceni retezce
-            if (buffer[count] == '\n' || buffer[count] == '\r') {
-                buffer[count] = '\0';
+            if (buffer[count] == 0){
                 return count;
             }
             
@@ -218,6 +218,6 @@ uint16_t uart1_receive_string(char* buffer, uint16_t max_length, uint16_t timeou
         }
     }
     
-    buffer[count] = '\0';
+    buffer[count] = 0;
     return count;
 }
