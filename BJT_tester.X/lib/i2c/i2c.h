@@ -4,6 +4,11 @@
  * Jednoducha knihovna pro komunikaci pres I2C rozhrani na mikrokontroleru AVR64DA28
  * I2C je pripojeno na piny PA2 (SDA) a PA3 (SCL)
  */
+#ifndef F_CPU
+# define F_CPU 16000000UL
+#endif
+
+
 #ifndef I2C_H
 #define I2C_H
 #include <avr/io.h>

@@ -128,7 +128,7 @@ void uart1_init(uart_baud_t baud_rate) {
     USART1.BAUD = baud_rate;
     
     //Povoleni preruseni
-    USART1.CTRLA = USART_RXCIE_bm;
+    //USART1.CTRLA = USART_RXCIE_bm;
     
     // Povoleni vysilace a prijimace
     USART1.CTRLB = USART_TXEN_bm | USART_RXEN_bm;

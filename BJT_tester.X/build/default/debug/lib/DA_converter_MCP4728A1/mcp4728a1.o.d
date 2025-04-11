@@ -1,7 +1,8 @@
-build/default/debug/src/main.o.d build/default/debug/src/main.o: \
- src/main.c \
- d:\produktivni\ programy\mplab\xc8\v2.41\avr\lib\gcc\avr\5.4.0\include\xc.h \
- d:\produktivni\ programy\mplab\xc8\v2.41\avr\lib\gcc\avr\5.4.0\include\cci.h \
+build/default/debug/lib/DA_converter_MCP4728A1/mcp4728a1.o.d \
+ build/default/debug/lib/DA_converter_MCP4728A1/mcp4728a1.o: \
+ lib/DA_converter_MCP4728A1/mcp4728a1.c \
+ lib/DA_converter_MCP4728A1/mcp4728a1.h \
+ lib/DA_converter_MCP4728A1/../i2c/i2c.h \
  d:\produktivni\ programy\mplab\xc8\v2.41\avr\avr\include\avr\io.h \
  d:\produktivni\ programy\mplab\xc8\v2.41\avr\avr\include\avr\sfr_defs.h \
  d:\produktivni\ programy\mplab\xc8\v2.41\avr\avr\include\inttypes.h \
@@ -16,19 +17,14 @@ build/default/debug/src/main.o.d build/default/debug/src/main.o: \
  d:\produktivni\ programy\mplab\xc8\v2.41\avr\avr\include\avr\xmega.h \
  d:\produktivni\ programy\mplab\xc8\v2.41\avr\avr\include\avr\fuse.h \
  d:\produktivni\ programy\mplab\xc8\v2.41\avr\avr\include\avr\lock.h \
+ d:\produktivni\ programy\mplab\xc8\v2.41\avr\lib\gcc\avr\5.4.0\include\stdbool.h \
  d:\produktivni\ programy\mplab\xc8\v2.41\avr\avr\include\util\delay.h \
  d:\produktivni\ programy\mplab\xc8\v2.41\avr\avr\include\util\delay_basic.h \
- d:\produktivni\ programy\mplab\xc8\v2.41\avr\avr\include\math.h \
- d:\produktivni\ programy\mplab\xc8\v2.41\avr\avr\include\avr\interrupt.h \
- src/../lib/uart/uart.h src/../lib/i2c/i2c.h \
- d:\produktivni\ programy\mplab\xc8\v2.41\avr\lib\gcc\avr\5.4.0\include\stdbool.h \
- src/../lib/DA_converter_MCP4728A1/mcp4728a1.h \
- src/../lib/DA_converter_MCP4728A1/../i2c/i2c.h \
- d:\produktivni\ programy\mplab\xc8\v2.41\avr\avr\include\stdio.h
+ d:\produktivni\ programy\mplab\xc8\v2.41\avr\avr\include\math.h
 
-d:\produktivni\ programy\mplab\xc8\v2.41\avr\lib\gcc\avr\5.4.0\include\xc.h:
+lib/DA_converter_MCP4728A1/mcp4728a1.h:
 
-d:\produktivni\ programy\mplab\xc8\v2.41\avr\lib\gcc\avr\5.4.0\include\cci.h:
+lib/DA_converter_MCP4728A1/../i2c/i2c.h:
 
 d:\produktivni\ programy\mplab\xc8\v2.41\avr\avr\include\avr\io.h:
 
@@ -58,22 +54,10 @@ d:\produktivni\ programy\mplab\xc8\v2.41\avr\avr\include\avr\fuse.h:
 
 d:\produktivni\ programy\mplab\xc8\v2.41\avr\avr\include\avr\lock.h:
 
+d:\produktivni\ programy\mplab\xc8\v2.41\avr\lib\gcc\avr\5.4.0\include\stdbool.h:
+
 d:\produktivni\ programy\mplab\xc8\v2.41\avr\avr\include\util\delay.h:
 
 d:\produktivni\ programy\mplab\xc8\v2.41\avr\avr\include\util\delay_basic.h:
 
 d:\produktivni\ programy\mplab\xc8\v2.41\avr\avr\include\math.h:
-
-d:\produktivni\ programy\mplab\xc8\v2.41\avr\avr\include\avr\interrupt.h:
-
-src/../lib/uart/uart.h:
-
-src/../lib/i2c/i2c.h:
-
-d:\produktivni\ programy\mplab\xc8\v2.41\avr\lib\gcc\avr\5.4.0\include\stdbool.h:
-
-src/../lib/DA_converter_MCP4728A1/mcp4728a1.h:
-
-src/../lib/DA_converter_MCP4728A1/../i2c/i2c.h:
-
-d:\produktivni\ programy\mplab\xc8\v2.41\avr\avr\include\stdio.h:

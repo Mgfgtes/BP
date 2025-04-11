@@ -5,7 +5,7 @@
  * Vyuziva I2C knihovnu pro AVR64DA28
  */
 
-#include "mcp4728.h"
+#include "mcp4728a1.h"
 
 // P?íkazy pro MCP4728A1
 #define MCP4728_CMD_FAST_WRITE       0x00 // Rychlé nastavení hodnot

@@ -1,4 +1,4 @@
-build/default/debug/src/main.o.d build/default/debug/src/main.o: \
+build/default/production/src/main.o.d build/default/production/src/main.o: \
  src/main.c \
  d:\produktivni\ programy\mplab\xc8\v2.41\avr\lib\gcc\avr\5.4.0\include\xc.h \
  d:\produktivni\ programy\mplab\xc8\v2.41\avr\lib\gcc\avr\5.4.0\include\cci.h \
