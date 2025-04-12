@@ -49,6 +49,8 @@ int main(void) {
     CLKCTRL.MCLKCTRLA = CLKCTRL_CLKSEL_OSCHF_gc;
     
     uart1_init(BAUD_9600);
+    
+    PORTA.DIRCLR = PIN1_bm;
     i2c_init(I2C_NORMAL_MODE_100KHZ);
     
     //_delay_ms(500);
@@ -58,16 +60,14 @@ int main(void) {
     uart1_send_byte(0xff);
     uart1_send_byte(0xff);
     
-    _delay_ms(500);
+    _delay_ms(2000);
     
     if (mcp4728_init(MCP4728_DEFAULT_ADDRESS) != I2C_OK) {
-        // Chyba inicializace - nap?íklad blikání LED pro indikaci chyby
-        while (1) {
-            uart1_send_string("t0.txt=\"I2C ERROR\"");
-            uart1_send_byte(0xff);
-            uart1_send_byte(0xff);
-            uart1_send_byte(0xff);
-        }
+        // Chyba inicializace
+        uart1_send_string("t0.txt=\"I2C INIT ERROR\"");
+        uart1_send_byte(0xff);
+        uart1_send_byte(0xff);
+        uart1_send_byte(0xff);
     }
     
     mcp4728_set_channel(MCP4728_CHANNEL_A, 2048, 

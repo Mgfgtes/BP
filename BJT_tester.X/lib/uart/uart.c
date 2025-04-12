@@ -131,7 +131,7 @@ void uart1_init(uart_baud_t baud_rate) {
     //USART1.CTRLA = USART_RXCIE_bm;
     
     // Povoleni vysilace a prijimace
-    USART1.CTRLB = USART_TXEN_bm | USART_RXEN_bm;
+    USART1.CTRLB |= USART_TXEN_bm | USART_RXEN_bm;
     
     // Format dat: 8 bit, bez parity, 1 stop bit
     USART1.CTRLC = USART_CHSIZE_8BIT_gc;
