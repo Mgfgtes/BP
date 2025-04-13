@@ -44,7 +44,7 @@ void uart0_send_byte(uint8_t data) {
 }
 
 /**
- * Odeslání retezce pres UART
+ * Odeslani retezce pres UART
  * 
  * @param str retezec k odeslani
  */
@@ -77,40 +77,24 @@ uint8_t uart0_data_available(void) {
 }
 
 /**
- * Príjem retezce pres UART s casovym limitem
+ * Prijem retezce pres UART
  * 
- * @param buffer Buffer pro ulození prijatych dat
+ * @param buffer Buffer pro ulozeni prijatych dat
  * @param max_length Maximalni delka bufferu
- * @param timeout Pocet cyklu pro timeout (0 = bez timeoutu)
- * @return Pocet prijatych znaku
+ * @return Pocet prijatých znaku
  */
-uint16_t uart0_receive_string(char* buffer, uint16_t max_length, uint16_t timeout) {
-    uint16_t count = 0;
-    uint16_t timer = 0;
+uint8_t uart0_receive_string(char* buffer, uint8_t max_length) {
+    uint8_t count = 0;
     
-    while(count < max_length - 1) {
-        if (uart0_data_available()) {
-            buffer[count] = uart0_receive_byte();
-            
-            // Kontrola ukonceni retezce
-            if (buffer[count] == '\n' || buffer[count] == '\r') {
-                buffer[count] = '\0';
-                return count;
-            }
-            
+    while (count < max_length - 1) {
+        if (uart0_data_available()){
+            buffer[count]=uart0_receive_byte();
+            if(buffer[count]==0) return count;
             count++;
-            timer = 0;
-        } else {
-            if (timeout > 0) {
-                timer++;
-                if (timer >= timeout) {
-                    break;
-                }
-            }
-        }
+        } 
     }
     
-    buffer[count] = '\0';
+    buffer[count] = 0;
     return count;
 }
 
@@ -179,7 +163,7 @@ uint8_t uart1_data_available(void) {
  */
 uint8_t uart1_receive_byte(void) {
     // Cekani na prijem dat
-    while (!(uart1_data_available));
+    while (!(USART1.STATUS & USART_RXCIF_bm));
     
     // Vraceni prijateho bajtu
     return USART1.RXDATAL;
@@ -199,7 +183,7 @@ void uart1_clear_receive_buffer(){
 }
 
 /**
- * Prijem retezce pres UART s casovým limitem
+ * Prijem retezce pres UART
  * 
  * @param buffer Buffer pro ulozeni prijatych dat
  * @param max_length Maximalni delka bufferu

@@ -7,13 +7,12 @@
 
 #define F_CPU 16000000UL
 
-//#include <xc.h>
+#include <xc.h>
 #include <util/delay.h>
 #include <avr/interrupt.h>
 #include "../lib/uart/uart.h"
 #include "../lib/i2c/i2c.h"
 #include "../lib/DA_converter_MCP4728A1/mcp4728a1.h"
-
 #include <stdio.h>
 
 ISR(USART1_RXC_vect){
@@ -88,8 +87,14 @@ int main(void) {
     //uint8_t t = 1;
     
     
+    PORTA.DIRSET = PIN6_bm;
+    
     while (1) {
-        /*_delay_ms(1000);
+        _delay_ms(1000);
+        
+        PORTA.OUTTGL = PIN6_bm;
+        
+        /*
         uart1_send_string("t0.txt=\"");
         sprintf(str, "%d", t);
         uart1_send_string(str);
