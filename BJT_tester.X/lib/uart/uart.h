@@ -122,9 +122,8 @@ uint8_t uart1_data_available(void);
  * 
  * @param buffer Buffer pro ulo?ení p?ijatých dat
  * @param max_length Maximální délka bufferu
- * @param timeout Po?et cykl? pro timeout (0 = bez timeoutu)
  * @return Po?et p?ijatých znak?
  */
-uint8_t uart1_receive_string(uint8_t* buffer, uint8_t max_length, uint8_t timeout);
+uint8_t uart1_receive_string(char* buffer, uint8_t max_length);
 
 #endif // UART_H

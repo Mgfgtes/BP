@@ -7,7 +7,7 @@
 
 #define F_CPU 16000000UL
 
-#include <xc.h>
+//#include <xc.h>
 #include <util/delay.h>
 #include <avr/interrupt.h>
 #include "../lib/uart/uart.h"
@@ -16,31 +16,31 @@
 
 #include <stdio.h>
 
-/*ISR(USART1_RXC_vect){
-    uint8_t string[10];
+ISR(USART1_RXC_vect){
+    char string[10];
     
     
-    uint8_t i=0;
+    /*uint8_t i=0;
     
-    //while (i<10) {
+    while (i<10) {
         
-    //    if (uart1_data_available()){
-    //        string[i]=uart1_receive_byte();
-    //        if(string[i]==0) break;
-    //        i++;
-    //    }
+        if (uart1_data_available()){
+            string[i]=uart1_receive_byte();
+            if(string[i]==0) break;
+            i++;
+        }
         
-    //}
+    }*/
     
-    uart1_receive_string(&string[0], 10,20);
+    uart1_receive_string(string, 10);
     
     uart1_send_string("t0.txt=\"");
-    uart1_send_string(&string[0]);
+    uart1_send_string(string);
     uart1_send_string("\"");
     uart1_send_byte(0xff);
     uart1_send_byte(0xff);
     uart1_send_byte(0xff);
-}*/
+}
 
 int main(void) {  
     //cli();
@@ -74,13 +74,16 @@ int main(void) {
                         MCP4728_VREF_INTERNAL, MCP4728_GAIN_2X, 
                         MCP4728_PD_NORMAL);
     
+    /*if (mcp4728_init(MCP4728_DEFAULT_ADDRESS) != I2C_OK) {
+        // Chyba inicializace
+        uart1_send_string("t0.txt=\"I2C VSET ERROR\"");
+        uart1_send_byte(0xff);
+        uart1_send_byte(0xff);
+        uart1_send_byte(0xff);
+    }*/
     
-    uart1_send_string("t0.txt=\"V_SET\"");
-    uart1_send_byte(0xff);
-    uart1_send_byte(0xff);
-    uart1_send_byte(0xff);
-    
-    //sei();
+    uart1_clear_receive_buffer();
+    sei();
     //uint8_t str[10];
     //uint8_t t = 1;
     

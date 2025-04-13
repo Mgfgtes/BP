@@ -128,7 +128,7 @@ void uart1_init(uart_baud_t baud_rate) {
     USART1.BAUD = baud_rate;
     
     //Povoleni preruseni
-    //USART1.CTRLA = USART_RXCIE_bm;
+    USART1.CTRLA = USART_RXCIE_bm;
     
     // Povoleni vysilace a prijimace
     USART1.CTRLB |= USART_TXEN_bm | USART_RXEN_bm;
@@ -163,19 +163,6 @@ void uart1_send_string(const char* str) {
 }
 
 /**
- * Prijem jednoho bajtu pres UART1
- * 
- * @return Prijaty bajt
- */
-uint8_t uart1_receive_byte(void) {
-    // Cekani na prijem dat
-    while (!(USART1.STATUS & USART_RXCIF_bm));
-    
-    // Vraceni prijateho bajtu
-    return USART1.RXDATAL;
-}
-
-/**
  * Kontrola, zda jsou k dispozici data k precteni
  * 
  * @return 1 pokud jsou data k dispozici, jinak 0
@@ -186,36 +173,47 @@ uint8_t uart1_data_available(void) {
 }
 
 /**
+ * Prijem jednoho bajtu pres UART1
+ * 
+ * @return Prijaty bajt
+ */
+uint8_t uart1_receive_byte(void) {
+    // Cekani na prijem dat
+    while (!(uart1_data_available));
+    
+    // Vraceni prijateho bajtu
+    return USART1.RXDATAL;
+}
+
+/**
+ * Vyprazdneni prijimaciho bufferu
+ * 
+ * @param buffer
+ * @param max_length
+ * @return 
+ */
+void uart1_clear_receive_buffer(){
+    while (uart1_data_available()) {
+        uart1_receive_byte();
+    }
+}
+
+/**
  * Prijem retezce pres UART s casovým limitem
  * 
  * @param buffer Buffer pro ulozeni prijatych dat
  * @param max_length Maximalni delka bufferu
- * @param timeout Pocet cyklu pro timeout (0 = bez timeoutu)
  * @return Pocet prijatých znaku
  */
-uint8_t uart1_receive_string(uint8_t* buffer, uint8_t max_length, uint8_t timeout) {
+uint8_t uart1_receive_string(char* buffer, uint8_t max_length) {
     uint8_t count = 0;
-    uint8_t timer = 0;
     
-    while(count < max_length - 1) {
-        if (uart1_data_available()) {
-            buffer[count] = USART1.RXDATAL;
-            
-            // Kontrola ukonceni retezce
-            if (buffer[count] == 0){
-                return count;
-            }
-            
+    while (count < max_length - 1) {
+        if (uart1_data_available()){
+            buffer[count]=uart1_receive_byte();
+            if(buffer[count]==0) return count;
             count++;
-            timer = 0;
-        } else {
-            if (timeout > 0) {
-                timer++;
-                if (timer >= timeout) {
-                    break;
-                }
-            }
-        }
+        } 
     }
     
     buffer[count] = 0;
