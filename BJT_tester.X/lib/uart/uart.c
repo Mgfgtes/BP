@@ -81,7 +81,7 @@ uint8_t uart0_data_available(void) {
  * 
  * @param buffer Buffer pro ulozeni prijatych dat
  * @param max_length Maximalni delka bufferu
- * @return Pocet prijatých znaku
+ * @return Pocet prijatych znaku
  */
 uint8_t uart0_receive_string(char* buffer, uint8_t max_length) {
     uint8_t count = 0;

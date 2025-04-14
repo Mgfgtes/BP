@@ -17,7 +17,7 @@
 #include <util/delay.h>
 
 /**
- * Definice standardních I2C frekvencí
+ * Definice standardnich I2C frekvencí
  */
 typedef enum {
     I2C_NORMAL_MODE_100KHZ = 100000,  // Standard mode

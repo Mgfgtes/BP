@@ -69,11 +69,11 @@ int main(void) {
         uart1_send_byte(0xff);
     }
     
-    mcp4728_set_channel(MCP4728_CHANNEL_A, 2048, 
+    /*mcp4728_set_channel(MCP4728_CHANNEL_A, 2048, 
                         MCP4728_VREF_INTERNAL, MCP4728_GAIN_2X, 
                         MCP4728_PD_NORMAL);
     
-    /*if (mcp4728_init(MCP4728_DEFAULT_ADDRESS) != I2C_OK) {
+    if (mcp4728_init(MCP4728_DEFAULT_ADDRESS) != I2C_OK) {
         // Chyba inicializace
         uart1_send_string("t0.txt=\"I2C VSET ERROR\"");
         uart1_send_byte(0xff);
