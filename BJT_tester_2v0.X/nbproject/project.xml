@@ -12,6 +12,7 @@
                 <sourceRootElem>lib/i2c</sourceRootElem>
                 <sourceRootElem>lib/DA_converter_MCP4728A1</sourceRootElem>
                 <sourceRootElem>lib/uart</sourceRootElem>
+                <sourceRootElem>lib/adc</sourceRootElem>
             </sourceRootList>
             <confList>
                 <confElem>

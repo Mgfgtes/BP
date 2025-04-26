@@ -51,17 +51,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=src/main.c lib/i2c/i2c.c lib/DA_converter_MCP4728A1/mcp4728a1.c lib/uart/uart.c
+SOURCEFILES_QUOTED_IF_SPACED=src/main.c lib/i2c/i2c.c lib/DA_converter_MCP4728A1/mcp4728a1.c lib/uart/uart.c lib/adc/adc.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/src/main.o ${OBJECTDIR}/lib/i2c/i2c.o ${OBJECTDIR}/lib/DA_converter_MCP4728A1/mcp4728a1.o ${OBJECTDIR}/lib/uart/uart.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/src/main.o.d ${OBJECTDIR}/lib/i2c/i2c.o.d ${OBJECTDIR}/lib/DA_converter_MCP4728A1/mcp4728a1.o.d ${OBJECTDIR}/lib/uart/uart.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/src/main.o ${OBJECTDIR}/lib/i2c/i2c.o ${OBJECTDIR}/lib/DA_converter_MCP4728A1/mcp4728a1.o ${OBJECTDIR}/lib/uart/uart.o ${OBJECTDIR}/lib/adc/adc.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/src/main.o.d ${OBJECTDIR}/lib/i2c/i2c.o.d ${OBJECTDIR}/lib/DA_converter_MCP4728A1/mcp4728a1.o.d ${OBJECTDIR}/lib/uart/uart.o.d ${OBJECTDIR}/lib/adc/adc.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/src/main.o ${OBJECTDIR}/lib/i2c/i2c.o ${OBJECTDIR}/lib/DA_converter_MCP4728A1/mcp4728a1.o ${OBJECTDIR}/lib/uart/uart.o
+OBJECTFILES=${OBJECTDIR}/src/main.o ${OBJECTDIR}/lib/i2c/i2c.o ${OBJECTDIR}/lib/DA_converter_MCP4728A1/mcp4728a1.o ${OBJECTDIR}/lib/uart/uart.o ${OBJECTDIR}/lib/adc/adc.o
 
 # Source Files
-SOURCEFILES=src/main.c lib/i2c/i2c.c lib/DA_converter_MCP4728A1/mcp4728a1.c lib/uart/uart.c
+SOURCEFILES=src/main.c lib/i2c/i2c.c lib/DA_converter_MCP4728A1/mcp4728a1.c lib/uart/uart.c lib/adc/adc.c
 
 
 
@@ -112,6 +112,12 @@ ${OBJECTDIR}/lib/uart/uart.o: lib/uart/uart.c  .generated_files/flags/default/75
 	@${RM} ${OBJECTDIR}/lib/uart/uart.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mconst-data-in-progmem -mno-const-data-in-config-mapped-progmem     -MD -MP -MF "${OBJECTDIR}/lib/uart/uart.o.d" -MT "${OBJECTDIR}/lib/uart/uart.o.d" -MT ${OBJECTDIR}/lib/uart/uart.o -o ${OBJECTDIR}/lib/uart/uart.o lib/uart/uart.c 
 	
+${OBJECTDIR}/lib/adc/adc.o: lib/adc/adc.c  .generated_files/flags/default/5a95a8b6042a0b0706bcf0d5eabf11303267ffed .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}/lib/adc" 
+	@${RM} ${OBJECTDIR}/lib/adc/adc.o.d 
+	@${RM} ${OBJECTDIR}/lib/adc/adc.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mconst-data-in-progmem -mno-const-data-in-config-mapped-progmem     -MD -MP -MF "${OBJECTDIR}/lib/adc/adc.o.d" -MT "${OBJECTDIR}/lib/adc/adc.o.d" -MT ${OBJECTDIR}/lib/adc/adc.o -o ${OBJECTDIR}/lib/adc/adc.o lib/adc/adc.c 
+	
 else
 ${OBJECTDIR}/src/main.o: src/main.c  .generated_files/flags/default/cc5a5b6bfa1fc0175b619803acd04661f91fa4da .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}/src" 
@@ -136,6 +142,12 @@ ${OBJECTDIR}/lib/uart/uart.o: lib/uart/uart.c  .generated_files/flags/default/42
 	@${RM} ${OBJECTDIR}/lib/uart/uart.o.d 
 	@${RM} ${OBJECTDIR}/lib/uart/uart.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mconst-data-in-progmem -mno-const-data-in-config-mapped-progmem     -MD -MP -MF "${OBJECTDIR}/lib/uart/uart.o.d" -MT "${OBJECTDIR}/lib/uart/uart.o.d" -MT ${OBJECTDIR}/lib/uart/uart.o -o ${OBJECTDIR}/lib/uart/uart.o lib/uart/uart.c 
+	
+${OBJECTDIR}/lib/adc/adc.o: lib/adc/adc.c  .generated_files/flags/default/c6e9f1eab792aa8d4b7f10c464ca46b2bab20a13 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}/lib/adc" 
+	@${RM} ${OBJECTDIR}/lib/adc/adc.o.d 
+	@${RM} ${OBJECTDIR}/lib/adc/adc.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mconst-data-in-progmem -mno-const-data-in-config-mapped-progmem     -MD -MP -MF "${OBJECTDIR}/lib/adc/adc.o.d" -MT "${OBJECTDIR}/lib/adc/adc.o.d" -MT ${OBJECTDIR}/lib/adc/adc.o -o ${OBJECTDIR}/lib/adc/adc.o lib/adc/adc.c 
 	
 endif
 

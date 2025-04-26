@@ -158,7 +158,7 @@ i2c_status_t i2c_read(uint8_t slave_addr, uint8_t *data, uint8_t len) {
     return I2C_ERROR_BUS;
 }
 
-bool i2c_device_available(uint8_t address) {
+uint8_t i2c_device_available(uint8_t address) {
     // Zkusime odeslat pouze adresu
     TWI0.MADDR = (address << 1) | 0;
     
@@ -167,19 +167,19 @@ bool i2c_device_available(uint8_t address) {
     while (!(TWI0.MSTATUS & (TWI_WIF_bm | TWI_RIF_bm))) {
         if (++timeout_counter > I2C_TIMEOUT_COUNT) {
             TWI0.MCTRLB = TWI_MCMD_STOP_gc;
-            return false;
+            return 0;
         }
         
         // Kontrola chyby sbernice
         if (TWI0.MSTATUS & TWI_BUSERR_bm) {
             TWI0.MSTATUS = TWI_BUSSTATE_IDLE_gc;
             TWI0.MCTRLB = TWI_MCMD_STOP_gc;
-            return false;
+            return 1;
         }
     }
     
     // Zkontrolujeme, zda jsme dostali ACK
-    bool device_present = !(TWI0.MSTATUS & TWI_RXACK_bm);
+    uint8_t device_present = !(TWI0.MSTATUS & TWI_RXACK_bm);
     
     // Poslani STOP
     TWI0.MCTRLB = TWI_MCMD_STOP_gc;

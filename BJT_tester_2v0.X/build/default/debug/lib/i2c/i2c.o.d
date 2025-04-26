@@ -14,7 +14,6 @@ build/default/debug/lib/i2c/i2c.o.d build/default/debug/lib/i2c/i2c.o: \
  d:\produktivni\ programy\mplab\xc8\v3.0\avr\avr\include\avr\xmega.h \
  d:\produktivni\ programy\mplab\xc8\v3.0\avr\avr\include\avr\fuse.h \
  d:\produktivni\ programy\mplab\xc8\v3.0\avr\avr\include\avr\lock.h \
- d:\produktivni\ programy\mplab\xc8\v3.0\avr\lib\gcc\avr\5.4.0\include\stdbool.h \
  d:\produktivni\ programy\mplab\xc8\v3.0\avr\avr\include\util\delay.h \
  d:\produktivni\ programy\mplab\xc8\v3.0\avr\avr\include\util\delay_basic.h \
  d:\produktivni\ programy\mplab\xc8\v3.0\avr\avr\include\math.h
@@ -48,8 +47,6 @@ d:\produktivni\ programy\mplab\xc8\v3.0\avr\avr\include\avr\xmega.h:
 d:\produktivni\ programy\mplab\xc8\v3.0\avr\avr\include\avr\fuse.h:
 
 d:\produktivni\ programy\mplab\xc8\v3.0\avr\avr\include\avr\lock.h:
-
-d:\produktivni\ programy\mplab\xc8\v3.0\avr\lib\gcc\avr\5.4.0\include\stdbool.h:
 
 d:\produktivni\ programy\mplab\xc8\v3.0\avr\avr\include\util\delay.h:
 

@@ -7,6 +7,7 @@
       <itemPath>lib/i2c/i2c.h</itemPath>
       <itemPath>lib/DA_converter_MCP4728A1/mcp4728a1.h</itemPath>
       <itemPath>lib/uart/uart.h</itemPath>
+      <itemPath>lib/adc/adc.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -19,6 +20,7 @@
       <itemPath>lib/i2c/i2c.c</itemPath>
       <itemPath>lib/DA_converter_MCP4728A1/mcp4728a1.c</itemPath>
       <itemPath>lib/uart/uart.c</itemPath>
+      <itemPath>lib/adc/adc.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -30,6 +32,7 @@
     <Elem>lib/i2c</Elem>
     <Elem>lib/DA_converter_MCP4728A1</Elem>
     <Elem>lib/uart</Elem>
+    <Elem>lib/adc</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>

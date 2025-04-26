@@ -12,7 +12,6 @@
 #ifndef I2C_H
 #define I2C_H
 #include <avr/io.h>
-#include <stdbool.h>
 #include <stdint.h>
 #include <util/delay.h>
 
@@ -61,9 +60,9 @@ i2c_status_t i2c_read(uint8_t slave_addr, uint8_t *data, uint8_t len);
  * Zjisteni, zda zarizeni odpovida na dane adrese
  * 
  * @param address Adresa zarizeni
- * @return true pokud zarizeni odpovida, jinak false
+ * @return 1 pokud zarizeni odpovida, jinak 0
  */
-bool i2c_device_available(uint8_t address);
+uint8_t i2c_device_available(uint8_t address);
 /**
  * Skenovani I2C sbernice pro nalezeni pripojenych zarizeni
  * 
