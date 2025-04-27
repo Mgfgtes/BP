@@ -13,6 +13,7 @@
 #include "../lib/uart/uart.h"
 #include "../lib/i2c/i2c.h"
 #include "../lib/DA_converter_MCP4728A1/mcp4728a1.h"
+#include "../lib/adc/adc.h"
 #include <stdio.h>
 
 ISR(USART1_RXC_vect){
@@ -41,6 +42,13 @@ ISR(USART1_RXC_vect){
     uart1_send_byte(0xff);
 }
 
+void nextion_send_string(const char* str){
+    uart1_send_string(str);
+    uart1_send_byte(0xff);
+    uart1_send_byte(0xff);
+    uart1_send_byte(0xff);
+}
+
 int main(void) {  
     //cli();
     
@@ -61,7 +69,7 @@ int main(void) {
     
     _delay_ms(2000);
     
-    if (mcp4728_init(MCP4728_DEFAULT_ADDRESS) != I2C_OK) {
+    if (mcp4728_init(0x61) != I2C_OK) {
         // Chyba inicializace
         uart1_send_string("t0.txt=\"I2C INIT ERROR\"");
         uart1_send_byte(0xff);
@@ -69,30 +77,52 @@ int main(void) {
         uart1_send_byte(0xff);
     }
     
-    /*mcp4728_set_channel(MCP4728_CHANNEL_A, 2048, 
+    mcp4728_set_channel(MCP4728_CHANNEL_A, 2898, 
+                        MCP4728_VREF_INTERNAL, MCP4728_GAIN_2X, 
+                        MCP4728_PD_NORMAL);
+    mcp4728_set_channel(MCP4728_CHANNEL_B, 2048, 
+                        MCP4728_VREF_INTERNAL, MCP4728_GAIN_2X, 
+                        MCP4728_PD_NORMAL);
+    mcp4728_set_channel(MCP4728_CHANNEL_C, 2048, 
                         MCP4728_VREF_INTERNAL, MCP4728_GAIN_2X, 
                         MCP4728_PD_NORMAL);
     
-    if (mcp4728_init(MCP4728_DEFAULT_ADDRESS) != I2C_OK) {
-        // Chyba inicializace
-        uart1_send_string("t0.txt=\"I2C VSET ERROR\"");
-        uart1_send_byte(0xff);
-        uart1_send_byte(0xff);
-        uart1_send_byte(0xff);
-    }*/
     
     uart1_clear_receive_buffer();
     sei();
-    //uint8_t str[10];
+    
+    uint8_t str[10];
     //uint8_t t = 1;
     
     
-    PORTA.DIRSET = PIN6_bm;
+    
+    
+    
+    //mereni proudu
+    ADC_init();
+    
+    //VREF=10mV
+    mcp4728_set_channel(MCP4728_CHANNEL_D, 10, MCP4728_VREF_INTERNAL, MCP4728_GAIN_2X, MCP4728_PD_NORMAL);
+    VREF.ADC0REF = VREF_REFSEL_VREFA_gc;
+    
+    uint16_t Ib = ((((0.01/4096)*ADC_read(2))/50)/0.2)*1000;
+                 //((((VREF/Rozliseni)*ADC_read(2))/INA_GAIN)/Rb)*1000 [uA]
+    sprintf(str, "%d", Ib);
+    
+    uart1_send_string("t0.txt=\"");
+    uart1_send_string(str);
+    uart1_send_string("\"");
+    uart1_send_byte(0xff);
+    uart1_send_byte(0xff);
+    uart1_send_byte(0xff);
+    
+    
+    //PORTA.DIRSET = PIN6_bm;
     
     while (1) {
-        _delay_ms(1000);
+        //_delay_ms(1000);
         
-        PORTA.OUTTGL = PIN6_bm;
+        //PORTA.OUTTGL = PIN6_bm;
         
         /*
         uart1_send_string("t0.txt=\"");

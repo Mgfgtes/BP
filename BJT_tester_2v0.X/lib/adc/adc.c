@@ -7,8 +7,8 @@
 #include "adc.h"
 
 void ADC_init(void) {
-    // Nastaveni reference na interni 1.024V
-    VREF.ADC0REF = VREF_REFSEL_1V024_gc;
+    // Nastaveni reference na napajeci napeti
+    VREF.ADC0REF = VREF_REFSEL_VDD_gc;
     
     // Nastaveni rozliseni na 12 bitu
     ADC0.CTRLA = ADC_RESSEL_12BIT_gc;

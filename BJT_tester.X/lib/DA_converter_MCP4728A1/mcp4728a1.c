@@ -19,7 +19,7 @@
 #define MCP4728_CMD_GEN_CALL_WAKEUP  0x09 // Obecné probuzení
 
 // Staticka promenna pro ulozeni adresy zarizeni
-static uint8_t _mcp4728_address = MCP4728_DEFAULT_ADDRESS;
+static uint8_t _mcp4728_address = 0x61;
 
 i2c_status_t mcp4728_init(uint8_t address) {
     _mcp4728_address = address;

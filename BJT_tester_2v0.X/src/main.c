@@ -21,7 +21,8 @@
 typedef enum {
     START,
     POLARITY_TESTING,
-    H21_MEASURING
+    NPN_H21_MEASURING,
+    PNP_H21_MEASURING
 } device_status_t;
 
 volatile device_status_t status;
@@ -59,8 +60,8 @@ int main(void) {
     }
     
     //Nastaveni offsetu  
-    uint16_t da_val[3]={2048,2048,2048};
-    
+    uint16_t da_val[4]={2048,2048,2048};
+        
     if (mcp4728_set_channel(MCP4728_CHANNEL_A, da_val[0], MCP4728_VREF_INTERNAL, MCP4728_GAIN_2X, MCP4728_PD_NORMAL)) {
         // Chyba nastaveni napeti na kanalu
         nextion_send_string("t0.txt=\"ERROR CHA SET\"");
@@ -97,9 +98,9 @@ int main(void) {
     
     
     
+    uint16_t h21=0;
     
-    
-    status = H21_MEASURING;
+    status = NPN_H21_MEASURING;
     
     //VREF=10mV
     mcp4728_set_channel(MCP4728_CHANNEL_D, 10, MCP4728_VREF_INTERNAL, MCP4728_GAIN_2X, MCP4728_PD_NORMAL);
@@ -117,8 +118,35 @@ int main(void) {
             nextion_send_string("t0.txt=\"ERROR CHA SET\"");
         }
     }
-
     
+    da_val[1] = 4096;
+    da_val[2] = 0;
+    
+    if (mcp4728_set_channel(MCP4728_CHANNEL_B, da_val[1], MCP4728_VREF_INTERNAL, MCP4728_GAIN_2X, MCP4728_PD_NORMAL)) {
+        // Chyba nastaveni napeti na kanalu
+        nextion_send_string("t0.txt=\"ERROR CHA SET\"");
+    }
+    if (mcp4728_set_channel(MCP4728_CHANNEL_C, da_val[2], MCP4728_VREF_INTERNAL, MCP4728_GAIN_2X, MCP4728_PD_NORMAL)) {
+        // Chyba nastaveni napeti na kanalu
+        nextion_send_string("t0.txt=\"ERROR CHA SET\"");
+    }
+    
+    h21 = ADC_read(2)/ADC_read(4);
+    
+    da_val[1] = 0;
+    da_val[2] = 4096;
+    
+    if (mcp4728_set_channel(MCP4728_CHANNEL_B, da_val[1], MCP4728_VREF_INTERNAL, MCP4728_GAIN_2X, MCP4728_PD_NORMAL)) {
+        // Chyba nastaveni napeti na kanalu
+        nextion_send_string("t0.txt=\"ERROR CHA SET\"");
+    }
+    if (mcp4728_set_channel(MCP4728_CHANNEL_C, da_val[2], MCP4728_VREF_INTERNAL, MCP4728_GAIN_2X, MCP4728_PD_NORMAL)) {
+        // Chyba nastaveni napeti na kanalu
+        nextion_send_string("t0.txt=\"ERROR CHA SET\"");
+    }
+    
+    if (ADC_read(0)/ADC_read(4)>h21) h21 = ADC_read(0)/ADC_read(4);
+
     return 0;
 }
 
