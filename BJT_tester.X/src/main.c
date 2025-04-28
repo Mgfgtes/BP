@@ -60,7 +60,7 @@ int main(void) {
     PORTA.DIRCLR = PIN1_bm;
     i2c_init(I2C_NORMAL_MODE_100KHZ);
     
-    //_delay_ms(500);
+    _delay_ms(500);
     
     uart1_send_string("t0.txt=\"OK\"");
     uart1_send_byte(0xff);
@@ -80,10 +80,10 @@ int main(void) {
     mcp4728_set_channel(MCP4728_CHANNEL_A, 2898, 
                         MCP4728_VREF_INTERNAL, MCP4728_GAIN_2X, 
                         MCP4728_PD_NORMAL);
-    mcp4728_set_channel(MCP4728_CHANNEL_B, 2048, 
+    mcp4728_set_channel(MCP4728_CHANNEL_B, 1000, 
                         MCP4728_VREF_INTERNAL, MCP4728_GAIN_2X, 
                         MCP4728_PD_NORMAL);
-    mcp4728_set_channel(MCP4728_CHANNEL_C, 2048, 
+    mcp4728_set_channel(MCP4728_CHANNEL_C, 2100, 
                         MCP4728_VREF_INTERNAL, MCP4728_GAIN_2X, 
                         MCP4728_PD_NORMAL);
     

@@ -7,7 +7,7 @@
 
 #include "mcp4728a1.h"
 
-// P?íkazy pro MCP4728A1
+// Prikazy pro MCP4728A1
 #define MCP4728_CMD_FAST_WRITE       0x00 // Rychlé nastavení hodnot
 #define MCP4728_CMD_MULTI_WRITE      0x40 // Vícenásobný zápis
 #define MCP4728_CMD_SEQ_WRITE        0x50 // Sekven?ní zápis

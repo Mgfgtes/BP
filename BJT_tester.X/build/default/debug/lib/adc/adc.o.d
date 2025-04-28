@@ -1,5 +1,5 @@
-build/default/debug/lib/i2c/i2c.o.d build/default/debug/lib/i2c/i2c.o: \
- lib/i2c/i2c.c lib/i2c/i2c.h \
+build/default/debug/lib/adc/adc.o.d build/default/debug/lib/adc/adc.o: \
+ lib/adc/adc.c lib/adc/adc.h \
  d:\produktivni\ programy\mplab\xc8\v2.41\avr\avr\include\avr\io.h \
  d:\produktivni\ programy\mplab\xc8\v2.41\avr\avr\include\avr\sfr_defs.h \
  d:\produktivni\ programy\mplab\xc8\v2.41\avr\avr\include\inttypes.h \
@@ -13,13 +13,9 @@ build/default/debug/lib/i2c/i2c.o.d build/default/debug/lib/i2c/i2c.o: \
  d:\produktivni\ programy\mplab\xc8\v2.41\avr\avr\include\avr\common.h \
  d:\produktivni\ programy\mplab\xc8\v2.41\avr\avr\include\avr\xmega.h \
  d:\produktivni\ programy\mplab\xc8\v2.41\avr\avr\include\avr\fuse.h \
- d:\produktivni\ programy\mplab\xc8\v2.41\avr\avr\include\avr\lock.h \
- d:\produktivni\ programy\mplab\xc8\v2.41\avr\lib\gcc\avr\5.4.0\include\stdbool.h \
- d:\produktivni\ programy\mplab\xc8\v2.41\avr\avr\include\util\delay.h \
- d:\produktivni\ programy\mplab\xc8\v2.41\avr\avr\include\util\delay_basic.h \
- d:\produktivni\ programy\mplab\xc8\v2.41\avr\avr\include\math.h
+ d:\produktivni\ programy\mplab\xc8\v2.41\avr\avr\include\avr\lock.h
 
-lib/i2c/i2c.h:
+lib/adc/adc.h:
 
 d:\produktivni\ programy\mplab\xc8\v2.41\avr\avr\include\avr\io.h:
 
@@ -48,11 +44,3 @@ d:\produktivni\ programy\mplab\xc8\v2.41\avr\avr\include\avr\xmega.h:
 d:\produktivni\ programy\mplab\xc8\v2.41\avr\avr\include\avr\fuse.h:
 
 d:\produktivni\ programy\mplab\xc8\v2.41\avr\avr\include\avr\lock.h:
-
-d:\produktivni\ programy\mplab\xc8\v2.41\avr\lib\gcc\avr\5.4.0\include\stdbool.h:
-
-d:\produktivni\ programy\mplab\xc8\v2.41\avr\avr\include\util\delay.h:
-
-d:\produktivni\ programy\mplab\xc8\v2.41\avr\avr\include\util\delay_basic.h:
-
-d:\produktivni\ programy\mplab\xc8\v2.41\avr\avr\include\math.h:
