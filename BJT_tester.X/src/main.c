@@ -106,7 +106,7 @@ int main(void) {
     VREF.ADC0REF = VREF_REFSEL_VREFA_gc;
     
     uint16_t Ib = ((((0.01/4096)*ADC_read(2))/50)/0.2)*1000;
-                 //((((VREF/Rozliseni)*ADC_read(2))/INA_GAIN)/Rb)*1000 [uA]
+                 //((((VREF/Rozliseni)*ADC_read(2))/INA_GAIN)/Rb)*1000000 [uA]
     sprintf(str, "%d", Ib);
     
     uart1_send_string("t0.txt=\"");
