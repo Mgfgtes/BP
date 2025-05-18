@@ -67,7 +67,7 @@ int main(void) {
     uart1_send_byte(0xff);
     uart1_send_byte(0xff);
     
-    _delay_ms(2000);
+    _delay_ms(500);
     
     if (mcp4728_init(0x61) != I2C_OK) {
         // Chyba inicializace
@@ -77,19 +77,30 @@ int main(void) {
         uart1_send_byte(0xff);
     }
     
-    mcp4728_set_channel(MCP4728_CHANNEL_A, 2898, 
+    _delay_ms(10);
+    
+    mcp4728_set_channel(MCP4728_CHANNEL_A, 2048, 
                         MCP4728_VREF_INTERNAL, MCP4728_GAIN_2X, 
                         MCP4728_PD_NORMAL);
-    mcp4728_set_channel(MCP4728_CHANNEL_B, 1000, 
+    
+    _delay_ms(10);
+    
+    mcp4728_set_channel(MCP4728_CHANNEL_B, 2250, 
                         MCP4728_VREF_INTERNAL, MCP4728_GAIN_2X, 
                         MCP4728_PD_NORMAL);
-    mcp4728_set_channel(MCP4728_CHANNEL_C, 2100, 
+    
+    _delay_ms(10);
+    
+    mcp4728_set_channel(MCP4728_CHANNEL_C, 2048, 
                         MCP4728_VREF_INTERNAL, MCP4728_GAIN_2X, 
                         MCP4728_PD_NORMAL);
+    
+    _delay_ms(10);
     
     
     uart1_clear_receive_buffer();
-    sei();
+    sei(); 
+    
     
     uint8_t str[10];
     //uint8_t t = 1;
@@ -101,12 +112,18 @@ int main(void) {
     //mereni proudu
     ADC_init();
     
-    //VREF=10mV
-    mcp4728_set_channel(MCP4728_CHANNEL_D, 10, MCP4728_VREF_INTERNAL, MCP4728_GAIN_2X, MCP4728_PD_NORMAL);
+    //VREF=100mV
+    mcp4728_set_channel(MCP4728_CHANNEL_D, 100, MCP4728_VREF_INTERNAL, MCP4728_GAIN_2X, MCP4728_PD_NORMAL);
     VREF.ADC0REF = VREF_REFSEL_VREFA_gc;
+    //VREF.ADC0REF = VREF_REFSEL_1V024_gc;
     
-    uint16_t Ib = ((((0.01/4096)*ADC_read(2))/50)/0.2)*1000;
-                 //((((VREF/Rozliseni)*ADC_read(2))/INA_GAIN)/Rb)*1000000 [uA]
+    /*uint16_t Ib = ((((0.1/4096)*ADC_read(2))/50)/0.2)*1000;
+                 //((((VREF/Rozliseni)*ADC_read(2))/INA_GAIN)/Rb)*1000000 [uA]*/
+                 //(VREF*ADC_read(2))/(Rb*INA_GAIN*Rozliseni)
+                 //(VREF*ADC_read(2))/(0,2*50*4096)
+                 //(VREF*ADC_read(2))/40960
+    uint16_t Ib = (1024000*ADC_read(2))/40960;
+    
     sprintf(str, "%d", Ib);
     
     uart1_send_string("t0.txt=\"");

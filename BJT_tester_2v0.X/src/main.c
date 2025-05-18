@@ -39,14 +39,11 @@ typedef enum {
 
 typedef struct {
     BJTPolarity polarity; // polarita tranzistoru (NPN nebo PNP)
-    mcp4728_channel_t base_channel;       // kanal pripojeny na baie (0-2)
-    uint16_t h21;        // zesileni tranzistoru
+    mcp4728_channel_t base_channel;       // kanal pripojeny na bazi (0-2)
+    uint16_t h21 = 0;        // zesileni tranzistoru
     uint16_t Ib_uA;
     uint16_t Ic_mA;
 } BJT;
-
-volatile device_status_t status;
-BJT tested_BJT;
 
 void nextion_send_string(const char* str){
     uart1_send_string(str);
@@ -54,6 +51,40 @@ void nextion_send_string(const char* str){
     uart1_send_byte(0xff);
     uart1_send_byte(0xff);
 }
+
+uint16_t measure_I_uA(uint8_t INA_CH){
+    //Zmereni napeti kanalu D z DA prevodiku
+    VREF.ADC0REF = VREF_REFSEL_1V024_gc;
+    
+    uint16_t VREF_mV_corrigated = (ADC_read(7)*1024)/4096;
+    
+    //Nastaveni reference na vystup DA prevodniku z kanalu D
+    VREF.ADC0REF = VREF_REFSEL_VREFA_gc;
+    
+                //I = ((((VREF/Rozliseni)*ADC_read())/INA_GAIN)/Rb)*1000000   [uA]
+                //I = (VREF*ADC_read()*1000000)/(Rb*INA_GAIN*Rozliseni)       [uA] 
+                //I = (VREF_mV*ADC_read()*1000)/(0,2*50*4096)                 [uA]
+                //I = (VREF_mV*ADC_read()*1000)/40960                         [uA]
+    uint16_t I = (VREF_mV_corrigated*ADC_read(INA_CH))/40960;
+    
+    return I;
+}
+
+uint16_t measure_I_mA(uint8_t INA_CH){
+    //Nastaveni reference na vystup DA prevodniku z kanalu D
+    VREF.ADC0REF = VREF_REFSEL_1V024_gc;
+    
+                //I = ((((VREF/Rozliseni)*ADC_read())/INA_GAIN)/Rb)*1000   [mA]
+                //I = (VREF*ADC_read()*1000)/(Rb*INA_GAIN*Rozliseni)       [mA] 
+                //I = (VREF_mV*ADC_read(2))/(0,2*50*4096)                  [mA]
+                //I = (1024*ADC_read(2)*)/40960                            [mA]
+    uint16_t I = (1024*ADC_read(INA_CH))/40960;
+    
+    return I;
+}
+
+//Globalni promenna status
+volatile device_status_t status;
 
 int main(void) {
     //Nastaveni hodinoveho signalu na 16 MHz a vypnuti 32,768 kHz oscilatoru.
@@ -63,6 +94,12 @@ int main(void) {
     
     //Oprava na desce -> nastavení HiZ na PIN1
     PORTA.DIRCLR = PIN1_bm;
+    
+    // Nastaveni pinu PD0-5 jako vstupy pro ADC
+    PORTD.DIRCLR = PIN0_bm | PIN1_bm | PIN2_bm | PIN3_bm | PIN4_bm | PIN5_bm;
+    
+    // Nastaveni pinu PD7 jako vstup pro VREF
+    PORTD.DIRCLR = PIN7_bm;
     
     //Inicializace seriovych sbernic
     uart1_init(BAUD_9600);
@@ -75,33 +112,47 @@ int main(void) {
     
     sei();
     
+    //Kontola dostupnosti DA prevodniku
     if (mcp4728_init(MCP4728_ADDRESS) != I2C_OK) {
         // Chyba inicializace
-        nextion_send_string("t0.txt=\"I2C INIT ERROR\"");
+        nextion_send_string("t0.txt=\"I2C DA CONV INIT ERROR\"");
     }
     
+    //Prechod na stranku se startovacim tlacitkem
     nextion_send_string("page start_menu");
     
     while (1) {
-        //Nastaveni offsetu  
-        uint16_t da_val[4]={2048, 2048, 2048, 0};
+        //Struct pro ukladani parametru tranzistoru
+        BJT tested_BJT;
+        
+        //Nastaveni offsetu a 100mV reference
+        uint16_t da_val[4]={2048, 2048, 2048, 100};
 
         if (mcp4728_set_channel(MCP4728_CHANNEL_A, da_val[0], MCP4728_VREF_INTERNAL, MCP4728_GAIN_2X, MCP4728_PD_NORMAL)) {
             // Chyba nastaveni napeti na kanalu
             nextion_send_string("t0.txt=\"ERROR CHA SET\"");
         }
+        _delay_ms(10);
         if (mcp4728_set_channel(MCP4728_CHANNEL_B, da_val[1], MCP4728_VREF_INTERNAL, MCP4728_GAIN_2X, MCP4728_PD_NORMAL)) {
             // Chyba nastaveni napeti na kanalu
             nextion_send_string("t0.txt=\"ERROR CHB SET\"");
         }
+        _delay_ms(10);
         if (mcp4728_set_channel(MCP4728_CHANNEL_C, da_val[2], MCP4728_VREF_INTERNAL, MCP4728_GAIN_2X, MCP4728_PD_NORMAL)) {
             // Chyba nastaveni napeti na kanalu
             nextion_send_string("t0.txt=\"ERROR CHC SET\"");
         }
+        _delay_ms(10);
+        if (mcp4728_set_channel(MCP4728_CHANNEL_D, da_val[3], MCP4728_VREF_INTERNAL, MCP4728_GAIN_2X, MCP4728_PD_NORMAL)) {
+            // Chyba nastaveni napeti na kanalu
+            nextion_send_string("t0.txt=\"ERROR CHD SET\"");
+        }
+        _delay_ms(10);
 
-        //cekani na stisknuti start
+        //Cekani na stisknuti start
         while (status != RUN) {}
-
+        
+        tested_BJT.polarity = FAULTY;
 
         //Kontrola zda není NPN
         for (int i = 0; i < 3; i++) {
@@ -118,31 +169,32 @@ int main(void) {
                 // Chyba nastaveni napeti na kanalu
                 nextion_send_string("t0.txt=\"ERROR CHA SET\"");
             }
+            _delay_ms(10);
             if (mcp4728_set_channel(MCP4728_CHANNEL_B, da_val[1], MCP4728_VREF_INTERNAL, MCP4728_GAIN_2X, MCP4728_PD_NORMAL)) {
                 // Chyba nastaveni napeti na kanalu
                 nextion_send_string("t0.txt=\"ERROR CHB SET\"");
             }
+            _delay_ms(10);
             if (mcp4728_set_channel(MCP4728_CHANNEL_C, da_val[2], MCP4728_VREF_INTERNAL, MCP4728_GAIN_2X, MCP4728_PD_NORMAL)) {
                 // Chyba nastaveni napeti na kanalu
                 nextion_send_string("t0.txt=\"ERROR CHC SET\"");
             }
+            _delay_ms(10);
 
             //Mereni proudu dalsimi dvema kanaly
-            //Nastaveni reference
-            VREF.ADC0REF = VREF_REFSEL_1V024_gc;
-
-            //Proud vetsi nez 250uA
-            if ((i==0) && (ADC_read(INA_CH_B_R)>10) && (ADC_read(INA_CH_C_R)>10)) {
+            
+            //Proud vetsi nez 100uA
+            if ((i==0) && (measure_I_uA(INA_CH_B_R)>100) && (measure_I_uA(INA_CH_C_R)>100)) {
                 tested_BJT.base_channel = MCP4728_CHANNEL_A;
                 tested_BJT.polarity = NPN;
                 break;
             }
-            if ((i==1) && (ADC_read(INA_CH_A_R)>10) && (ADC_read(INA_CH_C_R)>10)) {
+            if ((i==1) && (measure_I_uA(INA_CH_A_R)>100) && (measure_I_uA(INA_CH_C_R)>100)) {
                 tested_BJT.base_channel = MCP4728_CHANNEL_B;
                 tested_BJT.polarity = NPN;
                 break;
             }
-            if ((i==2) && (ADC_read(INA_CH_A_R)>10) && (ADC_read(INA_CH_B_R)>10)) {
+            if ((i==2) && (measure_I_uA(INA_CH_A_R)>100) && (measure_I_uA(INA_CH_B_R)>100)) {
                 tested_BJT.base_channel = MCP4728_CHANNEL_C;
                 tested_BJT.polarity = NPN;
                 break;
@@ -166,31 +218,32 @@ int main(void) {
                 // Chyba nastaveni napeti na kanalu
                 nextion_send_string("t0.txt=\"ERROR CHA SET\"");
             }
+            _delay_ms(10);
             if (mcp4728_set_channel(MCP4728_CHANNEL_B, da_val[1], MCP4728_VREF_INTERNAL, MCP4728_GAIN_2X, MCP4728_PD_NORMAL)) {
                 // Chyba nastaveni napeti na kanalu
                 nextion_send_string("t0.txt=\"ERROR CHB SET\"");
             }
+            _delay_ms(10);
             if (mcp4728_set_channel(MCP4728_CHANNEL_C, da_val[2], MCP4728_VREF_INTERNAL, MCP4728_GAIN_2X, MCP4728_PD_NORMAL)) {
                 // Chyba nastaveni napeti na kanalu
                 nextion_send_string("t0.txt=\"ERROR CHC SET\"");
             }
+            _delay_ms(10);
+            
 
             //Mereni proudu dalsimi dvema kanaly
-            //Nastaveni reference
-            VREF.ADC0REF = VREF_REFSEL_1V024_gc;
-
-            //Proud vetsi nez 250uA
-            if ((i==0) && (ADC_read(INA_CH_B_F)>10) && (ADC_read(INA_CH_C_F)>10)) {
+            //Proud vetsi nez 100uA
+            if ((i==0) && (measure_I_uA(INA_CH_B_F)>100) && (measure_I_uA(INA_CH_C_F)>100)) {
                 tested_BJT.base_channel = MCP4728_CHANNEL_A;
                 tested_BJT.polarity = PNP;
                 break;
             }
-            if ((i==1) && (ADC_read(INA_CH_A_F)>10) && (ADC_read(INA_CH_C_F)>10)) {
+            if ((i==1) && (measure_I_uA(INA_CH_A_F)>100) && (measure_I_uA(INA_CH_C_F)>100)) {
                 tested_BJT.base_channel = MCP4728_CHANNEL_B;
                 tested_BJT.polarity = PNP;
                 break;
             }
-            if ((i==2) && (ADC_read(INA_CH_A_F)>10) && (ADC_read(INA_CH_B_F)>10)) {
+            if ((i==2) && (measure_I_uA(INA_CH_A_F)>100) && (measure_I_uA(INA_CH_B_F)>100)) {
                 tested_BJT.base_channel = MCP4728_CHANNEL_C;
                 tested_BJT.polarity = PNP;
                 break;
@@ -200,36 +253,23 @@ int main(void) {
         }
 
 
-        ///////////////////////////////Chyby
+        
 
 
-        //Mereni h21
+        //MERENI h21
 
-        //VREF=10mV
-        mcp4728_set_channel(MCP4728_CHANNEL_D, 10, MCP4728_VREF_INTERNAL, MCP4728_GAIN_2X, MCP4728_PD_NORMAL);
-
-
-        //////////////////////////////////VREF check
-
-
-
-        //Nastaveni VREFA jako reference pro ADC pri nastavovani proudu baze
-        VREF.ADC0REF = VREF_REFSEL_VREFA_gc;
-
+        
         if (tested_BJT.polarity == NPN) {
 
             if (tested_BJT.base_channel==MCP4728_CHANNEL_A) {
-                //Nastav 100uA na 0,2 Ohm rezistoru
-                //0,2*100e-6= 20uV
-                //Merici zesilovac *50 -> 20e-6*50=1mV
-                //Rozliseni: VREF/2^12 = (0,01/4096)
-                //Vystup ADC: pozadovana hodnota/rozliseni = 1e-3/(0,01/4096)=409,6
-                while (ADC_read(INA_CH_A_F)<410) {
+                //Nastav zhruba 100uA
+                while (measure_I_uA(INA_CH_A_F)<410) {
                     da_val[0]++;
                     if (mcp4728_set_channel(MCP4728_CHANNEL_A, da_val[0], MCP4728_VREF_INTERNAL, MCP4728_GAIN_2X, MCP4728_PD_NORMAL)) {
                         // Chyba nastaveni napeti na kanalu
                         nextion_send_string("t0.txt=\"ERROR CHA SET\"");
                     }
+                    _delay_ms(10);
                 }
 
                 //Kolektor na kanalu B
@@ -240,18 +280,16 @@ int main(void) {
                     // Chyba nastaveni napeti na kanalu
                     nextion_send_string("t0.txt=\"ERROR CHB SET\"");
                 }
+                _delay_ms(10);
                 if (mcp4728_set_channel(MCP4728_CHANNEL_C, da_val[2], MCP4728_VREF_INTERNAL, MCP4728_GAIN_2X, MCP4728_PD_NORMAL)) {
                     // Chyba nastaveni napeti na kanalu
                     nextion_send_string("t0.txt=\"ERROR CHC SET\"");
                 }
+                _delay_ms(10);
 
-                //I=((((VREF/Rozliseni)*ADC_read(n))/INA_GAIN)/Rb)*1000000 [uA]
-                tested_BJT.Ib_uA = ((((0.01/4096)*ADC_read(INA_CH_A_F))/50)/0.2)*1000000;
+                tested_BJT.Ib_uA = measure_I_uA(INA_CH_A_F);
 
-                //Prepnuti reference pro ADC
-                VREF.ADC0REF = VREF_REFSEL_1V024_gc;
-                //I=((((VREF/Rozliseni)*ADC_read(n))/INA_GAIN)/Rb)*1000 [mA]
-                tested_BJT.Ic_mA = ((((1.024/4096)*ADC_read(INA_CH_B_F))/50)/0.2)*1000;
+                tested_BJT.Ic_mA = measure_I_mA(INA_CH_B_F);
 
                 //Kolektor na kanalu C
                 da_val[1] = 0;
@@ -261,26 +299,28 @@ int main(void) {
                     // Chyba nastaveni napeti na kanalu
                     nextion_send_string("t0.txt=\"ERROR CHB SET\"");
                 }
+                _delay_ms(10);
                 if (mcp4728_set_channel(MCP4728_CHANNEL_C, da_val[2], MCP4728_VREF_INTERNAL, MCP4728_GAIN_2X, MCP4728_PD_NORMAL)) {
                     // Chyba nastaveni napeti na kanalu
                     nextion_send_string("t0.txt=\"ERROR CHC SET\"");
                 }
+                _delay_ms(10);
 
-                if(tested_BJT.Ic_mA<(((((1.024/4096)*ADC_read(INA_CH_C_F))/50)/0.2)*1000)){
-                    //I=((((VREF/Rozliseni)*ADC_read(n))/INA_GAIN)/Rb)*1000 [mA]
-                    tested_BJT.Ic_mA = ((((1.024/4096)*ADC_read(INA_CH_C_F))/50)/0.2)*1000;
+                if(tested_BJT.Ic_mA < measure_I_mA(INA_CH_C_F)){
+                    tested_BJT.Ic_mA = measure_I_mA(INA_CH_C_F);
                 }
 
-                tested_BJT.h21= tested_BJT.Ic_mA/tested_BJT.Ib_uA;
+                tested_BJT.h21= tested_BJT.Ic_mA / (tested_BJT.Ib_uA * 1000);
 
             } else if(tested_BJT.base_channel == MCP4728_CHANNEL_B) {
                 //Nastav 100uA na bazi
-                while (ADC_read(INA_CH_B_F)<410) {
+                while (measure_I_uA(INA_CH_B_F)<100) {
                     da_val[1]++;
                     if (mcp4728_set_channel(MCP4728_CHANNEL_B, da_val[1], MCP4728_VREF_INTERNAL, MCP4728_GAIN_2X, MCP4728_PD_NORMAL)) {
                         // Chyba nastaveni napeti na kanalu
                         nextion_send_string("t0.txt=\"ERROR CHB SET\"");
                     }
+                    _delay_ms(10);
                 }
 
                 //Kolektor na kanalu A
@@ -291,18 +331,16 @@ int main(void) {
                     // Chyba nastaveni napeti na kanalu
                     nextion_send_string("t0.txt=\"ERROR CHA SET\"");
                 }
+                _delay_ms(10);
                 if (mcp4728_set_channel(MCP4728_CHANNEL_C, da_val[2], MCP4728_VREF_INTERNAL, MCP4728_GAIN_2X, MCP4728_PD_NORMAL)) {
                     // Chyba nastaveni napeti na kanalu
                     nextion_send_string("t0.txt=\"ERROR CHC SET\"");
                 }
+                _delay_ms(10);
 
-                //I=((((VREF/Rozliseni)*ADC_read(n))/INA_GAIN)/Rb)*1000000 [uA]
-                tested_BJT.Ib_uA = ((((0.01/4096)*ADC_read(INA_CH_B_F))/50)/0.2)*1000000;
+                tested_BJT.Ib_uA = measure_I_uA(INA_CH_B_F);
 
-                //Prepnuti reference pro ADC
-                VREF.ADC0REF = VREF_REFSEL_1V024_gc;
-                //I=((((VREF/Rozliseni)*ADC_read(n))/INA_GAIN)/Rb)*1000 [mA]
-                tested_BJT.Ic_mA = ((((1.024/4096)*ADC_read(INA_CH_A_F))/50)/0.2)*1000;
+                tested_BJT.Ic_mA = measure_I_mA(INA_CH_A_F);
 
                 //Kolektor na kanalu C
                 da_val[0] = 0;
@@ -312,26 +350,28 @@ int main(void) {
                     // Chyba nastaveni napeti na kanalu
                     nextion_send_string("t0.txt=\"ERROR CHA SET\"");
                 }
+                _delay_ms(10);
                 if (mcp4728_set_channel(MCP4728_CHANNEL_C, da_val[2], MCP4728_VREF_INTERNAL, MCP4728_GAIN_2X, MCP4728_PD_NORMAL)) {
                     // Chyba nastaveni napeti na kanalu
                     nextion_send_string("t0.txt=\"ERROR CHC SET\"");
                 }
+                _delay_ms(10);
 
-                if(tested_BJT.Ic_mA<(((((1.024/4096)*ADC_read(INA_CH_C_F))/50)/0.2)*1000)){
-                    //I=((((VREF/Rozliseni)*ADC_read(n))/INA_GAIN)/Rb)*1000 [mA]
-                    tested_BJT.Ic_mA = ((((1.024/4096)*ADC_read(INA_CH_C_F))/50)/0.2)*1000;
+                if(tested_BJT.Ic_mA < measure_I_mA(INA_CH_C_F)){
+                    tested_BJT.Ic_mA = measure_I_mA(INA_CH_C_F);
                 }
 
-                tested_BJT.h21= tested_BJT.Ic_mA/tested_BJT.Ib_uA;
+                tested_BJT.h21= tested_BJT.Ic_mA / (tested_BJT.Ib_uA * 1000);
 
             }else if(tested_BJT.base_channel==MCP4728_CHANNEL_C) {
                 //Nastav 100uA na bazi
-                while (ADC_read(INA_CH_C_F)<410) {
+                while (measure_I_uA(INA_CH_C_F)<100) {
                     da_val[2]++;
                     if (mcp4728_set_channel(MCP4728_CHANNEL_C, da_val[2], MCP4728_VREF_INTERNAL, MCP4728_GAIN_2X, MCP4728_PD_NORMAL)) {
                         // Chyba nastaveni napeti na kanalu
                         nextion_send_string("t0.txt=\"ERROR CHC SET\"");
                     }
+                    _delay_ms(10);
                 }
 
                 //Kolektor na kanalu A
@@ -342,18 +382,16 @@ int main(void) {
                     // Chyba nastaveni napeti na kanalu
                     nextion_send_string("t0.txt=\"ERROR CHA SET\"");
                 }
+                _delay_ms(10);
                 if (mcp4728_set_channel(MCP4728_CHANNEL_B, da_val[1], MCP4728_VREF_INTERNAL, MCP4728_GAIN_2X, MCP4728_PD_NORMAL)) {
                     // Chyba nastaveni napeti na kanalu
                     nextion_send_string("t0.txt=\"ERROR CHB SET\"");
                 }
+                _delay_ms(10);
 
-                //I=((((VREF/Rozliseni)*ADC_read(n))/INA_GAIN)/Rb)*1000000 [uA]
-                tested_BJT.Ib_uA = ((((0.01/4096)*ADC_read(INA_CH_C_F))/50)/0.2)*1000000;
+                tested_BJT.Ib_uA = measure_I_uA(INA_CH_C_F);
 
-                //Prepnuti reference pro ADC
-                VREF.ADC0REF = VREF_REFSEL_1V024_gc;
-                //I=((((VREF/Rozliseni)*ADC_read(n))/INA_GAIN)/Rb)*1000 [mA]
-                tested_BJT.Ic_mA = ((((1.024/4096)*ADC_read(INA_CH_A_F))/50)/0.2)*1000;
+                tested_BJT.Ic_mA = measure_I_mA(INA_CH_A_F);
 
                 //Kolektor na kanalu B
                 da_val[0] = 0;
@@ -363,32 +401,30 @@ int main(void) {
                     // Chyba nastaveni napeti na kanalu
                     nextion_send_string("t0.txt=\"ERROR CHA SET\"");
                 }
+                _delay_ms(10);
                 if (mcp4728_set_channel(MCP4728_CHANNEL_B, da_val[1], MCP4728_VREF_INTERNAL, MCP4728_GAIN_2X, MCP4728_PD_NORMAL)) {
                     // Chyba nastaveni napeti na kanalu
                     nextion_send_string("t0.txt=\"ERROR CHB SET\"");
                 }
+                _delay_ms(10);
 
-                if(tested_BJT.Ic_mA<((((1.024/4096)*ADC_read(INA_CH_B_F))/50)/0.2)*1000){
-                    //I=((((VREF/Rozliseni)*ADC_read(n))/INA_GAIN)/Rb)*1000 [mA]
-                    tested_BJT.Ic_mA = ((((1.024/4096)*ADC_read(INA_CH_B_F))/50)/0.2)*1000;
+                if(tested_BJT.Ic_mA < measure_I_mA(INA_CH_B_F)){
+                    tested_BJT.Ic_mA = measure_I_mA(INA_CH_B_F);
                 }
 
-                tested_BJT.h21= tested_BJT.Ic_mA/tested_BJT.Ib_uA;
+                tested_BJT.h21= tested_BJT.Ic_mA / (tested_BJT.Ib_uA * 1000);
             }
 
         } else if(tested_BJT.polarity==PNP){
             if (tested_BJT.base_channel == MCP4728_CHANNEL_A) {
-                //Nastav 100uA na 0,2 Ohm rezistoru
-                //0,2*100e-6= 20uV
-                //Merici zesilovac *50 -> 20e-6*50=1mV
-                //Rozliseni: VREF/2^12 = (0,01/4096)
-                //Vystup ADC: pozadovana hodnota/rozliseni = 1e-3/(0,01/4096)=409,6
-                while (ADC_read(INA_CH_A_R)<410) {
+                //Nastav 100uA na bazi
+                while (measure_I_uA(INA_CH_A_R)<100) {
                     da_val[0]--;
                     if (mcp4728_set_channel(MCP4728_CHANNEL_A, da_val[0], MCP4728_VREF_INTERNAL, MCP4728_GAIN_2X, MCP4728_PD_NORMAL)) {
                         // Chyba nastaveni napeti na kanalu
                         nextion_send_string("t0.txt=\"ERROR CHA SET\"");
                     }
+                    _delay_ms(10);
                 }
 
                 //Kolektor na kanalu B
@@ -399,18 +435,16 @@ int main(void) {
                     // Chyba nastaveni napeti na kanalu
                     nextion_send_string("t0.txt=\"ERROR CHB SET\"");
                 }
+                _delay_ms(10);
                 if (mcp4728_set_channel(MCP4728_CHANNEL_C, da_val[2], MCP4728_VREF_INTERNAL, MCP4728_GAIN_2X, MCP4728_PD_NORMAL)) {
                     // Chyba nastaveni napeti na kanalu
                     nextion_send_string("t0.txt=\"ERROR CHC SET\"");
                 }
+                _delay_ms(10);
 
-                //I=((((VREF/Rozliseni)*ADC_read(n))/INA_GAIN)/Rb)*1000000 [uA]
-                tested_BJT.Ib_uA = ((((0.01/4096)*ADC_read(INA_CH_A_R))/50)/0.2)*1000000;
+                tested_BJT.Ib_uA = measure_I_uA(INA_CH_A_R);
 
-                //Prepnuti reference pro ADC
-                VREF.ADC0REF = VREF_REFSEL_1V024_gc;
-                //I=((((VREF/Rozliseni)*ADC_read(n))/INA_GAIN)/Rb)*1000 [mA]
-                tested_BJT.Ic_mA = ((((1.024/4096)*ADC_read(INA_CH_B_F))/50)/0.2)*1000;
+                tested_BJT.Ic_mA = measure_I_mA(INA_CH_B_F);
 
                 //Kolektor na kanalu C
                 da_val[1] = 0;
@@ -420,26 +454,28 @@ int main(void) {
                     // Chyba nastaveni napeti na kanalu
                     nextion_send_string("t0.txt=\"ERROR CHB SET\"");
                 }
+                _delay_ms(10);
                 if (mcp4728_set_channel(MCP4728_CHANNEL_C, da_val[2], MCP4728_VREF_INTERNAL, MCP4728_GAIN_2X, MCP4728_PD_NORMAL)) {
                     // Chyba nastaveni napeti na kanalu
                     nextion_send_string("t0.txt=\"ERROR CHC SET\"");
                 }
+                _delay_ms(10);
 
-                if(tested_BJT.Ic_mA<(((((1.024/4096)*ADC_read(INA_CH_C_F))/50)/0.2)*1000)){
-                    //I=((((VREF/Rozliseni)*ADC_read(n))/INA_GAIN)/Rb)*1000 [mA]
-                    tested_BJT.Ic_mA = ((((1.024/4096)*ADC_read(INA_CH_C_F))/50)/0.2)*1000;
+                if(tested_BJT.Ic_mA < measure_I_mA(INA_CH_C_F)){
+                    tested_BJT.Ic_mA = measure_I_mA(INA_CH_C_F);
                 }
 
-                tested_BJT.h21= tested_BJT.Ic_mA/tested_BJT.Ib_uA;
+                tested_BJT.h21= tested_BJT.Ic_mA / (tested_BJT.Ib_uA * 1000);
 
             } else if (tested_BJT.base_channel == MCP4728_CHANNEL_B) {
                 //Nastav 100uA na bazi
-                while (ADC_read(INA_CH_B_R)<410) {
+                while (measure_I_uA(INA_CH_B_R)<100) {
                     da_val[1]--;
                     if (mcp4728_set_channel(MCP4728_CHANNEL_B, da_val[1], MCP4728_VREF_INTERNAL, MCP4728_GAIN_2X, MCP4728_PD_NORMAL)) {
                         // Chyba nastaveni napeti na kanalu
                         nextion_send_string("t0.txt=\"ERROR CHB SET\"");
                     }
+                    _delay_ms(10);
                 }
 
                 //Kolektor na kanalu A
@@ -450,18 +486,16 @@ int main(void) {
                     // Chyba nastaveni napeti na kanalu
                     nextion_send_string("t0.txt=\"ERROR CHA SET\"");
                 }
+                _delay_ms(10);
                 if (mcp4728_set_channel(MCP4728_CHANNEL_C, da_val[1], MCP4728_VREF_INTERNAL, MCP4728_GAIN_2X, MCP4728_PD_NORMAL)) {
                     // Chyba nastaveni napeti na kanalu
                     nextion_send_string("t0.txt=\"ERROR CHC SET\"");
                 }
+                _delay_ms(10);
 
-                //I=((((VREF/Rozliseni)*ADC_read(n))/INA_GAIN)/Rb)*1000000 [uA]
-                tested_BJT.Ib_uA = ((((0.01/4096)*ADC_read(INA_CH_B_R))/50)/0.2)*1000000;
+                tested_BJT.Ib_uA = measure_I_uA(INA_CH_B_R);
 
-                //Prepnuti reference pro ADC
-                VREF.ADC0REF = VREF_REFSEL_1V024_gc;
-                //I=((((VREF/Rozliseni)*ADC_read(n))/INA_GAIN)/Rb)*1000 [mA]
-                tested_BJT.Ic_mA = ((((1.024/4096)*ADC_read(INA_CH_A_F))/50)/0.2)*1000;
+                tested_BJT.Ic_mA = measure_I_mA(INA_CH_A_F);
 
                 //Kolektor na kanalu C
                 da_val[0] = 0;
@@ -471,25 +505,28 @@ int main(void) {
                     // Chyba nastaveni napeti na kanalu
                     nextion_send_string("t0.txt=\"ERROR CHA SET\"");
                 }
+                _delay_ms(10);
                 if (mcp4728_set_channel(MCP4728_CHANNEL_C, da_val[2], MCP4728_VREF_INTERNAL, MCP4728_GAIN_2X, MCP4728_PD_NORMAL)) {
                     // Chyba nastaveni napeti na kanalu
                     nextion_send_string("t0.txt=\"ERROR CHC SET\"");
                 }
+                _delay_ms(10);
 
-                if(tested_BJT.Ic_mA<((((1.024/4096)*ADC_read(INA_CH_C_F))/50)/0.2)*1000){
-                    //I=((((VREF/Rozliseni)*ADC_read(n))/INA_GAIN)/Rb)*1000 [mA]
-                    tested_BJT.Ic_mA = ((((1.024/4096)*ADC_read(INA_CH_C_F))/50)/0.2)*1000;
+                if(tested_BJT.Ic_mA < measure_I_mA(INA_CH_C_F)){
+                    tested_BJT.Ic_mA = measure_I_mA(INA_CH_C_F);
                 }
 
-                tested_BJT.h21= tested_BJT.Ic_mA/tested_BJT.Ib_uA;
+                tested_BJT.h21= tested_BJT.Ic_mA / (tested_BJT.Ib_uA * 1000);
+                
             } else if (tested_BJT.base_channel == MCP4728_CHANNEL_C) {
                 //Nastav 100uA na bazi
-                while (ADC_read(INA_CH_C_R)<410) {
+                while (measure_I_uA(INA_CH_C_R)<100) {
                     da_val[2]--;
                     if (mcp4728_set_channel(MCP4728_CHANNEL_C, da_val[2], MCP4728_VREF_INTERNAL, MCP4728_GAIN_2X, MCP4728_PD_NORMAL)) {
                         // Chyba nastaveni napeti na kanalu
                         nextion_send_string("t0.txt=\"ERROR CHC SET\"");
                     }
+                    _delay_ms(10);
                 }
 
                 //Kolektor na kanalu A
@@ -500,18 +537,16 @@ int main(void) {
                     // Chyba nastaveni napeti na kanalu
                     nextion_send_string("t0.txt=\"ERROR CHA SET\"");
                 }
+                _delay_ms(10);
                 if (mcp4728_set_channel(MCP4728_CHANNEL_B, da_val[1], MCP4728_VREF_INTERNAL, MCP4728_GAIN_2X, MCP4728_PD_NORMAL)) {
                     // Chyba nastaveni napeti na kanalu
                     nextion_send_string("t0.txt=\"ERROR CHB SET\"");
                 }
+                _delay_ms(10);
 
-                //I=((((VREF/Rozliseni)*ADC_read(n))/INA_GAIN)/Rb)*1000000 [uA]
-                tested_BJT.Ib_uA = ((((0.01/4096)*ADC_read(INA_CH_C_R))/50)/0.2)*1000000;
+                tested_BJT.Ib_uA = measure_I_uA(INA_CH_C_R);
 
-                //Prepnuti reference pro ADC
-                VREF.ADC0REF = VREF_REFSEL_1V024_gc;
-                //I=((((VREF/Rozliseni)*ADC_read(n))/INA_GAIN)/Rb)*1000 [mA]
-                tested_BJT.Ic_mA = ((((1.024/4096)*ADC_read(INA_CH_A_F))/50)/0.2)*1000;
+                tested_BJT.Ic_mA = measure_I_mA(INA_CH_A_F);
 
                 //Kolektor na kanalu B
                 da_val[0] = 0;
@@ -521,17 +556,18 @@ int main(void) {
                     // Chyba nastaveni napeti na kanalu
                     nextion_send_string("t0.txt=\"ERROR CHA SET\"");
                 }
+                _delay_ms(10);
                 if (mcp4728_set_channel(MCP4728_CHANNEL_B, da_val[1], MCP4728_VREF_INTERNAL, MCP4728_GAIN_2X, MCP4728_PD_NORMAL)) {
                     // Chyba nastaveni napeti na kanalu
                     nextion_send_string("t0.txt=\"ERROR CHB SET\"");
                 }
+                _delay_ms(10);
 
-                if(tested_BJT.Ic_mA<((((1.024/4096)*ADC_read(INA_CH_B_F))/50)/0.2)*1000){
-                    //I=((((VREF/Rozliseni)*ADC_read(n))/INA_GAIN)/Rb)*1000 [mA]
-                    tested_BJT.Ic_mA = ((((1.024/4096)*ADC_read(INA_CH_B_F))/50)/0.2)*1000;
+                if(tested_BJT.Ic_mA < measure_I_mA(INA_CH_B_F)){
+                    tested_BJT.Ic_mA = measure_I_mA(INA_CH_B_F);
                 }
 
-                tested_BJT.h21= tested_BJT.Ic_mA/tested_BJT.Ib_uA;
+                tested_BJT.h21= tested_BJT.Ic_mA / (tested_BJT.Ib_uA * 1000);
 
             }
 
@@ -541,18 +577,24 @@ int main(void) {
         //Odeslani h21 do displeje
         char h21_str[10];
         sprintf(h21_str, "%d", tested_BJT.h21);
-        nextion_send_string("t0.txt=\"");
-        nextion_send_string(h21_str);
-        nextion_send_string("\"");
+        uart1_send_string("n0.val=");
+        uart1_send_string(h21_str);
+        uart1_send_byte(0xff);
+        uart1_send_byte(0xff);
+        uart1_send_byte(0xff);
+        
+        if (tested_BJT.polarity==NPN) {
+            nextion_send_string("t0.txt=\"NPN\"");
+        } else if(tested_BJT.polarity==PNP){
+            nextion_send_string("t0.txt=\"PNP\"");
+        } else {
+            nextion_send_string("t0.txt=\"FAULTY OR UNRECOGNISED\"");
+        }
+        
 
         status = IDLE;
     }
 
-    
-    
-    
-    
-    
     
     return 0;
 }
