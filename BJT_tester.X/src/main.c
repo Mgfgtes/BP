@@ -49,6 +49,37 @@ void nextion_send_string(const char* str){
     uart1_send_byte(0xff);
 }
 
+uint16_t measure_I_uA(uint8_t INA_CH){
+    //Zmereni napeti kanalu D z DA prevodiku
+    VREF.ADC0REF = VREF_REFSEL_1V024_gc;
+    
+    uint16_t VREF_mV_corrigated = (ADC_read(7)*1024)/4096;
+    
+    //Nastaveni reference na vystup DA prevodniku z kanalu D
+    VREF.ADC0REF = VREF_REFSEL_VREFA_gc;
+    
+                //I = ((((VREF/Rozliseni)*ADC_read())/INA_GAIN)/Rb)*1000000   [uA]
+                //I = (VREF*ADC_read()*1000000)/(Rb*INA_GAIN*Rozliseni)       [uA] 
+                //I = (VREF_mV*ADC_read()*1000)/(0,2*50*4096)                 [uA]
+                //I = (VREF_mV*ADC_read()*1000)/40960                         [uA]
+    uint16_t I = (VREF_mV_corrigated*ADC_read(INA_CH))/40960;
+    
+    return I;
+}
+
+uint16_t measure_I_mA(uint8_t INA_CH){
+    //Nastaveni reference na vystup DA prevodniku z kanalu D
+    VREF.ADC0REF = VREF_REFSEL_1V024_gc;
+    
+                //I = ((((VREF/Rozliseni)*ADC_read())/INA_GAIN)/Rb)*1000   [mA]
+                //I = (VREF*ADC_read()*1000)/(Rb*INA_GAIN*Rozliseni)       [mA] 
+                //I = (VREF_mV*ADC_read(2))/(0,2*50*4096)                  [mA]
+                //I = (1024*ADC_read(2)*)/40960                            [mA]
+    uint16_t I = (1024*ADC_read(INA_CH))/40960;
+    
+    return I;
+}
+
 int main(void) {  
     //cli();
     
@@ -85,7 +116,7 @@ int main(void) {
     
     _delay_ms(10);
     
-    mcp4728_set_channel(MCP4728_CHANNEL_B, 2250, 
+    mcp4728_set_channel(MCP4728_CHANNEL_B, 2340, 
                         MCP4728_VREF_INTERNAL, MCP4728_GAIN_2X, 
                         MCP4728_PD_NORMAL);
     
@@ -114,7 +145,7 @@ int main(void) {
     
     //VREF=100mV
     mcp4728_set_channel(MCP4728_CHANNEL_D, 100, MCP4728_VREF_INTERNAL, MCP4728_GAIN_2X, MCP4728_PD_NORMAL);
-    VREF.ADC0REF = VREF_REFSEL_VREFA_gc;
+    //VREF.ADC0REF = VREF_REFSEL_VREFA_gc;
     //VREF.ADC0REF = VREF_REFSEL_1V024_gc;
     
     /*uint16_t Ib = ((((0.1/4096)*ADC_read(2))/50)/0.2)*1000;
@@ -122,7 +153,9 @@ int main(void) {
                  //(VREF*ADC_read(2))/(Rb*INA_GAIN*Rozliseni)
                  //(VREF*ADC_read(2))/(0,2*50*4096)
                  //(VREF*ADC_read(2))/40960
-    uint16_t Ib = (1024000*ADC_read(2))/40960;
+    //uint16_t Ib = (1024000*ADC_read(2))/40960;
+    
+    uint16_t Ib = measure_I_uA(2);
     
     sprintf(str, "%d", Ib);
     

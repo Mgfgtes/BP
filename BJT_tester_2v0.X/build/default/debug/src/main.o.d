@@ -22,6 +22,7 @@ build/default/debug/src/main.o.d build/default/debug/src/main.o: \
  d:\produktivni\ programy\mplab\xc8\v3.0\avr\avr\include\util\delay_basic.h \
  d:\produktivni\ programy\mplab\xc8\v3.0\avr\avr\include\math.h \
  d:\produktivni\ programy\mplab\xc8\v3.0\avr\avr\include\string.h \
+ d:\produktivni\ programy\mplab\xc8\v3.0\avr\avr\include\stdio.h \
  src/../lib/uart/uart.h src/../lib/i2c/i2c.h \
  src/../lib/DA_converter_MCP4728A1/mcp4728a1.h \
  src/../lib/DA_converter_MCP4728A1/../i2c/i2c.h \
@@ -71,6 +72,8 @@ d:\produktivni\ programy\mplab\xc8\v3.0\avr\avr\include\util\delay_basic.h:
 d:\produktivni\ programy\mplab\xc8\v3.0\avr\avr\include\math.h:
 
 d:\produktivni\ programy\mplab\xc8\v3.0\avr\avr\include\string.h:
+
+d:\produktivni\ programy\mplab\xc8\v3.0\avr\avr\include\stdio.h:
 
 src/../lib/uart/uart.h:
 

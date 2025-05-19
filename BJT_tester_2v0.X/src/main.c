@@ -40,7 +40,7 @@ typedef enum {
 typedef struct {
     BJTPolarity polarity; // polarita tranzistoru (NPN nebo PNP)
     mcp4728_channel_t base_channel;       // kanal pripojeny na bazi (0-2)
-    uint16_t h21 = 0;        // zesileni tranzistoru
+    uint16_t h21;        // zesileni tranzistoru
     uint16_t Ib_uA;
     uint16_t Ic_mA;
 } BJT;
@@ -124,6 +124,8 @@ int main(void) {
     while (1) {
         //Struct pro ukladani parametru tranzistoru
         BJT tested_BJT;
+        tested_BJT.h21 = 0;
+        tested_BJT.polarity = FAULTY;
         
         //Nastaveni offsetu a 100mV reference
         uint16_t da_val[4]={2048, 2048, 2048, 100};
@@ -152,8 +154,7 @@ int main(void) {
         //Cekani na stisknuti start
         while (status != RUN) {}
         
-        tested_BJT.polarity = FAULTY;
-
+/*
         //Kontrola zda není NPN
         for (int i = 0; i < 3; i++) {
 
@@ -572,7 +573,7 @@ int main(void) {
             }
 
         }
-
+*/
 
         //Odeslani h21 do displeje
         char h21_str[10];
