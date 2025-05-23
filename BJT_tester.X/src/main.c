@@ -7,14 +7,24 @@
 
 #define F_CPU 16000000UL
 
+#define MCP4728_ADDRESS 0x61
+#define INA_CH_A_F 0
+#define INA_CH_A_R 1
+#define INA_CH_B_F 2
+#define INA_CH_B_R 3
+#define INA_CH_C_F 5
+#define INA_CH_C_R 4
+
 #include <xc.h>
 #include <util/delay.h>
 #include <avr/interrupt.h>
+#include <string.h>
+#include <stdio.h>
+
 #include "../lib/uart/uart.h"
 #include "../lib/i2c/i2c.h"
 #include "../lib/DA_converter_MCP4728A1/mcp4728a1.h"
 #include "../lib/adc/adc.h"
-#include <stdio.h>
 
 ISR(USART1_RXC_vect){
     char string[10];
@@ -53,16 +63,21 @@ uint16_t measure_I_uA(uint8_t INA_CH){
     //Zmereni napeti kanalu D z DA prevodiku
     VREF.ADC0REF = VREF_REFSEL_1V024_gc;
     
-    uint16_t VREF_mV_corrigated = (ADC_read(7)*1024)/4096;
-    
+    volatile uint32_t VREF_mV_corrigated = ADC_read(7);
+    VREF_mV_corrigated = VREF_mV_corrigated * 1024;
+    VREF_mV_corrigated = VREF_mV_corrigated / 4096;
+       
     //Nastaveni reference na vystup DA prevodniku z kanalu D
     VREF.ADC0REF = VREF_REFSEL_VREFA_gc;
     
                 //I = ((((VREF/Rozliseni)*ADC_read())/INA_GAIN)/Rb)*1000000   [uA]
-                //I = (VREF*ADC_read()*1000000)/(Rb*INA_GAIN*Rozliseni)       [uA] 
-                //I = (VREF_mV*ADC_read()*1000)/(0,2*50*4096)                 [uA]
-                //I = (VREF_mV*ADC_read()*1000)/40960                         [uA]
-    uint16_t I = (VREF_mV_corrigated*ADC_read(INA_CH))/40960;
+                //I = (ADC_read()*VREF*1000000)/(Rb*INA_GAIN*Rozliseni)       [uA] 
+                //I = (ADC_read()*VREF_mV*1000)/(0,2*50*4096)                 [uA]
+                //I = (ADC_read()*VREF_mV*1000)/40960                         [uA]
+    
+    volatile uint32_t I = ADC_read(INA_CH);
+    I = I * VREF_mV_corrigated * 1000;
+    I = I / 40960;
     
     return I;
 }
@@ -75,7 +90,9 @@ uint16_t measure_I_mA(uint8_t INA_CH){
                 //I = (VREF*ADC_read()*1000)/(Rb*INA_GAIN*Rozliseni)       [mA] 
                 //I = (VREF_mV*ADC_read(2))/(0,2*50*4096)                  [mA]
                 //I = (1024*ADC_read(2)*)/40960                            [mA]
-    uint16_t I = (1024*ADC_read(INA_CH))/40960;
+    volatile uint32_t I = ADC_read(INA_CH);
+    I = I * 1024;
+    I = I / 40960;
     
     return I;
 }
@@ -91,14 +108,14 @@ int main(void) {
     PORTA.DIRCLR = PIN1_bm;
     i2c_init(I2C_NORMAL_MODE_100KHZ);
     
-    _delay_ms(500);
+    
     
     uart1_send_string("t0.txt=\"OK\"");
     uart1_send_byte(0xff);
     uart1_send_byte(0xff);
     uart1_send_byte(0xff);
     
-    _delay_ms(500);
+    
     
     if (mcp4728_init(0x61) != I2C_OK) {
         // Chyba inicializace
@@ -108,25 +125,26 @@ int main(void) {
         uart1_send_byte(0xff);
     }
     
-    _delay_ms(10);
     
-    mcp4728_set_channel(MCP4728_CHANNEL_A, 2048, 
+    
+    mcp4728_set_channel(MCP4728_CHANNEL_A, 4000, 
                         MCP4728_VREF_INTERNAL, MCP4728_GAIN_2X, 
                         MCP4728_PD_NORMAL);
-    
     _delay_ms(10);
     
-    mcp4728_set_channel(MCP4728_CHANNEL_B, 2340, 
+    
+    
+    mcp4728_set_channel(MCP4728_CHANNEL_B, 420, 
                         MCP4728_VREF_INTERNAL, MCP4728_GAIN_2X, 
                         MCP4728_PD_NORMAL);
-    
     _delay_ms(10);
     
-    mcp4728_set_channel(MCP4728_CHANNEL_C, 2048, 
+    
+    mcp4728_set_channel(MCP4728_CHANNEL_C, 0, 
                         MCP4728_VREF_INTERNAL, MCP4728_GAIN_2X, 
                         MCP4728_PD_NORMAL);
-    
     _delay_ms(10);
+    
     
     
     uart1_clear_receive_buffer();
@@ -145,6 +163,7 @@ int main(void) {
     
     //VREF=100mV
     mcp4728_set_channel(MCP4728_CHANNEL_D, 100, MCP4728_VREF_INTERNAL, MCP4728_GAIN_2X, MCP4728_PD_NORMAL);
+    
     //VREF.ADC0REF = VREF_REFSEL_VREFA_gc;
     //VREF.ADC0REF = VREF_REFSEL_1V024_gc;
     
@@ -155,9 +174,54 @@ int main(void) {
                  //(VREF*ADC_read(2))/40960
     //uint16_t Ib = (1024000*ADC_read(2))/40960;
     
-    uint16_t Ib = measure_I_uA(2);
+    volatile uint16_t Ib = measure_I_uA(2);
+    volatile uint16_t Ie = measure_I_uA(4);
+    volatile uint16_t Ic = measure_I_uA(1);
     
-    sprintf(str, "%d", Ib);
+    /*
+    mcp4728_set_channel(MCP4728_CHANNEL_A, 2048, 
+                        MCP4728_VREF_INTERNAL, MCP4728_GAIN_2X, 
+                        MCP4728_PD_NORMAL);
+    
+    _delay_us(25)
+    
+    mcp4728_set_channel(MCP4728_CHANNEL_B, 2048, 
+                        MCP4728_VREF_INTERNAL, MCP4728_GAIN_2X, 
+                        MCP4728_PD_NORMAL);
+    
+    _delay_us(25)
+    
+    mcp4728_set_channel(MCP4728_CHANNEL_C, 2048, 
+                        MCP4728_VREF_INTERNAL, MCP4728_GAIN_2X, 
+                        MCP4728_PD_NORMAL);
+    
+    _delay_us(25)
+    */
+    /*for(uint8_t i = 0; i < 10; i++){
+        Ib[i] = measure_I_uA(3);
+        Ic[i] = measure_I_uA(0);
+    }*/
+    
+    
+    /*//Zmereni napeti kanalu D z DA prevodiku
+    VREF.ADC0REF = VREF_REFSEL_1V024_gc;
+    
+    volatile uint32_t VREF_mV_corrigated = ADC_read(7);
+    VREF_mV_corrigated = VREF_mV_corrigated * 1024;
+    VREF_mV_corrigated = VREF_mV_corrigated / 4096;
+    
+    //Nastaveni reference na vystup DA prevodniku z kanalu D
+    VREF.ADC0REF = VREF_REFSEL_VREFA_gc;
+    
+                //I = ((((VREF/Rozliseni)*ADC_read())/INA_GAIN)/Rb)*1000000   [uA]
+                //I = (VREF*ADC_read()*1000000)/(Rb*INA_GAIN*Rozliseni)       [uA] 
+                //I = (VREF_mV*ADC_read()*1000)/(0,2*50*4096)                 [uA]
+                //I = (VREF_mV*ADC_read()*1000)/40960                         [uA]
+    volatile uint32_t Ib = ADC_read(2);
+    Ib = Ib * VREF_mV_corrigated * 1000;
+    Ib = Ib / 40960;*/
+    
+    sprintf(str, "%d", Ie);
     
     uart1_send_string("t0.txt=\"");
     uart1_send_string(str);

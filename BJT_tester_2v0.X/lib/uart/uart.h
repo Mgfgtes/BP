@@ -131,8 +131,9 @@ void uart1_clear_receive_buffer();
  * 
  * @param buffer Buffer pro ulorení prijatych dat
  * @param max_length Maximalni delka bufferu
+ * @param timeout Maximalni pocet opakovani
  * @return Pocet prijatych znaku
  */
-uint8_t uart1_receive_string(char* buffer, uint8_t max_length);
+uint8_t uart1_receive_string(char* buffer, uint8_t max_length, uint8_t timeout);
 
 #endif // UART_H

@@ -1,0 +1,1134 @@
+Archive member included to satisfy reference by file (symbol)
+
+d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_mulsi3.o)
+                              build/default/production/src/main.o (__mulsi3)
+d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_udivmodsi4.o)
+                              build/default/production/src/main.o (__udivmodsi4)
+d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_copy_data.o)
+                              build/default/production/lib/DA_converter_MCP4728A1/mcp4728a1.o (__do_copy_data)
+d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_muluhisi3.o)
+                              build/default/production/src/main.o (__muluhisi3)
+d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_umulhisi3.o)
+                              d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_muluhisi3.o) (__umulhisi3)
+d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(exit.o)
+                              D:/Produktivni programy/MPLab/v610/packs/Microchip/AVR-Dx_DFP/2.3.272/xc8/avr/lib/avrxmega2/memx-const/mapped/crtavr64da28.o (exit)
+d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__sio_sprintf_doux.o)
+                              build/default/production/src/main.o (_sprintf_cdopuxX)
+d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__fmt_d.o)
+                              d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__sio_sprintf_doux.o) (__fmt_d_needed)
+d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__fmt_o.o)
+                              d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__sio_sprintf_doux.o) (__fmt_o_needed)
+d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__fmt_s.o)
+                              d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__sio_sprintf_doux.o) (__fmt_s_needed)
+d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__fmt_u.o)
+                              d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__fmt_d.o) (__cvt_u)
+d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__fmt_x.o)
+                              d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__sio_sprintf_doux.o) (__fmt_x_needed)
+d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__pop_int.o)
+                              d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__sio_sprintf_doux.o) (__pop_int_needed)
+d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__printf_core.o)
+                              d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__fmt_d.o) (__pad)
+d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(fputc.o)
+                              d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__printf_core.o) (fputc)
+d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(strlen.o)
+                              d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__fmt_s.o) (strlen)
+d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(tolower.o)
+                              d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__printf_core.o) (tolower)
+d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(toupper.o)
+                              d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__fmt_x.o) (toupper)
+d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(errno.o)
+                              d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__printf_core.o) (__errno_val)
+d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(_Exit.o)
+                              d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(exit.o) (_Exit)
+d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__int_vsprintf.o)
+                              d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__sio_sprintf_doux.o) (__vsprintf)
+d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__int_vsnprintf.o)
+                              d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__int_vsprintf.o) (__vsnprintf)
+d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__int_vfprintf.o)
+                              d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__int_vsnprintf.o) (__vfprintf)
+d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_exit.o)
+                              d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(_Exit.o) (_exit)
+d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_prologue.o)
+                              d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__sio_sprintf_doux.o) (__prologue_saves__)
+d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_epilogue.o)
+                              d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__sio_sprintf_doux.o) (__epilogue_restores__)
+
+Allocating common symbols
+Common symbol       size              file
+
+__errno_val         0x2               d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(errno.o)
+
+Discarded input sections
+
+ .data          0x0000000000000000        0x0 D:/Produktivni programy/MPLab/v610/packs/Microchip/AVR-Dx_DFP/2.3.272/xc8/avr/lib/avrxmega2/memx-const/mapped/crtavr64da28.o
+ .bss           0x0000000000000000        0x0 D:/Produktivni programy/MPLab/v610/packs/Microchip/AVR-Dx_DFP/2.3.272/xc8/avr/lib/avrxmega2/memx-const/mapped/crtavr64da28.o
+ .text          0x0000000000000000        0x0 build/default/production/src/main.o
+ .data          0x0000000000000000        0x0 build/default/production/src/main.o
+ .bss           0x0000000000000000        0x0 build/default/production/src/main.o
+ .text.nextion_send_string
+                0x0000000000000000       0x18 build/default/production/src/main.o
+ .text.measure_I_mA
+                0x0000000000000000       0x72 build/default/production/src/main.o
+ .text          0x0000000000000000        0x0 build/default/production/lib/uart/uart.o
+ .data          0x0000000000000000        0x0 build/default/production/lib/uart/uart.o
+ .bss           0x0000000000000000        0x0 build/default/production/lib/uart/uart.o
+ .text.uart0_init
+                0x0000000000000000       0x22 build/default/production/lib/uart/uart.o
+ .text.uart0_send_byte
+                0x0000000000000000       0x10 build/default/production/lib/uart/uart.o
+ .text.uart0_send_string
+                0x0000000000000000       0x1e build/default/production/lib/uart/uart.o
+ .text.uart0_receive_byte
+                0x0000000000000000       0x10 build/default/production/lib/uart/uart.o
+ .text.uart0_data_available
+                0x0000000000000000        0xc build/default/production/lib/uart/uart.o
+ .text.uart0_receive_string
+                0x0000000000000000       0x5c build/default/production/lib/uart/uart.o
+ .text          0x0000000000000000        0x0 build/default/production/lib/i2c/i2c.o
+ .data          0x0000000000000000        0x0 build/default/production/lib/i2c/i2c.o
+ .bss           0x0000000000000000        0x0 build/default/production/lib/i2c/i2c.o
+ .text.i2c_read
+                0x0000000000000000       0xa6 build/default/production/lib/i2c/i2c.o
+ .text.i2c_scan
+                0x0000000000000000       0x44 build/default/production/lib/i2c/i2c.o
+ .text          0x0000000000000000        0x0 build/default/production/lib/DA_converter_MCP4728A1/mcp4728a1.o
+ .data          0x0000000000000000        0x0 build/default/production/lib/DA_converter_MCP4728A1/mcp4728a1.o
+ .bss           0x0000000000000000        0x0 build/default/production/lib/DA_converter_MCP4728A1/mcp4728a1.o
+ .text.mcp4728_fast_write
+                0x0000000000000000       0x52 build/default/production/lib/DA_converter_MCP4728A1/mcp4728a1.o
+ .text.mcp4728_set_all_channels
+                0x0000000000000000       0x88 build/default/production/lib/DA_converter_MCP4728A1/mcp4728a1.o
+ .text.mcp4728_general_reset
+                0x0000000000000000       0x24 build/default/production/lib/DA_converter_MCP4728A1/mcp4728a1.o
+ .text.mcp4728_wakeup
+                0x0000000000000000       0x24 build/default/production/lib/DA_converter_MCP4728A1/mcp4728a1.o
+ .text          0x0000000000000000        0x0 build/default/production/lib/adc/adc.o
+ .data          0x0000000000000000        0x0 build/default/production/lib/adc/adc.o
+ .bss           0x0000000000000000        0x0 build/default/production/lib/adc/adc.o
+ .text          0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_mulsi3.o)
+ .data          0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_mulsi3.o)
+ .bss           0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_mulsi3.o)
+ .stack.descriptors
+                0x0000000000000000       0x16 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_mulsi3.o)
+ .text.libgcc.div
+                0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_mulsi3.o)
+ .text.libgcc   0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_mulsi3.o)
+ .text.libgcc.prologue
+                0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_mulsi3.o)
+ .text.libgcc.builtins
+                0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_mulsi3.o)
+ .text.libgcc.fmul
+                0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_mulsi3.o)
+ .text.libgcc.fixed
+                0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_mulsi3.o)
+ .text          0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_udivmodsi4.o)
+ .data          0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_udivmodsi4.o)
+ .bss           0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_udivmodsi4.o)
+ .text.libgcc.mul
+                0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_udivmodsi4.o)
+ .stack.descriptors
+                0x0000000000000000       0x1a d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_udivmodsi4.o)
+ .text.libgcc   0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_udivmodsi4.o)
+ .text.libgcc.prologue
+                0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_udivmodsi4.o)
+ .text.libgcc.builtins
+                0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_udivmodsi4.o)
+ .text.libgcc.fmul
+                0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_udivmodsi4.o)
+ .text.libgcc.fixed
+                0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_udivmodsi4.o)
+ .text          0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_copy_data.o)
+ .data          0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_copy_data.o)
+ .bss           0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_copy_data.o)
+ .text.libgcc.mul
+                0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_copy_data.o)
+ .text.libgcc.div
+                0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_copy_data.o)
+ .text.libgcc   0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_copy_data.o)
+ .text.libgcc.prologue
+                0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_copy_data.o)
+ .text.libgcc.builtins
+                0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_copy_data.o)
+ .text.libgcc.fmul
+                0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_copy_data.o)
+ .text.libgcc.fixed
+                0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_copy_data.o)
+ .text          0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_muluhisi3.o)
+ .data          0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_muluhisi3.o)
+ .bss           0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_muluhisi3.o)
+ .stack.descriptors
+                0x0000000000000000       0x19 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_muluhisi3.o)
+ .text.libgcc.div
+                0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_muluhisi3.o)
+ .text.libgcc   0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_muluhisi3.o)
+ .text.libgcc.prologue
+                0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_muluhisi3.o)
+ .text.libgcc.builtins
+                0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_muluhisi3.o)
+ .text.libgcc.fmul
+                0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_muluhisi3.o)
+ .text.libgcc.fixed
+                0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_muluhisi3.o)
+ .text          0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_umulhisi3.o)
+ .data          0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_umulhisi3.o)
+ .bss           0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_umulhisi3.o)
+ .stack.descriptors
+                0x0000000000000000       0x19 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_umulhisi3.o)
+ .text.libgcc.div
+                0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_umulhisi3.o)
+ .text.libgcc   0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_umulhisi3.o)
+ .text.libgcc.prologue
+                0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_umulhisi3.o)
+ .text.libgcc.builtins
+                0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_umulhisi3.o)
+ .text.libgcc.fmul
+                0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_umulhisi3.o)
+ .text.libgcc.fixed
+                0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_umulhisi3.o)
+ .text          0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(exit.o)
+ .data          0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(exit.o)
+ .bss           0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(exit.o)
+ .stack.descriptors
+                0x0000000000000000       0x73 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(exit.o)
+ .text          0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__sio_sprintf_doux.o)
+ .data          0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__sio_sprintf_doux.o)
+ .bss           0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__sio_sprintf_doux.o)
+ .stack.descriptors
+                0x0000000000000000       0x3c d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__sio_sprintf_doux.o)
+ .text.__sio_sprintf_doux
+                0x0000000000000000       0x1a d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__sio_sprintf_doux.o)
+ .text          0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__fmt_d.o)
+ .data          0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__fmt_d.o)
+ .bss           0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__fmt_d.o)
+ .stack.descriptors
+                0x0000000000000000       0x15 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__fmt_d.o)
+ .text          0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__fmt_o.o)
+ .data          0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__fmt_o.o)
+ .bss           0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__fmt_o.o)
+ .stack.descriptors
+                0x0000000000000000       0x15 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__fmt_o.o)
+ .text          0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__fmt_s.o)
+ .data          0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__fmt_s.o)
+ .bss           0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__fmt_s.o)
+ .stack.descriptors
+                0x0000000000000000       0x15 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__fmt_s.o)
+ .text          0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__fmt_u.o)
+ .data          0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__fmt_u.o)
+ .bss           0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__fmt_u.o)
+ .stack.descriptors
+                0x0000000000000000       0x2a d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__fmt_u.o)
+ .text          0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__fmt_x.o)
+ .data          0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__fmt_x.o)
+ .bss           0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__fmt_x.o)
+ .stack.descriptors
+                0x0000000000000000       0x15 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__fmt_x.o)
+ .text          0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__pop_int.o)
+ .data          0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__pop_int.o)
+ .bss           0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__pop_int.o)
+ .stack.descriptors
+                0x0000000000000000       0x17 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__pop_int.o)
+ .text          0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__printf_core.o)
+ .data          0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__printf_core.o)
+ .bss           0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__printf_core.o)
+ .stack.descriptors
+                0x0000000000000000       0x91 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__printf_core.o)
+ .text          0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(fputc.o)
+ .data          0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(fputc.o)
+ .bss           0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(fputc.o)
+ .stack.descriptors
+                0x0000000000000000       0x13 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(fputc.o)
+ .text          0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(strlen.o)
+ .data          0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(strlen.o)
+ .bss           0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(strlen.o)
+ .stack.descriptors
+                0x0000000000000000       0x14 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(strlen.o)
+ .text          0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(tolower.o)
+ .data          0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(tolower.o)
+ .bss           0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(tolower.o)
+ .stack.descriptors
+                0x0000000000000000       0x2e d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(tolower.o)
+ .text.__tolower_l
+                0x0000000000000000        0x6 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(tolower.o)
+ .text          0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(toupper.o)
+ .data          0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(toupper.o)
+ .bss           0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(toupper.o)
+ .stack.descriptors
+                0x0000000000000000       0x2e d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(toupper.o)
+ .text.__toupper_l
+                0x0000000000000000        0x6 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(toupper.o)
+ .text          0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(errno.o)
+ .data          0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(errno.o)
+ .bss           0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(errno.o)
+ .text          0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(_Exit.o)
+ .data          0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(_Exit.o)
+ .bss           0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(_Exit.o)
+ .stack.descriptors
+                0x0000000000000000       0x13 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(_Exit.o)
+ .text          0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__int_vsprintf.o)
+ .data          0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__int_vsprintf.o)
+ .bss           0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__int_vsprintf.o)
+ .stack.descriptors
+                0x0000000000000000       0x18 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__int_vsprintf.o)
+ .text          0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__int_vsnprintf.o)
+ .data          0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__int_vsnprintf.o)
+ .bss           0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__int_vsnprintf.o)
+ .stack.descriptors
+                0x0000000000000000       0x19 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__int_vsnprintf.o)
+ .text          0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__int_vfprintf.o)
+ .data          0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__int_vfprintf.o)
+ .bss           0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__int_vfprintf.o)
+ .stack.descriptors
+                0x0000000000000000       0x18 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__int_vfprintf.o)
+ .text          0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_exit.o)
+ .data          0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_exit.o)
+ .bss           0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_exit.o)
+ .text.libgcc.mul
+                0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_exit.o)
+ .text.libgcc.div
+                0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_exit.o)
+ .text.libgcc   0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_exit.o)
+ .text.libgcc.prologue
+                0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_exit.o)
+ .stack.descriptors
+                0x0000000000000000       0x13 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_exit.o)
+ .text.libgcc.builtins
+                0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_exit.o)
+ .text.libgcc.fmul
+                0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_exit.o)
+ .text.libgcc.fixed
+                0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_exit.o)
+ .text          0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_prologue.o)
+ .data          0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_prologue.o)
+ .bss           0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_prologue.o)
+ .text.libgcc.mul
+                0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_prologue.o)
+ .text.libgcc.div
+                0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_prologue.o)
+ .text.libgcc   0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_prologue.o)
+ .text.libgcc.builtins
+                0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_prologue.o)
+ .text.libgcc.fmul
+                0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_prologue.o)
+ .text.libgcc.fixed
+                0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_prologue.o)
+ .text          0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_epilogue.o)
+ .data          0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_epilogue.o)
+ .bss           0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_epilogue.o)
+ .text.libgcc.mul
+                0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_epilogue.o)
+ .text.libgcc.div
+                0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_epilogue.o)
+ .text.libgcc   0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_epilogue.o)
+ .text.libgcc.builtins
+                0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_epilogue.o)
+ .text.libgcc.fmul
+                0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_epilogue.o)
+ .text.libgcc.fixed
+                0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_epilogue.o)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+text             0x0000000000000000 0x0000000000010000 xr
+data             0x0000000000806000 0x0000000000002000 rw !x
+eeprom           0x0000000000810000 0x0000000000000200 rw !x
+fuse             0x0000000000820000 0x0000000000000010 rw !x
+lock             0x0000000000830000 0x0000000000000400 rw !x
+signature        0x0000000000840000 0x0000000000000400 rw !x
+user_signatures  0x0000000000850000 0x0000000000000400 rw !x
+bootrow          0x0000000000860000 0x0000000000000400 rw !x
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+Address of section .data set to 0x806000
+                0x0000000000008000                __RODATA_PM_OFFSET__ = 0x8000
+LOAD D:/Produktivni programy/MPLab/v610/packs/Microchip/AVR-Dx_DFP/2.3.272/xc8/avr/lib/avrxmega2/memx-const/mapped/crtavr64da28.o
+                0x0000000000000001                __MPLAB_BUILD = 0x1
+LOAD build/default/production/src/main.o
+LOAD build/default/production/lib/uart/uart.o
+LOAD build/default/production/lib/i2c/i2c.o
+LOAD build/default/production/lib/DA_converter_MCP4728A1/mcp4728a1.o
+LOAD build/default/production/lib/adc/adc.o
+START GROUP
+LOAD d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libm.a
+END GROUP
+START GROUP
+LOAD d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a
+LOAD d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libm.a
+LOAD d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a
+LOAD D:/Produktivni programy/MPLab/v610/packs/Microchip/AVR-Dx_DFP/2.3.272/xc8/avr/lib/avrxmega2/memx-const/mapped\libavr64da28.a
+END GROUP
+                [0x0000000000000000]                __TEXT_REGION_ORIGIN__ = DEFINED (__TEXT_REGION_ORIGIN__)?__TEXT_REGION_ORIGIN__:0x0
+                [0x0000000000806000]                __DATA_REGION_ORIGIN__ = DEFINED (__DATA_REGION_ORIGIN__)?__DATA_REGION_ORIGIN__:0x802000
+                [0x0000000000010000]                __TEXT_REGION_LENGTH__ = DEFINED (__TEXT_REGION_LENGTH__)?__TEXT_REGION_LENGTH__:0x100000
+                [0x0000000000002000]                __DATA_REGION_LENGTH__ = DEFINED (__DATA_REGION_LENGTH__)?__DATA_REGION_LENGTH__:0xffa0
+                [0x0000000000000200]                __EEPROM_REGION_LENGTH__ = DEFINED (__EEPROM_REGION_LENGTH__)?__EEPROM_REGION_LENGTH__:0x10000
+                [0x0000000000000010]                __FUSE_REGION_LENGTH__ = DEFINED (__FUSE_REGION_LENGTH__)?__FUSE_REGION_LENGTH__:0x400
+                0x0000000000000400                __LOCK_REGION_LENGTH__ = DEFINED (__LOCK_REGION_LENGTH__)?__LOCK_REGION_LENGTH__:0x400
+                0x0000000000000400                __SIGNATURE_REGION_LENGTH__ = DEFINED (__SIGNATURE_REGION_LENGTH__)?__SIGNATURE_REGION_LENGTH__:0x400
+                0x0000000000000400                __USER_SIGNATURE_REGION_LENGTH__ = DEFINED (__USER_SIGNATURE_REGION_LENGTH__)?__USER_SIGNATURE_REGION_LENGTH__:0x400
+                0x0000000000000400                __BOOTROW_REGION_LENGTH__ = DEFINED (__BOOTROW_REGION_LENGTH__)?__BOOTROW_REGION_LENGTH__:0x400
+
+.hash
+ *(.hash)
+
+.dynsym
+ *(.dynsym)
+
+.dynstr
+ *(.dynstr)
+
+.gnu.version
+ *(.gnu.version)
+
+.gnu.version_d
+ *(.gnu.version_d)
+
+.gnu.version_r
+ *(.gnu.version_r)
+
+.rel.init
+ *(.rel.init)
+
+.rela.init
+ *(.rela.init)
+
+.rel.text
+ *(.rel.text)
+ *(.rel.text.*)
+ *(.rel.gnu.linkonce.t*)
+
+.rela.text
+ *(.rela.text)
+ *(.rela.text.*)
+ *(.rela.gnu.linkonce.t*)
+
+.rel.fini
+ *(.rel.fini)
+
+.rela.fini
+ *(.rela.fini)
+
+.rel.rodata
+ *(.rel.rodata)
+ *(.rel.rodata.*)
+ *(.rel.gnu.linkonce.r*)
+
+.rela.rodata
+ *(.rela.rodata)
+ *(.rela.rodata.*)
+ *(.rela.gnu.linkonce.r*)
+
+.rel.data
+ *(.rel.data)
+ *(.rel.data.*)
+ *(.rel.gnu.linkonce.d*)
+
+.rela.data
+ *(.rela.data)
+ *(.rela.data.*)
+ *(.rela.gnu.linkonce.d*)
+
+.rel.ctors
+ *(.rel.ctors)
+
+.rela.ctors
+ *(.rela.ctors)
+
+.rel.dtors
+ *(.rel.dtors)
+
+.rela.dtors
+ *(.rela.dtors)
+
+.rel.got
+ *(.rel.got)
+
+.rela.got
+ *(.rela.got)
+
+.rel.bss
+ *(.rel.bss)
+
+.rela.bss
+ *(.rela.bss)
+
+.rel.plt
+ *(.rel.plt)
+
+.rela.plt
+ *(.rela.plt)
+
+.text           0x0000000000000000      0x116
+ *(.vectors)
+ .vectors       0x0000000000000000       0xa4 D:/Produktivni programy/MPLab/v610/packs/Microchip/AVR-Dx_DFP/2.3.272/xc8/avr/lib/avrxmega2/memx-const/mapped/crtavr64da28.o
+                0x0000000000000000                __vector_default
+                0x0000000000000000                __vectors
+ *(.vectors)
+ *(.progmem.gcc*)
+ *(.dinit)
+ .dinit         0x00000000000000a4        0xc data_init
+                0x00000000000000b0                . = ALIGN (0x2)
+ *fill*         0x00000000000000b0        0x0 
+                0x00000000000000b0                __trampolines_start = .
+ *(.trampolines)
+ .trampolines   0x00000000000000b0        0x0 linker stubs
+ *(.trampolines*)
+                0x00000000000000b0                __trampolines_end = .
+ *libprintf_flt.a:*(.progmem.data)
+ *libc.a:*(.progmem.data)
+                0x00000000000000b0                . = ALIGN (0x2)
+ *(.jumptables)
+ *(.jumptables*)
+ *(.lowtext)
+ *(.lowtext*)
+                0x00000000000000b0                __ctors_start = .
+ *(.ctors)
+                0x00000000000000b0                __ctors_end = .
+                0x00000000000000b0                __dtors_start = .
+ *(.dtors)
+                0x00000000000000b0                __dtors_end = .
+ SORT(*)(.ctors)
+ SORT(*)(.dtors)
+ *(.init0)
+ .init0         0x00000000000000b0        0x0 D:/Produktivni programy/MPLab/v610/packs/Microchip/AVR-Dx_DFP/2.3.272/xc8/avr/lib/avrxmega2/memx-const/mapped/crtavr64da28.o
+                0x00000000000000b0                __init
+ *(.init0)
+ *(.init1)
+ .init1         0x00000000000000b0       0x12 D:/Produktivni programy/MPLab/v610/packs/Microchip/AVR-Dx_DFP/2.3.272/xc8/avr/lib/avrxmega2/memx-const/mapped/crtavr64da28.o
+ *(.init1)
+ *(.init2)
+ .init2         0x00000000000000c2        0xc D:/Produktivni programy/MPLab/v610/packs/Microchip/AVR-Dx_DFP/2.3.272/xc8/avr/lib/avrxmega2/memx-const/mapped/crtavr64da28.o
+ *(.init2)
+ *(.init3)
+ *(.init3)
+ *(.init4)
+ .init4         0x00000000000000ce       0x3c d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_copy_data.o)
+                0x00000000000000ce                __do_copy_data
+                0x00000000000000fc                __do_clear_bss
+ *(.init4)
+ *(.init5)
+ *(.init5)
+ *(.init6)
+ *(.init6)
+ *(.init7)
+ *(.init7)
+ *(.init8)
+ *(.init8)
+ *(.init9)
+ .init9         0x000000000000010a        0x8 D:/Produktivni programy/MPLab/v610/packs/Microchip/AVR-Dx_DFP/2.3.272/xc8/avr/lib/avrxmega2/memx-const/mapped/crtavr64da28.o
+ *(.init9)
+                0x0000000000000112                . = ALIGN (0x2)
+ *(.fini9)
+ .fini9         0x0000000000000112        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_exit.o)
+                0x0000000000000112                _exit
+ *(.fini9)
+ *(.fini8)
+ *(.fini8)
+ *(.fini7)
+ *(.fini7)
+ *(.fini6)
+ *(.fini6)
+ *(.fini5)
+ *(.fini5)
+ *(.fini4)
+ *(.fini4)
+ *(.fini3)
+ *(.fini3)
+ *(.fini2)
+ *(.fini2)
+ *(.fini1)
+ *(.fini1)
+ *(.fini0)
+ .fini0         0x0000000000000112        0x4 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_exit.o)
+ *(.fini0)
+                0x0000000000000116                _etext = .
+
+.data           0x0000000000806000        0x0 load address 0x0000000000000116
+                [!provide]                        PROVIDE (__data_start, .)
+ *(.gnu.linkonce.d*)
+ *(.gnu.linkonce.r*)
+                0x0000000000806000                . = ALIGN (0x2)
+                0x0000000000806000                _edata = .
+                [!provide]                        PROVIDE (__data_end, .)
+
+.bss            0x0000000000806000        0x2
+                [!provide]                        PROVIDE (__bss_start, .)
+ *(COMMON)
+ COMMON         0x0000000000806000        0x2 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(errno.o)
+                0x0000000000806000                __errno_val
+                [!provide]                        PROVIDE (__bss_end, .)
+                0x0000000000000116                __data_load_start = LOADADDR (.data)
+                0x0000000000000116                __data_load_end = (__data_load_start + SIZEOF (.data))
+
+.noinit         0x0000000000806002        0x0
+                [!provide]                        PROVIDE (__noinit_start, .)
+ *(.noinit*)
+                [!provide]                        PROVIDE (__noinit_end, .)
+                0x0000000000806002                _end = .
+
+.eeprom         0x0000000000810000        0x0
+ *(.eeprom*)
+                0x0000000000810000                __eeprom_end = .
+
+.fuse
+ *(.fuse)
+ *(.lfuse)
+ *(.hfuse)
+ *(.efuse)
+
+.lock
+ *(.lock*)
+
+.signature
+ *(.signature*)
+
+.user_signatures
+ *(.user_signatures*)
+
+.bootrow
+ *(.bootrow*)
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment        0x0000000000000000       0x5b
+ *(.comment)
+ .comment       0x0000000000000000       0x2f build/default/production/src/main.o
+                                         0x30 (size before relaxing)
+ .comment       0x000000000000002f       0x30 build/default/production/lib/uart/uart.o
+ .comment       0x000000000000002f       0x30 build/default/production/lib/i2c/i2c.o
+ .comment       0x000000000000002f       0x30 build/default/production/lib/DA_converter_MCP4728A1/mcp4728a1.o
+ .comment       0x000000000000002f       0x30 build/default/production/lib/adc/adc.o
+ .comment       0x000000000000002f       0x2c d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(exit.o)
+                                         0x2d (size before relaxing)
+ .comment       0x000000000000005b       0x2d d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__sio_sprintf_doux.o)
+ .comment       0x000000000000005b       0x2d d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__fmt_d.o)
+ .comment       0x000000000000005b       0x2d d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__fmt_o.o)
+ .comment       0x000000000000005b       0x2d d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__fmt_s.o)
+ .comment       0x000000000000005b       0x2d d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__fmt_u.o)
+ .comment       0x000000000000005b       0x2d d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__fmt_x.o)
+ .comment       0x000000000000005b       0x2d d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__pop_int.o)
+ .comment       0x000000000000005b       0x2d d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__printf_core.o)
+ .comment       0x000000000000005b       0x2d d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(fputc.o)
+ .comment       0x000000000000005b       0x2d d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(strlen.o)
+ .comment       0x000000000000005b       0x2d d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(tolower.o)
+ .comment       0x000000000000005b       0x2d d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(toupper.o)
+ .comment       0x000000000000005b       0x2d d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(errno.o)
+ .comment       0x000000000000005b       0x2d d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(_Exit.o)
+ .comment       0x000000000000005b       0x2d d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__int_vsprintf.o)
+ .comment       0x000000000000005b       0x2d d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__int_vsnprintf.o)
+ .comment       0x000000000000005b       0x2d d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__int_vfprintf.o)
+
+.stack.descriptors.hdr
+                0x0000000000000000      0x142
+ .stack.descriptors.hdr
+                0x0000000000000000        0xe d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_mulsi3.o)
+ .stack.descriptors.hdr
+                0x000000000000000e        0xe d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_udivmodsi4.o)
+ .stack.descriptors.hdr
+                0x000000000000001c        0xe d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_muluhisi3.o)
+ .stack.descriptors.hdr
+                0x000000000000002a        0xe d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_umulhisi3.o)
+ .stack.descriptors.hdr
+                0x0000000000000038        0xe d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(exit.o)
+ .stack.descriptors.hdr
+                0x0000000000000046        0xe d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__sio_sprintf_doux.o)
+ .stack.descriptors.hdr
+                0x0000000000000054        0xe d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__fmt_d.o)
+ .stack.descriptors.hdr
+                0x0000000000000062        0xe d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__fmt_o.o)
+ .stack.descriptors.hdr
+                0x0000000000000070        0xe d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__fmt_s.o)
+ .stack.descriptors.hdr
+                0x000000000000007e        0xe d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__fmt_u.o)
+ .stack.descriptors.hdr
+                0x000000000000008c        0xe d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__fmt_x.o)
+ .stack.descriptors.hdr
+                0x000000000000009a        0xe d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__pop_int.o)
+ .stack.descriptors.hdr
+                0x00000000000000a8        0xe d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__printf_core.o)
+ .stack.descriptors.hdr
+                0x00000000000000b6        0xe d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(fputc.o)
+ .stack.descriptors.hdr
+                0x00000000000000c4        0xe d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(strlen.o)
+ .stack.descriptors.hdr
+                0x00000000000000d2        0xe d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(tolower.o)
+ .stack.descriptors.hdr
+                0x00000000000000e0        0xe d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(toupper.o)
+ .stack.descriptors.hdr
+                0x00000000000000ee        0xe d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(errno.o)
+ .stack.descriptors.hdr
+                0x00000000000000fc        0xe d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(_Exit.o)
+ .stack.descriptors.hdr
+                0x000000000000010a        0xe d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__int_vsprintf.o)
+ .stack.descriptors.hdr
+                0x0000000000000118        0xe d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__int_vsnprintf.o)
+ .stack.descriptors.hdr
+                0x0000000000000126        0xe d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__int_vfprintf.o)
+ .stack.descriptors.hdr
+                0x0000000000000134        0xe d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_exit.o)
+
+.note.GNU-stack
+                0x0000000000000000        0x0
+ .note.GNU-stack
+                0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(exit.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__sio_sprintf_doux.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__fmt_d.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__fmt_o.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__fmt_s.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__fmt_u.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__fmt_x.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__pop_int.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__printf_core.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(fputc.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(strlen.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(tolower.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(toupper.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(errno.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(_Exit.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__int_vsprintf.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__int_vsnprintf.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__int_vfprintf.o)
+
+.note.gnu.build-id
+ *(.note.gnu.build-id)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges
+ *(.debug_aranges)
+
+.debug_pubnames
+ *(.debug_pubnames)
+
+.debug_info     0x0000000000000000     0x2504
+ *(.debug_info .gnu.linkonce.wi.*)
+ .debug_info    0x0000000000000000     0x2504 D:/Produktivni programy/MPLab/v610/packs/Microchip/AVR-Dx_DFP/2.3.272/xc8/avr/lib/avrxmega2/memx-const/mapped/crtavr64da28.o
+
+.debug_abbrev   0x0000000000000000     0x230e
+ *(.debug_abbrev)
+ .debug_abbrev  0x0000000000000000     0x230e D:/Produktivni programy/MPLab/v610/packs/Microchip/AVR-Dx_DFP/2.3.272/xc8/avr/lib/avrxmega2/memx-const/mapped/crtavr64da28.o
+
+.debug_line     0x0000000000000000      0x1c8
+ *(.debug_line .debug_line.* .debug_line_end)
+ .debug_line    0x0000000000000000      0x1c8 D:/Produktivni programy/MPLab/v610/packs/Microchip/AVR-Dx_DFP/2.3.272/xc8/avr/lib/avrxmega2/memx-const/mapped/crtavr64da28.o
+
+.debug_frame
+ *(.debug_frame)
+
+.debug_str      0x0000000000000000      0xfdc
+ *(.debug_str)
+ .debug_str     0x0000000000000000      0xfdc D:/Produktivni programy/MPLab/v610/packs/Microchip/AVR-Dx_DFP/2.3.272/xc8/avr/lib/avrxmega2/memx-const/mapped/crtavr64da28.o
+
+.debug_loc
+ *(.debug_loc)
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.debug_weaknames
+ *(.debug_weaknames)
+
+.debug_funcnames
+ *(.debug_funcnames)
+
+.debug_typenames
+ *(.debug_typenames)
+
+.debug_varnames
+ *(.debug_varnames)
+
+.debug_pubtypes
+ *(.debug_pubtypes)
+
+.debug_ranges
+ *(.debug_ranges)
+
+.debug_macro
+ *(.debug_macro)
+OUTPUT(dist/default/production/BJT_tester.X.production.elf elf32-avr)
+LOAD linker stubs
+LOAD data_init
+
+.note.gnu.avr.deviceinfo
+                0x0000000000000000       0x3c
+ .note.gnu.avr.deviceinfo
+                0x0000000000000000       0x3c D:/Produktivni programy/MPLab/v610/packs/Microchip/AVR-Dx_DFP/2.3.272/xc8/avr/lib/avrxmega2/memx-const/mapped/crtavr64da28.o
+
+.rodata         0x0000000000808116       0x32 load address 0x0000000000000116
+ .rodata        0x0000000000808116       0x32 build/default/production/src/main.o
+
+.text.vfpfcnvrt
+                0x0000000000000148      0x3fc
+ .text.vfpfcnvrt
+                0x0000000000000148      0x3fc d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__printf_core.o)
+                0x0000000000000148                vfpfcnvrt
+
+.text.__fmt_x   0x0000000000000544      0x1dc
+ .text.__fmt_x  0x0000000000000544      0x1dc d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__fmt_x.o)
+                0x0000000000000544                __fmt_x_needed
+                0x0000000000000544                __fmt_x
+
+.text.main      0x0000000000000720      0x14a
+ .text.main     0x0000000000000720      0x14a build/default/production/src/main.o
+                0x0000000000000720                main
+
+.text.measure_I_uA
+                0x000000000000086a       0xea
+ .text.measure_I_uA
+                0x000000000000086a       0xea build/default/production/src/main.o
+                0x000000000000086a                measure_I_uA
+
+.text.__fmt_d   0x0000000000000954       0xe4
+ .text.__fmt_d  0x0000000000000954       0xe4 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__fmt_d.o)
+                0x0000000000000954                __fmt_d
+                0x0000000000000954                __fmt_d_needed
+
+.text.__pop_int
+                0x0000000000000a38       0xd0
+ .text.__pop_int
+                0x0000000000000a38       0xd0 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__pop_int.o)
+                0x0000000000000a38                __pop_int_needed
+                0x0000000000000a38                __pop_int
+
+.text.__cvt_u   0x0000000000000b08       0xca
+ .text.__cvt_u  0x0000000000000b08       0xca d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__fmt_u.o)
+                0x0000000000000b08                __cvt_u
+
+.text.__fmt_o   0x0000000000000bd2       0xb2
+ .text.__fmt_o  0x0000000000000bd2       0xb2 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__fmt_o.o)
+                0x0000000000000bd2                __fmt_o
+                0x0000000000000bd2                __fmt_o_needed
+
+.text.i2c_write
+                0x0000000000000c84       0xa2
+ .text.i2c_write
+                0x0000000000000c84       0xa2 build/default/production/lib/i2c/i2c.o
+                0x0000000000000c84                i2c_write
+
+.text.fputc     0x0000000000000d26       0x92
+ .text.fputc    0x0000000000000d26       0x92 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(fputc.o)
+                0x0000000000000d26                fputc
+                0x0000000000000d26                putc
+
+.text.__vector_31
+                0x0000000000000db8       0x90
+ .text.__vector_31
+                0x0000000000000db8       0x90 build/default/production/src/main.o
+                0x0000000000000db8                __vector_31
+
+.text.__fmt_u   0x0000000000000e48       0x8e
+ .text.__fmt_u  0x0000000000000e48       0x8e d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__fmt_u.o)
+                0x0000000000000e48                __fmt_u_needed
+                0x0000000000000e48                __fmt_u
+
+.text.__printf_core
+                0x0000000000000ed6       0x78
+ .text.__printf_core
+                0x0000000000000ed6       0x78 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__printf_core.o)
+                0x0000000000000ed6                __printf_core
+
+.text.__vsnprintf
+                0x0000000000000f4e       0x74
+ .text.__vsnprintf
+                0x0000000000000f4e       0x74 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__int_vsnprintf.o)
+                0x0000000000000f4e                __vsnprintf
+
+.text.__pad     0x0000000000000fc2       0x72
+ .text.__pad    0x0000000000000fc2       0x72 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__printf_core.o)
+                0x0000000000000fc2                __pad
+
+.text.mcp4728_set_channel
+                0x0000000000001034       0x6c
+ .text.mcp4728_set_channel
+                0x0000000000001034       0x6c build/default/production/lib/DA_converter_MCP4728A1/mcp4728a1.o
+                0x0000000000001034                mcp4728_set_channel
+
+.text.read_prec_or_width
+                0x00000000000010a0       0x5c
+ .text.read_prec_or_width
+                0x00000000000010a0       0x5c d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__printf_core.o)
+
+.text.uart1_receive_string
+                0x00000000000010fc       0x58
+ .text.uart1_receive_string
+                0x00000000000010fc       0x58 build/default/production/lib/uart/uart.o
+                0x00000000000010fc                uart1_receive_string
+
+.text.__fmt_s   0x0000000000001154       0x54
+ .text.__fmt_s  0x0000000000001154       0x54 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__fmt_s.o)
+                0x0000000000001154                __fmt_s
+                0x0000000000001154                __fmt_0_needed
+                0x0000000000001154                __fmt_s_needed
+
+.text.libgcc.div
+                0x00000000000011a8       0x44
+ .text.libgcc.div
+                0x00000000000011a8       0x44 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_udivmodsi4.o)
+                0x00000000000011a8                __udivmodsi4
+
+.text.__fmt_state
+                0x00000000000011ec       0x40
+ .text.__fmt_state
+                0x00000000000011ec       0x40 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__printf_core.o)
+                0x00000000000011ec                __fmt_state
+
+.text.i2c_device_available
+                0x000000000000122c       0x3c
+ .text.i2c_device_available
+                0x000000000000122c       0x3c build/default/production/lib/i2c/i2c.o
+                0x000000000000122c                i2c_device_available
+
+.text.i2c_init  0x0000000000001268       0x3a
+ .text.i2c_init
+                0x0000000000001268       0x3a build/default/production/lib/i2c/i2c.o
+                0x0000000000001268                i2c_init
+
+.text.__out     0x00000000000012a2       0x3a
+ .text.__out    0x00000000000012a2       0x3a d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__printf_core.o)
+                0x00000000000012a2                __out
+
+.text.libgcc.prologue
+                0x00000000000012dc       0x32
+ .text.libgcc.prologue
+                0x00000000000012dc       0x32 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_prologue.o)
+                0x00000000000012dc                __prologue_saves__
+
+.text.__vfprintf
+                0x000000000000130e       0x30
+ .text.__vfprintf
+                0x000000000000130e       0x30 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__int_vfprintf.o)
+                0x000000000000130e                __vfprintf
+
+.text.libgcc.prologue
+                0x000000000000133e       0x30
+ .text.libgcc.prologue
+                0x000000000000133e       0x30 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_epilogue.o)
+                0x000000000000133e                __epilogue_restores__
+
+.text.uart1_init
+                0x000000000000136e       0x24
+ .text.uart1_init
+                0x000000000000136e       0x24 build/default/production/lib/uart/uart.o
+                0x000000000000136e                uart1_init
+
+.text.__wrap_sprintf
+                0x0000000000001392       0x24
+ .text.__wrap_sprintf
+                0x0000000000001392       0x24 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__sio_sprintf_doux.o)
+                0x0000000000001392                _sprintf_cdopuxX
+
+.text.libgcc.mul
+                0x00000000000013b6       0x20
+ .text.libgcc.mul
+                0x00000000000013b6       0x20 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_mulsi3.o)
+                0x00000000000013b6                __mulsi3
+
+.text.uart1_send_string
+                0x00000000000013d6       0x1e
+ .text.uart1_send_string
+                0x00000000000013d6       0x1e build/default/production/lib/uart/uart.o
+                0x00000000000013d6                uart1_send_string
+
+.text.libgcc.mul
+                0x00000000000013f4       0x1e
+ .text.libgcc.mul
+                0x00000000000013f4       0x1e d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_umulhisi3.o)
+                0x00000000000013f4                __umulhisi3
+
+.text.strlen    0x0000000000001412       0x1c
+ .text.strlen   0x0000000000001412       0x1c d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(strlen.o)
+                0x0000000000001412                strlen
+
+.text.ADC_read  0x000000000000142e       0x1a
+ .text.ADC_read
+                0x000000000000142e       0x1a build/default/production/lib/adc/adc.o
+                0x000000000000142e                ADC_read
+
+.text.ADC_init  0x0000000000001448       0x18
+ .text.ADC_init
+                0x0000000000001448       0x18 build/default/production/lib/adc/adc.o
+                0x0000000000001448                ADC_init
+
+.text.libgcc.mul
+                0x0000000000001460       0x16
+ .text.libgcc.mul
+                0x0000000000001460       0x16 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const/mapped\libgcc.a(_muluhisi3.o)
+                0x0000000000001460                __muluhisi3
+
+.text.exit      0x0000000000001476       0x16
+ .text.exit     0x0000000000001476       0x16 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(exit.o)
+                0x0000000000001476                exit
+
+.text.toupper   0x000000000000148c       0x12
+ .text.toupper  0x000000000000148c       0x12 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(toupper.o)
+                0x000000000000148c                toupper
+
+.text.uart1_send_byte
+                0x000000000000149e       0x10
+ .text.uart1_send_byte
+                0x000000000000149e       0x10 build/default/production/lib/uart/uart.o
+                0x000000000000149e                uart1_send_byte
+
+.text.uart1_receive_byte
+                0x00000000000014ae       0x10
+ .text.uart1_receive_byte
+                0x00000000000014ae       0x10 build/default/production/lib/uart/uart.o
+                0x00000000000014ae                uart1_receive_byte
+
+.text.uart1_clear_receive_buffer
+                0x00000000000014be       0x10
+ .text.uart1_clear_receive_buffer
+                0x00000000000014be       0x10 build/default/production/lib/uart/uart.o
+                0x00000000000014be                uart1_clear_receive_buffer
+
+.text.tolower   0x00000000000014ce       0x10
+ .text.tolower  0x00000000000014ce       0x10 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(tolower.o)
+                0x00000000000014ce                tolower
+
+.text.mcp4728_init
+                0x00000000000014de        0xe
+ .text.mcp4728_init
+                0x00000000000014de        0xe build/default/production/lib/DA_converter_MCP4728A1/mcp4728a1.o
+                0x00000000000014de                mcp4728_init
+
+.text.__vsprintf
+                0x00000000000014ec        0xe
+ .text.__vsprintf
+                0x00000000000014ec        0xe d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__int_vsprintf.o)
+                0x00000000000014ec                __vsprintf
+
+.text.uart1_data_available
+                0x00000000000014fa        0xc
+ .text.uart1_data_available
+                0x00000000000014fa        0xc build/default/production/lib/uart/uart.o
+                0x00000000000014fa                uart1_data_available
+
+.text           0x0000000000001506        0x4
+ .text          0x0000000000001506        0x4 D:/Produktivni programy/MPLab/v610/packs/Microchip/AVR-Dx_DFP/2.3.272/xc8/avr/lib/avrxmega2/memx-const/mapped/crtavr64da28.o
+                0x0000000000001506                __vector_38
+                0x0000000000001506                __vector_22
+                0x0000000000001506                __vector_28
+                0x0000000000001506                __vector_1
+                0x0000000000001506                __vector_32
+                0x0000000000001506                __vector_34
+                0x0000000000001506                __vector_24
+                0x0000000000001506                __vector_12
+                0x0000000000001506                __bad_interrupt
+                0x0000000000001506                __vector_6
+                0x0000000000001506                __vector_35
+                0x0000000000001506                __vector_39
+                0x0000000000001506                __vector_3
+                0x0000000000001506                __vector_23
+                0x0000000000001506                __vector_30
+                0x0000000000001506                __vector_25
+                0x0000000000001506                __vector_11
+                0x0000000000001506                __vector_13
+                0x0000000000001506                __vector_17
+                0x0000000000001506                __vector_19
+                0x0000000000001506                __vector_7
+                0x0000000000001506                __vector_27
+                0x0000000000001506                __vector_5
+                0x0000000000001506                __vector_33
+                0x0000000000001506                __vector_37
+                0x0000000000001506                __vector_4
+                0x0000000000001506                __vector_9
+                0x0000000000001506                __vector_2
+                0x0000000000001506                __vector_21
+                0x0000000000001506                __vector_15
+                0x0000000000001506                __vector_36
+                0x0000000000001506                __vector_29
+                0x0000000000001506                __vector_40
+                0x0000000000001506                __vector_8
+                0x0000000000001506                __vector_26
+                0x0000000000001506                __vector_14
+                0x0000000000001506                __vector_10
+                0x0000000000001506                __vector_16
+                0x0000000000001506                __vector_18
+                0x0000000000001506                __vector_20
+
+.text._Exit     0x000000000000150a        0x4
+ .text._Exit    0x000000000000150a        0x4 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(_Exit.o)
+                0x000000000000150a                _Exit
+
+.text.__dummy_fini
+                0x000000000000150e        0x2
+ .text.__dummy_fini
+                0x000000000000150e        0x2 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(exit.o)
+                0x000000000000150e                _fini
+
+.text.__dummy_funcs_on_exit
+                0x0000000000001510        0x2
+ .text.__dummy_funcs_on_exit
+                0x0000000000001510        0x2 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(exit.o)
+                0x0000000000001510                __funcs_on_exit
+
+.text.__dummy_simulator_exit
+                0x0000000000001512        0x2
+ .text.__dummy_simulator_exit
+                0x0000000000001512        0x2 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(exit.o)
+                0x0000000000001512                __simulator_exit
+
+.rodata.state_table
+                0x0000000000806002       0x16 load address 0x0000000000001514
+ .rodata.state_table
+                0x0000000000806002       0x16 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__printf_core.o)
+
+.rodata.nuls.2781
+                0x0000000000806018        0x7 load address 0x000000000000152a
+ .rodata.nuls.2781
+                0x0000000000806018        0x7 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__fmt_s.o)
+
+.rodata.nilstr.2962
+                0x000000000080601f        0x6 load address 0x0000000000001531
+ .rodata.nilstr.2962
+                0x000000000080601f        0x6 d:/produktivni programy/mplab/xc8/v2.41/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const/mapped\libc.a(__printf_core.o)
+
+.data._mcp4728_address
+                0x0000000000806025        0x1 load address 0x0000000000001537
+ .data._mcp4728_address
+                0x0000000000806025        0x1 build/default/production/lib/DA_converter_MCP4728A1/mcp4728a1.o

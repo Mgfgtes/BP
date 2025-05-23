@@ -187,17 +187,23 @@ void uart1_clear_receive_buffer(){
  * 
  * @param buffer Buffer pro ulozeni prijatych dat
  * @param max_length Maximalni delka bufferu
+ * @param timeout Maximalni pocet opakovani
  * @return Pocet prijatých znaku
  */
-uint8_t uart1_receive_string(char* buffer, uint8_t max_length) {
+uint8_t uart1_receive_string(char* buffer, uint8_t max_length, uint8_t timeout) {
     uint8_t count = 0;
+    uint8_t t = 0;
     
-    while (count < max_length - 1) {
+    while ((count < max_length - 1)&&(t < timeout)) {
         if (uart1_data_available()){
             buffer[count]=uart1_receive_byte();
             if(buffer[count]==0) return count;
             count++;
-        } 
+            t = 0;
+        }
+        else{
+            t++;
+        }
     }
     
     buffer[count] = 0;
