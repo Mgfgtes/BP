@@ -1,21 +1,21 @@
 Archive member included to satisfy reference by file (symbol)
 
 d:/produktivni programy/mplab/xc8/v3.0/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const\libgcc.a(_mulsi3.o)
-                              build/default/debug/src/main.o (__mulsi3)
+                              build/default/production/src/main.o (__mulsi3)
 d:/produktivni programy/mplab/xc8/v3.0/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const\libgcc.a(_udivmodhi4.o)
-                              build/default/debug/src/main.o (__udivmodhi4)
+                              build/default/production/src/main.o (__udivmodhi4)
 d:/produktivni programy/mplab/xc8/v3.0/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const\libgcc.a(_udivmodsi4.o)
-                              build/default/debug/src/main.o (__udivmodsi4)
+                              build/default/production/src/main.o (__udivmodsi4)
 d:/produktivni programy/mplab/xc8/v3.0/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const\libgcc.a(_copy_data.o)
-                              build/default/debug/src/main.o (__do_copy_data)
+                              build/default/production/src/main.o (__do_copy_data)
 d:/produktivni programy/mplab/xc8/v3.0/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const\libgcc.a(_umulhisi3.o)
-                              build/default/debug/src/main.o (__umulhisi3)
+                              build/default/production/src/main.o (__umulhisi3)
 d:/produktivni programy/mplab/xc8/v3.0/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const\libgcc.a(_muluhisi3.o)
-                              build/default/debug/src/main.o (__muluhisi3)
+                              build/default/production/src/main.o (__muluhisi3)
 d:/produktivni programy/mplab/xc8/v3.0/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const\libc.a(exit.o)
                               D:/Produktivni programy/MPLab/v610/packs/Microchip/AVR-Dx_DFP/2.3.272/xc8/avr/lib/avrxmega2/memx-const/crtavr64da28.o (exit)
 d:/produktivni programy/mplab/xc8/v3.0/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const\libc.a(__sio_sprintf_doux.o)
-                              build/default/debug/src/main.o (_sprintf_cdopuxX)
+                              build/default/production/src/main.o (_sprintf_cdopuxX)
 d:/produktivni programy/mplab/xc8/v3.0/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const\libc.a(__fmt_d.o)
                               d:/produktivni programy/mplab/xc8/v3.0/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const\libc.a(__sio_sprintf_doux.o) (__fmt_d_needed)
 d:/produktivni programy/mplab/xc8/v3.0/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const\libc.a(__fmt_o.o)
@@ -33,7 +33,7 @@ d:/produktivni programy/mplab/xc8/v3.0/avr/bin/../lib/gcc/avr/5.4.0/../../../../
 d:/produktivni programy/mplab/xc8/v3.0/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const\libc.a(fputc.o)
                               d:/produktivni programy/mplab/xc8/v3.0/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const\libc.a(__printf_core.o) (fputc)
 d:/produktivni programy/mplab/xc8/v3.0/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const\libc.a(strcmp.o)
-                              build/default/debug/src/main.o (strcmp)
+                              build/default/production/src/main.o (strcmp)
 d:/produktivni programy/mplab/xc8/v3.0/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const\libc.a(strlen.o)
                               d:/produktivni programy/mplab/xc8/v3.0/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const\libc.a(__fmt_s.o) (strlen)
 d:/produktivni programy/mplab/xc8/v3.0/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const\libc.a(tolower.o)
@@ -66,47 +66,47 @@ Discarded input sections
 
  .data          0x0000000000000000        0x0 D:/Produktivni programy/MPLab/v610/packs/Microchip/AVR-Dx_DFP/2.3.272/xc8/avr/lib/avrxmega2/memx-const/crtavr64da28.o
  .bss           0x0000000000000000        0x0 D:/Produktivni programy/MPLab/v610/packs/Microchip/AVR-Dx_DFP/2.3.272/xc8/avr/lib/avrxmega2/memx-const/crtavr64da28.o
- .text          0x0000000000000000        0x0 build/default/debug/src/main.o
- .data          0x0000000000000000        0x0 build/default/debug/src/main.o
- .bss           0x0000000000000000        0x0 build/default/debug/src/main.o
- .text          0x0000000000000000        0x0 build/default/debug/lib/i2c/i2c.o
- .data          0x0000000000000000        0x0 build/default/debug/lib/i2c/i2c.o
- .bss           0x0000000000000000        0x0 build/default/debug/lib/i2c/i2c.o
+ .text          0x0000000000000000        0x0 build/default/production/src/main.o
+ .data          0x0000000000000000        0x0 build/default/production/src/main.o
+ .bss           0x0000000000000000        0x0 build/default/production/src/main.o
+ .text          0x0000000000000000        0x0 build/default/production/lib/i2c/i2c.o
+ .data          0x0000000000000000        0x0 build/default/production/lib/i2c/i2c.o
+ .bss           0x0000000000000000        0x0 build/default/production/lib/i2c/i2c.o
  .text.i2c_read
-                0x0000000000000000       0xa2 build/default/debug/lib/i2c/i2c.o
+                0x0000000000000000       0xa2 build/default/production/lib/i2c/i2c.o
  .text.i2c_scan
-                0x0000000000000000       0x40 build/default/debug/lib/i2c/i2c.o
- .text          0x0000000000000000        0x0 build/default/debug/lib/DA_converter_MCP4728A1/mcp4728a1.o
- .data          0x0000000000000000        0x0 build/default/debug/lib/DA_converter_MCP4728A1/mcp4728a1.o
- .bss           0x0000000000000000        0x0 build/default/debug/lib/DA_converter_MCP4728A1/mcp4728a1.o
+                0x0000000000000000       0x40 build/default/production/lib/i2c/i2c.o
+ .text          0x0000000000000000        0x0 build/default/production/lib/DA_converter_MCP4728A1/mcp4728a1.o
+ .data          0x0000000000000000        0x0 build/default/production/lib/DA_converter_MCP4728A1/mcp4728a1.o
+ .bss           0x0000000000000000        0x0 build/default/production/lib/DA_converter_MCP4728A1/mcp4728a1.o
  .text.mcp4728_fast_write
-                0x0000000000000000       0x54 build/default/debug/lib/DA_converter_MCP4728A1/mcp4728a1.o
+                0x0000000000000000       0x54 build/default/production/lib/DA_converter_MCP4728A1/mcp4728a1.o
  .text.mcp4728_set_all_channels
-                0x0000000000000000       0xa6 build/default/debug/lib/DA_converter_MCP4728A1/mcp4728a1.o
+                0x0000000000000000       0xa6 build/default/production/lib/DA_converter_MCP4728A1/mcp4728a1.o
  .text.mcp4728_general_reset
-                0x0000000000000000       0x26 build/default/debug/lib/DA_converter_MCP4728A1/mcp4728a1.o
+                0x0000000000000000       0x26 build/default/production/lib/DA_converter_MCP4728A1/mcp4728a1.o
  .text.mcp4728_wakeup
-                0x0000000000000000       0x26 build/default/debug/lib/DA_converter_MCP4728A1/mcp4728a1.o
- .text          0x0000000000000000        0x0 build/default/debug/lib/uart/uart.o
- .data          0x0000000000000000        0x0 build/default/debug/lib/uart/uart.o
- .bss           0x0000000000000000        0x0 build/default/debug/lib/uart/uart.o
+                0x0000000000000000       0x26 build/default/production/lib/DA_converter_MCP4728A1/mcp4728a1.o
+ .text          0x0000000000000000        0x0 build/default/production/lib/uart/uart.o
+ .data          0x0000000000000000        0x0 build/default/production/lib/uart/uart.o
+ .bss           0x0000000000000000        0x0 build/default/production/lib/uart/uart.o
  .text.uart0_init
-                0x0000000000000000       0x22 build/default/debug/lib/uart/uart.o
+                0x0000000000000000       0x22 build/default/production/lib/uart/uart.o
  .text.uart0_send_byte
-                0x0000000000000000        0xe build/default/debug/lib/uart/uart.o
+                0x0000000000000000        0xe build/default/production/lib/uart/uart.o
  .text.uart0_send_string
-                0x0000000000000000       0x2c build/default/debug/lib/uart/uart.o
+                0x0000000000000000       0x2c build/default/production/lib/uart/uart.o
  .text.uart0_receive_byte
-                0x0000000000000000        0xe build/default/debug/lib/uart/uart.o
+                0x0000000000000000        0xe build/default/production/lib/uart/uart.o
  .text.uart0_data_available
-                0x0000000000000000        0xc build/default/debug/lib/uart/uart.o
+                0x0000000000000000        0xc build/default/production/lib/uart/uart.o
  .text.uart0_clear_receive_buffer
-                0x0000000000000000       0x10 build/default/debug/lib/uart/uart.o
+                0x0000000000000000       0x10 build/default/production/lib/uart/uart.o
  .text.uart0_receive_string
-                0x0000000000000000       0x64 build/default/debug/lib/uart/uart.o
- .text          0x0000000000000000        0x0 build/default/debug/lib/adc/adc.o
- .data          0x0000000000000000        0x0 build/default/debug/lib/adc/adc.o
- .bss           0x0000000000000000        0x0 build/default/debug/lib/adc/adc.o
+                0x0000000000000000       0x64 build/default/production/lib/uart/uart.o
+ .text          0x0000000000000000        0x0 build/default/production/lib/adc/adc.o
+ .data          0x0000000000000000        0x0 build/default/production/lib/adc/adc.o
+ .bss           0x0000000000000000        0x0 build/default/production/lib/adc/adc.o
  .text          0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v3.0/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const\libgcc.a(_mulsi3.o)
  .data          0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v3.0/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const\libgcc.a(_mulsi3.o)
  .bss           0x0000000000000000        0x0 d:/produktivni programy/mplab/xc8/v3.0/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const\libgcc.a(_mulsi3.o)
@@ -368,16 +368,14 @@ Address of section .data set to 0x806000
                 0x0000000000008000                __RODATA_PM_OFFSET__ = 0x8000
 LOAD D:/Produktivni programy/MPLab/v610/packs/Microchip/AVR-Dx_DFP/2.3.272/xc8/avr/lib/avrxmega2/memx-const/crtavr64da28.o
                 0x0000000000000001                __MPLAB_BUILD = 0x1
-LOAD build/default/debug/src/main.o
-LOAD build/default/debug/lib/i2c/i2c.o
-LOAD build/default/debug/lib/DA_converter_MCP4728A1/mcp4728a1.o
-LOAD build/default/debug/lib/uart/uart.o
-LOAD build/default/debug/lib/adc/adc.o
+LOAD build/default/production/src/main.o
+LOAD build/default/production/lib/i2c/i2c.o
+LOAD build/default/production/lib/DA_converter_MCP4728A1/mcp4728a1.o
+LOAD build/default/production/lib/uart/uart.o
+LOAD build/default/production/lib/adc/adc.o
 START GROUP
 LOAD d:/produktivni programy/mplab/xc8/v3.0/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const\libm.a
 END GROUP
-                0x0000000000000001                __MPLAB_DEBUG = 0x1
-                0x0000000000000001                __DEBUG = 0x1
 START GROUP
 LOAD d:/produktivni programy/mplab/xc8/v3.0/avr/bin/../lib/gcc/avr/5.4.0/avrxmega2/memx-const\libgcc.a
 LOAD d:/produktivni programy/mplab/xc8/v3.0/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const\libm.a
@@ -633,12 +631,12 @@ END GROUP
 
 .comment        0x0000000000000000       0x5b
  *(.comment)
- .comment       0x0000000000000000       0x2f build/default/debug/src/main.o
+ .comment       0x0000000000000000       0x2f build/default/production/src/main.o
                                          0x30 (size before relaxing)
- .comment       0x000000000000002f       0x30 build/default/debug/lib/i2c/i2c.o
- .comment       0x000000000000002f       0x30 build/default/debug/lib/DA_converter_MCP4728A1/mcp4728a1.o
- .comment       0x000000000000002f       0x30 build/default/debug/lib/uart/uart.o
- .comment       0x000000000000002f       0x30 build/default/debug/lib/adc/adc.o
+ .comment       0x000000000000002f       0x30 build/default/production/lib/i2c/i2c.o
+ .comment       0x000000000000002f       0x30 build/default/production/lib/DA_converter_MCP4728A1/mcp4728a1.o
+ .comment       0x000000000000002f       0x30 build/default/production/lib/uart/uart.o
+ .comment       0x000000000000002f       0x30 build/default/production/lib/adc/adc.o
  .comment       0x000000000000002f       0x2c d:/produktivni programy/mplab/xc8/v3.0/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const\libc.a(exit.o)
                                          0x2d (size before relaxing)
  .comment       0x000000000000005b       0x2d d:/produktivni programy/mplab/xc8/v3.0/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const\libc.a(__sio_sprintf_doux.o)
@@ -772,70 +770,70 @@ END GROUP
 .debug_aranges  0x0000000000000000      0x178
  *(.debug_aranges)
  .debug_aranges
-                0x0000000000000000       0x40 build/default/debug/src/main.o
+                0x0000000000000000       0x40 build/default/production/src/main.o
  .debug_aranges
-                0x0000000000000040       0x40 build/default/debug/lib/i2c/i2c.o
+                0x0000000000000040       0x40 build/default/production/lib/i2c/i2c.o
  .debug_aranges
-                0x0000000000000080       0x48 build/default/debug/lib/DA_converter_MCP4728A1/mcp4728a1.o
+                0x0000000000000080       0x48 build/default/production/lib/DA_converter_MCP4728A1/mcp4728a1.o
  .debug_aranges
-                0x00000000000000c8       0x88 build/default/debug/lib/uart/uart.o
+                0x00000000000000c8       0x88 build/default/production/lib/uart/uart.o
  .debug_aranges
-                0x0000000000000150       0x28 build/default/debug/lib/adc/adc.o
+                0x0000000000000150       0x28 build/default/production/lib/adc/adc.o
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x0000000000000000     0x7a2d
+.debug_info     0x0000000000000000     0x79ec
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x0000000000000000     0x2504 D:/Produktivni programy/MPLab/v610/packs/Microchip/AVR-Dx_DFP/2.3.272/xc8/avr/lib/avrxmega2/memx-const/crtavr64da28.o
- .debug_info    0x0000000000002504     0x3004 build/default/debug/src/main.o
- .debug_info    0x0000000000005508      0xb37 build/default/debug/lib/i2c/i2c.o
- .debug_info    0x000000000000603f      0x78b build/default/debug/lib/DA_converter_MCP4728A1/mcp4728a1.o
- .debug_info    0x00000000000067ca      0xab4 build/default/debug/lib/uart/uart.o
- .debug_info    0x000000000000727e      0x7af build/default/debug/lib/adc/adc.o
+ .debug_info    0x0000000000002504     0x2ff7 build/default/production/src/main.o
+ .debug_info    0x00000000000054fb      0xb2a build/default/production/lib/i2c/i2c.o
+ .debug_info    0x0000000000006025      0x77e build/default/production/lib/DA_converter_MCP4728A1/mcp4728a1.o
+ .debug_info    0x00000000000067a3      0xaa7 build/default/production/lib/uart/uart.o
+ .debug_info    0x000000000000724a      0x7a2 build/default/production/lib/adc/adc.o
 
 .debug_abbrev   0x0000000000000000     0x2b9c
  *(.debug_abbrev)
  .debug_abbrev  0x0000000000000000     0x230e D:/Produktivni programy/MPLab/v610/packs/Microchip/AVR-Dx_DFP/2.3.272/xc8/avr/lib/avrxmega2/memx-const/crtavr64da28.o
- .debug_abbrev  0x000000000000230e      0x2be build/default/debug/src/main.o
- .debug_abbrev  0x00000000000025cc      0x1e4 build/default/debug/lib/i2c/i2c.o
- .debug_abbrev  0x00000000000027b0       0xde build/default/debug/lib/DA_converter_MCP4728A1/mcp4728a1.o
- .debug_abbrev  0x000000000000288e      0x1ce build/default/debug/lib/uart/uart.o
- .debug_abbrev  0x0000000000002a5c      0x140 build/default/debug/lib/adc/adc.o
+ .debug_abbrev  0x000000000000230e      0x2be build/default/production/src/main.o
+ .debug_abbrev  0x00000000000025cc      0x1e4 build/default/production/lib/i2c/i2c.o
+ .debug_abbrev  0x00000000000027b0       0xde build/default/production/lib/DA_converter_MCP4728A1/mcp4728a1.o
+ .debug_abbrev  0x000000000000288e      0x1ce build/default/production/lib/uart/uart.o
+ .debug_abbrev  0x0000000000002a5c      0x140 build/default/production/lib/adc/adc.o
 
 .debug_line     0x0000000000000000     0x18d6
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x0000000000000000      0x190 D:/Produktivni programy/MPLab/v610/packs/Microchip/AVR-Dx_DFP/2.3.272/xc8/avr/lib/avrxmega2/memx-const/crtavr64da28.o
- .debug_line    0x0000000000000190      0xd16 build/default/debug/src/main.o
- .debug_line    0x0000000000000ea6      0x35f build/default/debug/lib/i2c/i2c.o
- .debug_line    0x0000000000001205      0x209 build/default/debug/lib/DA_converter_MCP4728A1/mcp4728a1.o
- .debug_line    0x000000000000140e      0x390 build/default/debug/lib/uart/uart.o
- .debug_line    0x000000000000179e      0x138 build/default/debug/lib/adc/adc.o
+ .debug_line    0x0000000000000190      0xd16 build/default/production/src/main.o
+ .debug_line    0x0000000000000ea6      0x35f build/default/production/lib/i2c/i2c.o
+ .debug_line    0x0000000000001205      0x209 build/default/production/lib/DA_converter_MCP4728A1/mcp4728a1.o
+ .debug_line    0x000000000000140e      0x390 build/default/production/lib/uart/uart.o
+ .debug_line    0x000000000000179e      0x138 build/default/production/lib/adc/adc.o
 
 .debug_frame    0x0000000000000000      0x418
  *(.debug_frame)
- .debug_frame   0x0000000000000000      0x108 build/default/debug/src/main.o
- .debug_frame   0x0000000000000108       0xac build/default/debug/lib/i2c/i2c.o
- .debug_frame   0x00000000000001b4       0xdc build/default/debug/lib/DA_converter_MCP4728A1/mcp4728a1.o
- .debug_frame   0x0000000000000290      0x154 build/default/debug/lib/uart/uart.o
- .debug_frame   0x00000000000003e4       0x34 build/default/debug/lib/adc/adc.o
+ .debug_frame   0x0000000000000000      0x108 build/default/production/src/main.o
+ .debug_frame   0x0000000000000108       0xac build/default/production/lib/i2c/i2c.o
+ .debug_frame   0x00000000000001b4       0xdc build/default/production/lib/DA_converter_MCP4728A1/mcp4728a1.o
+ .debug_frame   0x0000000000000290      0x154 build/default/production/lib/uart/uart.o
+ .debug_frame   0x00000000000003e4       0x34 build/default/production/lib/adc/adc.o
 
 .debug_str      0x0000000000000000     0x1138
  *(.debug_str)
  .debug_str     0x0000000000000000      0xfdc D:/Produktivni programy/MPLab/v610/packs/Microchip/AVR-Dx_DFP/2.3.272/xc8/avr/lib/avrxmega2/memx-const/crtavr64da28.o
- .debug_str     0x0000000000000fdc       0xd5 build/default/debug/src/main.o
- .debug_str     0x00000000000010b1       0x32 build/default/debug/lib/i2c/i2c.o
- .debug_str     0x00000000000010e3       0x1f build/default/debug/lib/DA_converter_MCP4728A1/mcp4728a1.o
- .debug_str     0x0000000000001102       0x20 build/default/debug/lib/uart/uart.o
- .debug_str     0x0000000000001122       0x16 build/default/debug/lib/adc/adc.o
+ .debug_str     0x0000000000000fdc       0xd5 build/default/production/src/main.o
+ .debug_str     0x00000000000010b1       0x32 build/default/production/lib/i2c/i2c.o
+ .debug_str     0x00000000000010e3       0x1f build/default/production/lib/DA_converter_MCP4728A1/mcp4728a1.o
+ .debug_str     0x0000000000001102       0x20 build/default/production/lib/uart/uart.o
+ .debug_str     0x0000000000001122       0x16 build/default/production/lib/adc/adc.o
 
 .debug_loc      0x0000000000000000     0x1638
  *(.debug_loc)
- .debug_loc     0x0000000000000000      0xe39 build/default/debug/src/main.o
- .debug_loc     0x0000000000000e39      0x3a9 build/default/debug/lib/i2c/i2c.o
- .debug_loc     0x00000000000011e2      0x177 build/default/debug/lib/DA_converter_MCP4728A1/mcp4728a1.o
- .debug_loc     0x0000000000001359      0x2b2 build/default/debug/lib/uart/uart.o
- .debug_loc     0x000000000000160b       0x2d build/default/debug/lib/adc/adc.o
+ .debug_loc     0x0000000000000000      0xe39 build/default/production/src/main.o
+ .debug_loc     0x0000000000000e39      0x3a9 build/default/production/lib/i2c/i2c.o
+ .debug_loc     0x00000000000011e2      0x177 build/default/production/lib/DA_converter_MCP4728A1/mcp4728a1.o
+ .debug_loc     0x0000000000001359      0x2b2 build/default/production/lib/uart/uart.o
+ .debug_loc     0x000000000000160b       0x2d build/default/production/lib/adc/adc.o
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -857,15 +855,15 @@ END GROUP
 
 .debug_ranges   0x0000000000000000      0x1a0
  *(.debug_ranges)
- .debug_ranges  0x0000000000000000       0x60 build/default/debug/src/main.o
- .debug_ranges  0x0000000000000060       0x78 build/default/debug/lib/i2c/i2c.o
- .debug_ranges  0x00000000000000d8       0x38 build/default/debug/lib/DA_converter_MCP4728A1/mcp4728a1.o
- .debug_ranges  0x0000000000000110       0x78 build/default/debug/lib/uart/uart.o
- .debug_ranges  0x0000000000000188       0x18 build/default/debug/lib/adc/adc.o
+ .debug_ranges  0x0000000000000000       0x60 build/default/production/src/main.o
+ .debug_ranges  0x0000000000000060       0x78 build/default/production/lib/i2c/i2c.o
+ .debug_ranges  0x00000000000000d8       0x38 build/default/production/lib/DA_converter_MCP4728A1/mcp4728a1.o
+ .debug_ranges  0x0000000000000110       0x78 build/default/production/lib/uart/uart.o
+ .debug_ranges  0x0000000000000188       0x18 build/default/production/lib/adc/adc.o
 
 .debug_macro
  *(.debug_macro)
-OUTPUT(dist/default/debug/BJT_tester_2v0.X.debug.elf elf32-avr)
+OUTPUT(dist/default/production/BJT_tester_2v0.X.production.elf elf32-avr)
 LOAD linker stubs
 LOAD data_init
 
@@ -875,12 +873,12 @@ LOAD data_init
                 0x0000000000000000       0x3c D:/Produktivni programy/MPLab/v610/packs/Microchip/AVR-Dx_DFP/2.3.272/xc8/avr/lib/avrxmega2/memx-const/crtavr64da28.o
 
 .bss.status     0x000000000080600a        0x1
- .bss.status    0x000000000080600a        0x1 build/default/debug/src/main.o
+ .bss.status    0x000000000080600a        0x1 build/default/production/src/main.o
                 0x000000000080600a                status
 
 .progmemx.data  0x0000000000000110       0xf5
  .progmemx.data
-                0x0000000000000110       0xf5 build/default/debug/src/main.o
+                0x0000000000000110       0xf5 build/default/production/src/main.o
 
 .progmemx.data.state_table
                 0x0000000000000205       0x16
@@ -898,7 +896,7 @@ LOAD data_init
                 0x0000000000000222        0x6 d:/produktivni programy/mplab/xc8/v3.0/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega2/memx-const\libc.a(__printf_core.o)
 
 .text.main      0x0000000000000228     0x11c2
- .text.main     0x0000000000000228     0x11c2 build/default/debug/src/main.o
+ .text.main     0x0000000000000228     0x11c2 build/default/production/src/main.o
                 0x0000000000000228                main
 
 .text.vfpfcnvrt
@@ -915,7 +913,7 @@ LOAD data_init
 .text.measure_I_uA
                 0x0000000000001a90      0x12e
  .text.measure_I_uA
-                0x0000000000001a90      0x12e build/default/debug/src/main.o
+                0x0000000000001a90      0x12e build/default/production/src/main.o
                 0x0000000000001a90                measure_I_uA
 
 .text.__fmt_d   0x0000000000001bbe       0xe6
@@ -937,7 +935,7 @@ LOAD data_init
 .text.i2c_write
                 0x0000000000001e48       0xbc
  .text.i2c_write
-                0x0000000000001e48       0xbc build/default/debug/lib/i2c/i2c.o
+                0x0000000000001e48       0xbc build/default/production/lib/i2c/i2c.o
                 0x0000000000001e48                i2c_write
 
 .text.__fmt_o   0x0000000000001f04       0xb4
@@ -980,7 +978,7 @@ LOAD data_init
 .text.__vector_31
                 0x0000000000002340       0x8a
  .text.__vector_31
-                0x0000000000002340       0x8a build/default/debug/src/main.o
+                0x0000000000002340       0x8a build/default/production/src/main.o
                 0x0000000000002340                __vector_31
 
 .text.__fmt_s   0x00000000000023ca       0x7a
@@ -997,13 +995,13 @@ LOAD data_init
 .text.measure_I_mA
                 0x00000000000024bc       0x72
  .text.measure_I_mA
-                0x00000000000024bc       0x72 build/default/debug/src/main.o
+                0x00000000000024bc       0x72 build/default/production/src/main.o
                 0x00000000000024bc                measure_I_mA
 
 .text.mcp4728_set_channel
                 0x000000000000252e       0x6e
  .text.mcp4728_set_channel
-                0x000000000000252e       0x6e build/default/debug/lib/DA_converter_MCP4728A1/mcp4728a1.o
+                0x000000000000252e       0x6e build/default/production/lib/DA_converter_MCP4728A1/mcp4728a1.o
                 0x000000000000252e                mcp4728_set_channel
 
 .text.__out     0x000000000000259c       0x68
@@ -1013,7 +1011,7 @@ LOAD data_init
 .text.uart1_receive_string
                 0x0000000000002604       0x64
  .text.uart1_receive_string
-                0x0000000000002604       0x64 build/default/debug/lib/uart/uart.o
+                0x0000000000002604       0x64 build/default/production/lib/uart/uart.o
                 0x0000000000002604                uart1_receive_string
 
 .text.libgcc.div
@@ -1029,12 +1027,12 @@ LOAD data_init
 .text.i2c_device_available
                 0x00000000000026ee       0x3e
  .text.i2c_device_available
-                0x00000000000026ee       0x3e build/default/debug/lib/i2c/i2c.o
+                0x00000000000026ee       0x3e build/default/production/lib/i2c/i2c.o
                 0x00000000000026ee                i2c_device_available
 
 .text.i2c_init  0x000000000000272c       0x3a
  .text.i2c_init
-                0x000000000000272c       0x3a build/default/debug/lib/i2c/i2c.o
+                0x000000000000272c       0x3a build/default/production/lib/i2c/i2c.o
                 0x000000000000272c                i2c_init
 
 .text.libgcc.prologue
@@ -1058,7 +1056,7 @@ LOAD data_init
 .text.uart1_send_string
                 0x00000000000027f8       0x2c
  .text.uart1_send_string
-                0x00000000000027f8       0x2c build/default/debug/lib/uart/uart.o
+                0x00000000000027f8       0x2c build/default/production/lib/uart/uart.o
                 0x00000000000027f8                uart1_send_string
 
 .text.strlen    0x0000000000002824       0x2c
@@ -1080,7 +1078,7 @@ LOAD data_init
 .text.uart1_init
                 0x000000000000289e       0x24
  .text.uart1_init
-                0x000000000000289e       0x24 build/default/debug/lib/uart/uart.o
+                0x000000000000289e       0x24 build/default/production/lib/uart/uart.o
                 0x000000000000289e                uart1_init
 
 .text.libgcc.mul
@@ -1097,18 +1095,18 @@ LOAD data_init
 
 .text.ADC_read  0x0000000000002900       0x1c
  .text.ADC_read
-                0x0000000000002900       0x1c build/default/debug/lib/adc/adc.o
+                0x0000000000002900       0x1c build/default/production/lib/adc/adc.o
                 0x0000000000002900                ADC_read
 
 .text.nextion_send_string
                 0x000000000000291c       0x18
  .text.nextion_send_string
-                0x000000000000291c       0x18 build/default/debug/src/main.o
+                0x000000000000291c       0x18 build/default/production/src/main.o
                 0x000000000000291c                nextion_send_string
 
 .text.ADC_init  0x0000000000002934       0x18
  .text.ADC_init
-                0x0000000000002934       0x18 build/default/debug/lib/adc/adc.o
+                0x0000000000002934       0x18 build/default/production/lib/adc/adc.o
                 0x0000000000002934                ADC_init
 
 .text.__vsprintf
@@ -1130,7 +1128,7 @@ LOAD data_init
 .text.mcp4728_init
                 0x0000000000002990       0x14
  .text.mcp4728_init
-                0x0000000000002990       0x14 build/default/debug/lib/DA_converter_MCP4728A1/mcp4728a1.o
+                0x0000000000002990       0x14 build/default/production/lib/DA_converter_MCP4728A1/mcp4728a1.o
                 0x0000000000002990                mcp4728_init
 
 .text.toupper   0x00000000000029a4       0x12
@@ -1140,13 +1138,13 @@ LOAD data_init
 .text.uart1_data_available
                 0x00000000000029b6       0x10
  .text.uart1_data_available
-                0x00000000000029b6       0x10 build/default/debug/lib/uart/uart.o
+                0x00000000000029b6       0x10 build/default/production/lib/uart/uart.o
                 0x00000000000029b6                uart1_data_available
 
 .text.uart1_clear_receive_buffer
                 0x00000000000029c6       0x10
  .text.uart1_clear_receive_buffer
-                0x00000000000029c6       0x10 build/default/debug/lib/uart/uart.o
+                0x00000000000029c6       0x10 build/default/production/lib/uart/uart.o
                 0x00000000000029c6                uart1_clear_receive_buffer
 
 .text.tolower   0x00000000000029d6       0x10
@@ -1156,13 +1154,13 @@ LOAD data_init
 .text.uart1_send_byte
                 0x00000000000029e6        0xe
  .text.uart1_send_byte
-                0x00000000000029e6        0xe build/default/debug/lib/uart/uart.o
+                0x00000000000029e6        0xe build/default/production/lib/uart/uart.o
                 0x00000000000029e6                uart1_send_byte
 
 .text.uart1_receive_byte
                 0x00000000000029f4        0xe
  .text.uart1_receive_byte
-                0x00000000000029f4        0xe build/default/debug/lib/uart/uart.o
+                0x00000000000029f4        0xe build/default/production/lib/uart/uart.o
                 0x00000000000029f4                uart1_receive_byte
 
 .text           0x0000000000002a02        0x4
@@ -1231,9 +1229,9 @@ LOAD data_init
                 0x0000000000002a0e                __simulator_exit
 
 .rodata         0x0000000000806002        0x8 load address 0x0000000000002a10
- .rodata        0x0000000000806002        0x8 build/default/debug/src/main.o
+ .rodata        0x0000000000806002        0x8 build/default/production/src/main.o
 
 .data._mcp4728_address
                 0x000000000080600b        0x1 load address 0x0000000000002a18
  .data._mcp4728_address
-                0x000000000080600b        0x1 build/default/debug/lib/DA_converter_MCP4728A1/mcp4728a1.o
+                0x000000000080600b        0x1 build/default/production/lib/DA_converter_MCP4728A1/mcp4728a1.o

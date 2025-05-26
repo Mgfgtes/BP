@@ -140,7 +140,6 @@ int main(void) {
     nextion_send_string("page Start_menu");
     
     while (1) {
-        status = IDLE;
         //Struct pro ukladani parametru tranzistoru
         volatile BJT tested_BJT;
         tested_BJT.h21 = 0;
@@ -172,6 +171,7 @@ int main(void) {
         
         uart1_clear_receive_buffer();
         //Cekani na stisknuti start
+        status = IDLE;
         while (status != RUN) {_delay_us(1);}
         
 
@@ -374,8 +374,8 @@ int main(void) {
                 }
                 _delay_ms(10);
                 
-                //Nastav zhruba 100uA bazi
-                while (measure_I_uA(INA_CH_A_F)<100) {
+                //Nastav zhruba 200uA bazi
+                while (measure_I_uA(INA_CH_A_F)<200) {
                     da_val[0]++;
                     if (mcp4728_set_channel(MCP4728_CHANNEL_A, da_val[0], MCP4728_VREF_INTERNAL, MCP4728_GAIN_2X, MCP4728_PD_NORMAL)) {
                         // Chyba nastaveni napeti na kanalu
@@ -409,7 +409,8 @@ int main(void) {
                 }
                 _delay_ms(10);
                 
-                while (measure_I_uA(INA_CH_A_F)<100) {
+                //Nastav 200uA na bazi
+                while (measure_I_uA(INA_CH_A_F)<200) {
                     da_val[0]++;
                     if (mcp4728_set_channel(MCP4728_CHANNEL_A, da_val[0], MCP4728_VREF_INTERNAL, MCP4728_GAIN_2X, MCP4728_PD_NORMAL)) {
                         // Chyba nastaveni napeti na kanalu
@@ -422,7 +423,8 @@ int main(void) {
                     tested_BJT.Ic_mA = measure_I_mA(INA_CH_C_F);
                 }
 
-                tested_BJT.h21= tested_BJT.Ic_mA / (tested_BJT.Ib_uA * 1000);
+                tested_BJT.h21 = tested_BJT.Ic_mA / tested_BJT.Ib_uA;
+                tested_BJT.h21 = tested_BJT.h21 / 1000;
 
             } else if(tested_BJT.base_channel == MCP4728_CHANNEL_B) {
                 //Kolektor na kanalu A
@@ -446,8 +448,8 @@ int main(void) {
                 }
                 _delay_ms(10);
                 
-                //Nastav 100uA na bazi
-                while (measure_I_uA(INA_CH_B_F)<100) {
+                //Nastav 200uA na bazi
+                while (measure_I_uA(INA_CH_B_F)<200) {
                     da_val[1]++;
                     if (mcp4728_set_channel(MCP4728_CHANNEL_B, da_val[1], MCP4728_VREF_INTERNAL, MCP4728_GAIN_2X, MCP4728_PD_NORMAL)) {
                         // Chyba nastaveni napeti na kanalu
@@ -481,8 +483,8 @@ int main(void) {
                 }
                 _delay_ms(10);
                 
-                //Nastav 100uA na bazi
-                while (measure_I_uA(INA_CH_B_F)<100) {
+                //Nastav 200uA na bazi
+                while (measure_I_uA(INA_CH_B_F)<200) {
                     da_val[1]++;
                     if (mcp4728_set_channel(MCP4728_CHANNEL_B, da_val[1], MCP4728_VREF_INTERNAL, MCP4728_GAIN_2X, MCP4728_PD_NORMAL)) {
                         // Chyba nastaveni napeti na kanalu
@@ -495,7 +497,8 @@ int main(void) {
                     tested_BJT.Ic_mA = measure_I_mA(INA_CH_C_F);
                 }
 
-                tested_BJT.h21= tested_BJT.Ic_mA / (tested_BJT.Ib_uA * 1000);
+                tested_BJT.h21 = tested_BJT.Ic_mA / tested_BJT.Ib_uA;
+                tested_BJT.h21 = tested_BJT.h21 / 1000;
 
             }else if(tested_BJT.base_channel==MCP4728_CHANNEL_C) {
                 //Kolektor na kanalu A
@@ -519,8 +522,8 @@ int main(void) {
                 }
                 _delay_ms(10);
                 
-                //Nastav 100uA na bazi
-                while (measure_I_uA(INA_CH_C_F)<100) {
+                //Nastav 200uA na bazi
+                while (measure_I_uA(INA_CH_C_F)<200) {
                     da_val[2]++;
                     if (mcp4728_set_channel(MCP4728_CHANNEL_C, da_val[2], MCP4728_VREF_INTERNAL, MCP4728_GAIN_2X, MCP4728_PD_NORMAL)) {
                         // Chyba nastaveni napeti na kanalu
@@ -554,8 +557,8 @@ int main(void) {
                 }
                 _delay_ms(10);
                 
-                //Nastav 100uA na bazi
-                while (measure_I_uA(INA_CH_C_F)<100) {
+                //Nastav 200uA na bazi
+                while (measure_I_uA(INA_CH_C_F)<200) {
                     da_val[2]++;
                     if (mcp4728_set_channel(MCP4728_CHANNEL_C, da_val[2], MCP4728_VREF_INTERNAL, MCP4728_GAIN_2X, MCP4728_PD_NORMAL)) {
                         // Chyba nastaveni napeti na kanalu
@@ -568,7 +571,8 @@ int main(void) {
                     tested_BJT.Ic_mA = measure_I_mA(INA_CH_B_F);
                 }
 
-                tested_BJT.h21= tested_BJT.Ic_mA / (tested_BJT.Ib_uA * 1000);
+                tested_BJT.h21 = tested_BJT.Ic_mA / tested_BJT.Ib_uA;
+                tested_BJT.h21 = tested_BJT.h21 / 1000;
             }
 
         } else if(tested_BJT.polarity==PNP){
@@ -594,8 +598,8 @@ int main(void) {
                 }
                 _delay_ms(10);
                 
-                //Nastav 100uA na bazi
-                while (measure_I_uA(INA_CH_A_R)<100) {
+                //Nastav 200uA na bazi
+                while (measure_I_uA(INA_CH_A_R)<200) {
                     da_val[0]--;
                     if (mcp4728_set_channel(MCP4728_CHANNEL_A, da_val[0], MCP4728_VREF_INTERNAL, MCP4728_GAIN_2X, MCP4728_PD_NORMAL)) {
                         // Chyba nastaveni napeti na kanalu
@@ -629,8 +633,8 @@ int main(void) {
                 }
                 _delay_ms(10);
                 
-                //Nastav 100uA na bazi
-                while (measure_I_uA(INA_CH_A_R)<100) {
+                //Nastav 200uA na bazi
+                while (measure_I_uA(INA_CH_A_R)<200) {
                     da_val[0]--;
                     if (mcp4728_set_channel(MCP4728_CHANNEL_A, da_val[0], MCP4728_VREF_INTERNAL, MCP4728_GAIN_2X, MCP4728_PD_NORMAL)) {
                         // Chyba nastaveni napeti na kanalu
@@ -643,7 +647,8 @@ int main(void) {
                     tested_BJT.Ic_mA = measure_I_mA(INA_CH_C_F);
                 }
 
-                tested_BJT.h21= tested_BJT.Ic_mA / (tested_BJT.Ib_uA * 1000);
+                tested_BJT.h21 = tested_BJT.Ic_mA / tested_BJT.Ib_uA;
+                tested_BJT.h21 = tested_BJT.h21 / 1000;
 
             } else if (tested_BJT.base_channel == MCP4728_CHANNEL_B) {
                 //Kolektor na kanalu A
@@ -667,8 +672,8 @@ int main(void) {
                 }
                 _delay_ms(10);
                 
-                //Nastav 100uA na bazi
-                while (measure_I_uA(INA_CH_B_R)<100) {
+                //Nastav 200uA na bazi
+                while (measure_I_uA(INA_CH_B_R)<200) {
                     da_val[1]--;
                     if (mcp4728_set_channel(MCP4728_CHANNEL_B, da_val[1], MCP4728_VREF_INTERNAL, MCP4728_GAIN_2X, MCP4728_PD_NORMAL)) {
                         // Chyba nastaveni napeti na kanalu
@@ -702,8 +707,8 @@ int main(void) {
                 }
                 _delay_ms(10);
                 
-                //Nastav 100uA na bazi
-                while (measure_I_uA(INA_CH_B_R)<100) {
+                //Nastav 200uA na bazi
+                while (measure_I_uA(INA_CH_B_R)<200) {
                     da_val[1]--;
                     if (mcp4728_set_channel(MCP4728_CHANNEL_B, da_val[1], MCP4728_VREF_INTERNAL, MCP4728_GAIN_2X, MCP4728_PD_NORMAL)) {
                         // Chyba nastaveni napeti na kanalu
@@ -716,7 +721,8 @@ int main(void) {
                     tested_BJT.Ic_mA = measure_I_mA(INA_CH_C_F);
                 }
 
-                tested_BJT.h21= tested_BJT.Ic_mA / (tested_BJT.Ib_uA * 1000);
+                tested_BJT.h21 = tested_BJT.Ic_mA / tested_BJT.Ib_uA;
+                tested_BJT.h21 = tested_BJT.h21 / 1000;
                 
             } else if (tested_BJT.base_channel == MCP4728_CHANNEL_C) {
                 //Kolektor na kanalu A
@@ -740,8 +746,8 @@ int main(void) {
                 }
                 _delay_ms(10);
                 
-                //Nastav 100uA na bazi
-                while (measure_I_uA(INA_CH_C_R)<100) {
+                //Nastav 200uA na bazi
+                while (measure_I_uA(INA_CH_C_R)<200) {
                     da_val[2]--;
                     if (mcp4728_set_channel(MCP4728_CHANNEL_C, da_val[2], MCP4728_VREF_INTERNAL, MCP4728_GAIN_2X, MCP4728_PD_NORMAL)) {
                         // Chyba nastaveni napeti na kanalu
@@ -775,8 +781,8 @@ int main(void) {
                 }
                 _delay_ms(10);
                 
-                //Nastav 100uA na bazi
-                while (measure_I_uA(INA_CH_C_R)<100) {
+                //Nastav 200uA na bazi
+                while (measure_I_uA(INA_CH_C_R)<200) {
                     da_val[2]--;
                     if (mcp4728_set_channel(MCP4728_CHANNEL_C, da_val[2], MCP4728_VREF_INTERNAL, MCP4728_GAIN_2X, MCP4728_PD_NORMAL)) {
                         // Chyba nastaveni napeti na kanalu
@@ -789,7 +795,8 @@ int main(void) {
                     tested_BJT.Ic_mA = measure_I_mA(INA_CH_B_F);
                 }
 
-                tested_BJT.h21= tested_BJT.Ic_mA / (tested_BJT.Ib_uA * 1000);
+                tested_BJT.h21 = tested_BJT.Ic_mA / tested_BJT.Ib_uA;
+                tested_BJT.h21 = tested_BJT.h21 / 1000;
 
             }
 
