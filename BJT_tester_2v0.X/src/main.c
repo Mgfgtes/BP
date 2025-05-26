@@ -32,6 +32,7 @@ typedef enum {
 } device_status_t;
 
 typedef enum {
+    NOT_MEASURED,
     FAULTY,
     NPN,
     PNP
@@ -63,11 +64,17 @@ uint16_t measure_I_uA(uint8_t INA_CH){
     //Nastaveni reference na vystup DA prevodniku z kanalu D
     VREF.ADC0REF = VREF_REFSEL_VREFA_gc;
     
-                //I = ((((VREF/Rozliseni)*ADC_read())/INA_GAIN)/Rb)*1000000   [uA]
-                //I = (VREF*ADC_read()*1000000)/(Rb*INA_GAIN*Rozliseni)       [uA] 
-                //I = (VREF_mV*ADC_read()*1000)/(0,2*50*4096)                 [uA]
-                //I = (VREF_mV*ADC_read()*1000)/40960                         [uA]
-    volatile uint32_t I = ADC_read(INA_CH);
+    volatile uint32_t I = 0;
+    for(uint8_t i = 0; i < 10; i++){
+        I += ADC_read(INA_CH);
+    }
+    I = I / 10;
+    
+    //I = ((((VREF/Rozliseni)*ADC_read())/INA_GAIN)/Rb)*1000000   [uA]
+    //I = (VREF*ADC_read()*1000000)/(Rb*INA_GAIN*Rozliseni)       [uA] 
+    //I = (VREF_mV*ADC_read()*1000)/(0,2*50*4096)                 [uA]
+    //I = (VREF_mV*ADC_read()*1000)/40960                         [uA]
+    
     I = I * VREF_mV_corrigated * 1000;
     I = I / 40960;
     
@@ -137,10 +144,10 @@ int main(void) {
         //Struct pro ukladani parametru tranzistoru
         volatile BJT tested_BJT;
         tested_BJT.h21 = 0;
-        tested_BJT.polarity = FAULTY;
+        tested_BJT.polarity = NOT_MEASURED;
         
         //Nastaveni offsetu a 100mV reference !Kanál C chyba zesílení!
-        volatile uint16_t da_val[4]={2048, 2048, 1900, 100};
+        volatile uint16_t da_val[4]={2054, 2035, 1913, 100};
 
         if (mcp4728_set_channel(MCP4728_CHANNEL_A, da_val[0], MCP4728_VREF_INTERNAL, MCP4728_GAIN_2X, MCP4728_PD_NORMAL)) {
             // Chyba nastaveni napeti na kanalu
@@ -172,9 +179,9 @@ int main(void) {
         for (int i = 0; i < 3; i++) {
 
             //offset
-            da_val[0]= 2048;
-            da_val[1]= 2048;
-            da_val[2]= 1900;
+            da_val[0]= 2054;
+            da_val[1]= 2035;
+            da_val[2]= 1913;
 
             //Zvyseni napeti na vystupu jednoho zesilovace 
             da_val[i] += 550;
@@ -196,15 +203,15 @@ int main(void) {
             _delay_ms(10);
 
             //Mereni proudu dalsimi dvema kanaly
-            //Proud vetsi nez 100uA kvuli sum
+            //Proud vetsi nez 2000uA
             if (i==0) {
                 volatile uint32_t I1,I2;
                 I1 = measure_I_uA(INA_CH_B_R);
                 I2 = measure_I_uA(INA_CH_C_R);
                 
-                if((I1 > 100) && (I2 > 100)){
+                if((I1 > 2000) && (I2 > 2000)){
                     //Osetreni prepsani vadnym tranzistorem
-                    if(tested_BJT.polarity != FAULTY){
+                    if(tested_BJT.polarity != NOT_MEASURED){
                         tested_BJT.polarity = FAULTY;
                         break;
                     }
@@ -219,15 +226,15 @@ int main(void) {
                 I1 = measure_I_uA(INA_CH_A_R);
                 I2 = measure_I_uA(INA_CH_C_R);
                 
-                if((I1 > 100) && (I2 > 100)){
+                if((I1 > 2000) && (I2 > 2000)){
                     //Osetreni prepsani vadnym tranzistorem
-                    if(tested_BJT.polarity != FAULTY){
+                    if(tested_BJT.polarity != NOT_MEASURED){
                         tested_BJT.polarity = FAULTY;
                         break;
                     }
                     tested_BJT.base_channel = MCP4728_CHANNEL_B;
                     tested_BJT.polarity = NPN;
-                    break;
+                    
                 }
                 
             }
@@ -236,15 +243,15 @@ int main(void) {
                 I1 = measure_I_uA(INA_CH_A_R);
                 I2 = measure_I_uA(INA_CH_B_R);
                 
-                if((I1 > 100) && (I2 > 100)){
+                if((I1 > 2000) && (I2 > 2000)){
                     //Osetreni prepsani vadnym tranzistorem
-                    if(tested_BJT.polarity != FAULTY){
+                    if(tested_BJT.polarity != NOT_MEASURED){
                         tested_BJT.polarity = FAULTY;
                         break;
                     }
                     tested_BJT.base_channel = MCP4728_CHANNEL_C;
                     tested_BJT.polarity = NPN;
-                    break;
+                    
                 }
                 
             }
@@ -256,9 +263,9 @@ int main(void) {
         for (int i = 0; i < 3; i++) {
 
             //offset
-            da_val[0]= 2048;
-            da_val[1]= 2048;
-            da_val[2]= 1900;
+            da_val[0]= 2054;
+            da_val[1]= 2035;
+            da_val[2]= 1913;
 
             //Snizeni napeti na vystupu jednoho zesilovace
             da_val[i] -= 550;
@@ -281,23 +288,58 @@ int main(void) {
             
 
             //Mereni proudu dalsimi dvema kanaly
-            //Proud vetsi nez 100uA
-            if ((i==0) && (measure_I_uA(INA_CH_B_F)>100) && (measure_I_uA(INA_CH_C_F)>100)) {
-                tested_BJT.base_channel = MCP4728_CHANNEL_A;
-                tested_BJT.polarity = PNP;
-                break;
+            //Proud vetsi nez 2000uA
+            if (i==0) {
+                volatile uint32_t I1,I2;
+                I1 = measure_I_uA(INA_CH_B_F);
+                I2 = measure_I_uA(INA_CH_C_F);
+                
+                if((I1 > 2000) && (I2 > 2000)){
+                    //Osetreni prepsani vadnym tranzistorem
+                    if(tested_BJT.polarity != NOT_MEASURED){
+                        tested_BJT.polarity = FAULTY;
+                        break;
+                    }
+                    tested_BJT.base_channel = MCP4728_CHANNEL_A;
+                    tested_BJT.polarity = PNP;
+                    
+                }
+                
             }
-            if ((i==1) && (measure_I_uA(INA_CH_A_F)>100) && (measure_I_uA(INA_CH_C_F)>100)) {
-                tested_BJT.base_channel = MCP4728_CHANNEL_B;
-                tested_BJT.polarity = PNP;
-                break;
+            if (i==1) {
+                volatile uint32_t I1,I2;
+                I1 = measure_I_uA(INA_CH_A_F);
+                I2 = measure_I_uA(INA_CH_C_F);
+                
+                if((I1 > 2000) && (I2 > 2000)){
+                    //Osetreni prepsani vadnym tranzistorem
+                    if(tested_BJT.polarity != NOT_MEASURED){
+                        tested_BJT.polarity = FAULTY;
+                        break;
+                    }
+                    tested_BJT.base_channel = MCP4728_CHANNEL_B;
+                    tested_BJT.polarity = PNP;
+                    
+                }
+                
             }
-            if ((i==2) && (measure_I_uA(INA_CH_A_F)>100) && (measure_I_uA(INA_CH_B_F)>100)) {
-                tested_BJT.base_channel = MCP4728_CHANNEL_C;
-                tested_BJT.polarity = PNP;
-                break;
+            if (i==2) {
+                volatile uint32_t I1,I2;
+                I1 = measure_I_uA(INA_CH_A_F);
+                I2 = measure_I_uA(INA_CH_B_F);
+                
+                if((I1 > 2000) && (I2 > 2000)){
+                    //Osetreni prepsani vadnym tranzistorem
+                    if(tested_BJT.polarity != NOT_MEASURED){
+                        tested_BJT.polarity = FAULTY;
+                        break;
+                    }
+                    tested_BJT.base_channel = MCP4728_CHANNEL_C;
+                    tested_BJT.polarity = PNP;
+                    
+                }
+                
             }
-
 
         }
 

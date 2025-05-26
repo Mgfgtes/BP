@@ -77,21 +77,29 @@ uint8_t uart0_data_available(void) {
 }
 
 /**
- * Prijem retezce pres UART
- * 
- * @param buffer Buffer pro ulozeni prijatych dat
- * @param max_length Maximalni delka bufferu
- * @return Pocet prijatych znaku
+ * Vyprazdneni prijimaciho bufferu
+ *  
  */
-uint8_t uart0_receive_string(char* buffer, uint8_t max_length) {
+void uart0_clear_receive_buffer(){
+    while (uart0_data_available()) {
+        uart0_receive_byte();
+    }
+}
+
+uint8_t uart0_receive_string(char* buffer, uint8_t max_length, uint8_t timeout) {
     uint8_t count = 0;
+    uint8_t t = 0;
     
-    while (count < max_length - 1) {
+    while ((count < max_length - 1)&&(t < timeout)) {
         if (uart0_data_available()){
             buffer[count]=uart0_receive_byte();
             if(buffer[count]==0) return count;
             count++;
-        } 
+            t = 0;
+        }
+        else{
+            t++;
+        }
     }
     
     buffer[count] = 0;
@@ -171,10 +179,7 @@ uint8_t uart1_receive_byte(void) {
 
 /**
  * Vyprazdneni prijimaciho bufferu
- * 
- * @param buffer
- * @param max_length
- * @return 
+ *  
  */
 void uart1_clear_receive_buffer(){
     while (uart1_data_available()) {

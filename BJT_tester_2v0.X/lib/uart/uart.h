@@ -67,6 +67,12 @@ uint8_t uart0_receive_byte(void);
 uint8_t uart0_data_available(void);
 
 /**
+ * Vyprazdneni prijimaciho bufferu
+ *  
+ */
+void uart0_clear_receive_buffer(void);
+
+/**
  * Prijem retezce pres UART0 s casovym limitem
  * 
  * @param buffer Buffer pro ulorení prijatych dat
@@ -74,7 +80,7 @@ uint8_t uart0_data_available(void);
  * @param timeout Pocet cyklu pro timeout (0 = bez timeoutu)
  * @return Pocet prijatych znaku
  */
-uint8_t uart0_receive_string(char* buffer, uint8_t max_length);
+uint8_t uart0_receive_string(char* buffer, uint8_t max_length, uint8_t timeout);
 
 
 
