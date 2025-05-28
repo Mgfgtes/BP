@@ -32,7 +32,7 @@ i2c_status_t i2c_write(uint8_t slave_addr, const uint8_t *data, uint8_t len) {
     uint8_t retry_count = 0;
     
     do {
-        // Nastaveni adresy a smer (zapis)
+        // Nastaveni adresy a smeru (zapis)
         TWI0.MADDR = (slave_addr << 1) | 0;
         
         // Cekani na dokonceni prenosu adresy

@@ -41,6 +41,7 @@ typedef enum {
 typedef struct {
     BJTPolarity polarity; // polarita tranzistoru (NPN nebo PNP)
     mcp4728_channel_t base_channel;       // kanal pripojeny na bazi (0-2)
+    mcp4728_channel_t collector_channel;
     uint16_t h21;        // zesileni tranzistoru
     uint16_t Ib_uA;
     uint16_t Ic_mA;
@@ -354,6 +355,8 @@ int main(void) {
 
             if (tested_BJT.base_channel==MCP4728_CHANNEL_A) {
                 //Kolektor na kanalu B
+                tested_BJT.collector_channel = MCP4728_CHANNEL_B;
+                
                 da_val[0] = 0;
                 da_val[1] = 4096;
                 da_val[2] = 0;
@@ -375,13 +378,14 @@ int main(void) {
                 _delay_ms(10);
                 
                 //Nastav zhruba 200uA bazi
+                
                 while (measure_I_uA(INA_CH_A_F)<200) {
                     da_val[0]++;
                     if (mcp4728_set_channel(MCP4728_CHANNEL_A, da_val[0], MCP4728_VREF_INTERNAL, MCP4728_GAIN_2X, MCP4728_PD_NORMAL)) {
                         // Chyba nastaveni napeti na kanalu
                         nextion_send_string("t0.txt=\"ERROR CHA SET\"");
                     }
-                    
+                    if(da_val[0]>4096) break;
                 }
 
                 tested_BJT.Ib_uA = measure_I_uA(INA_CH_A_F);
@@ -416,18 +420,21 @@ int main(void) {
                         // Chyba nastaveni napeti na kanalu
                         nextion_send_string("t0.txt=\"ERROR CHA SET\"");
                     }
+                    if(da_val[0]>4096) break;
                     
                 }
 
                 if(tested_BJT.Ic_mA < measure_I_mA(INA_CH_C_F)){
+                    tested_BJT.Ib_uA = measure_I_uA(INA_CH_A_F);
                     tested_BJT.Ic_mA = measure_I_mA(INA_CH_C_F);
+                    tested_BJT.collector_channel = MCP4728_CHANNEL_C;
                 }
 
-                tested_BJT.h21 = tested_BJT.Ic_mA / tested_BJT.Ib_uA;
-                tested_BJT.h21 = tested_BJT.h21 / 1000;
+                tested_BJT.h21 = (tested_BJT.Ic_mA *1000) / tested_BJT.Ib_uA;
 
             } else if(tested_BJT.base_channel == MCP4728_CHANNEL_B) {
                 //Kolektor na kanalu A
+                tested_BJT.collector_channel = MCP4728_CHANNEL_A;
                 da_val[0] = 4096;
                 da_val[1] = 0;
                 da_val[2] = 0;
@@ -455,6 +462,7 @@ int main(void) {
                         // Chyba nastaveni napeti na kanalu
                         nextion_send_string("t0.txt=\"ERROR CHB SET\"");
                     }
+                    if(da_val[1]>4096) break;
                     
                 }
 
@@ -490,18 +498,21 @@ int main(void) {
                         // Chyba nastaveni napeti na kanalu
                         nextion_send_string("t0.txt=\"ERROR CHB SET\"");
                     }
+                    if(da_val[1]>4096) break;
                     
                 }
 
                 if(tested_BJT.Ic_mA < measure_I_mA(INA_CH_C_F)){
+                    tested_BJT.Ib_uA = measure_I_uA(INA_CH_B_F);
                     tested_BJT.Ic_mA = measure_I_mA(INA_CH_C_F);
+                    tested_BJT.collector_channel = MCP4728_CHANNEL_C;
                 }
 
-                tested_BJT.h21 = tested_BJT.Ic_mA / tested_BJT.Ib_uA;
-                tested_BJT.h21 = tested_BJT.h21 / 1000;
-
+                tested_BJT.h21 = (tested_BJT.Ic_mA *1000) / tested_BJT.Ib_uA;
+                
             }else if(tested_BJT.base_channel==MCP4728_CHANNEL_C) {
                 //Kolektor na kanalu A
+                tested_BJT.collector_channel = MCP4728_CHANNEL_A;
                 da_val[0] = 4096;
                 da_val[1] = 0;
                 da_val[2] = 0;
@@ -529,6 +540,7 @@ int main(void) {
                         // Chyba nastaveni napeti na kanalu
                         nextion_send_string("t0.txt=\"ERROR CHC SET\"");
                     }
+                    if(da_val[2]>4096) break;
                     
                 }
 
@@ -564,20 +576,23 @@ int main(void) {
                         // Chyba nastaveni napeti na kanalu
                         nextion_send_string("t0.txt=\"ERROR CHC SET\"");
                     }
+                    if(da_val[2]>4096) break;
                     
                 }
 
                 if(tested_BJT.Ic_mA < measure_I_mA(INA_CH_B_F)){
+                    tested_BJT.Ib_uA = measure_I_uA(INA_CH_C_F);
                     tested_BJT.Ic_mA = measure_I_mA(INA_CH_B_F);
+                    tested_BJT.collector_channel = MCP4728_CHANNEL_B;
                 }
 
-                tested_BJT.h21 = tested_BJT.Ic_mA / tested_BJT.Ib_uA;
-                tested_BJT.h21 = tested_BJT.h21 / 1000;
+                tested_BJT.h21 = (tested_BJT.Ic_mA *1000) / tested_BJT.Ib_uA;
             }
 
         } else if(tested_BJT.polarity==PNP){
             if (tested_BJT.base_channel == MCP4728_CHANNEL_A) {
-                //Kolektor na kanalu B
+                //Kolektor na kanalu C
+                tested_BJT.collector_channel = MCP4728_CHANNEL_C;
                 da_val[0] = 4096;
                 da_val[1] = 4096;
                 da_val[2] = 0;
@@ -605,14 +620,14 @@ int main(void) {
                         // Chyba nastaveni napeti na kanalu
                         nextion_send_string("t0.txt=\"ERROR CHA SET\"");
                     }
-                    
+                    if(da_val[0]<100) break;
                 }
 
                 tested_BJT.Ib_uA = measure_I_uA(INA_CH_A_R);
 
                 tested_BJT.Ic_mA = measure_I_mA(INA_CH_B_F);
 
-                //Kolektor na kanalu C
+                //Kolektor na kanalu B
                 da_val[0] = 4096;
                 da_val[1] = 0;
                 da_val[2] = 4096;
@@ -640,18 +655,21 @@ int main(void) {
                         // Chyba nastaveni napeti na kanalu
                         nextion_send_string("t0.txt=\"ERROR CHA SET\"");
                     }
+                    if(da_val[0]<100) break;
                     
                 }
 
                 if(tested_BJT.Ic_mA < measure_I_mA(INA_CH_C_F)){
+                    tested_BJT.Ib_uA = measure_I_uA(INA_CH_A_R);
                     tested_BJT.Ic_mA = measure_I_mA(INA_CH_C_F);
+                    tested_BJT.collector_channel = MCP4728_CHANNEL_B;
                 }
 
-                tested_BJT.h21 = tested_BJT.Ic_mA / tested_BJT.Ib_uA;
-                tested_BJT.h21 = tested_BJT.h21 / 1000;
+                tested_BJT.h21 = (tested_BJT.Ic_mA *1000) / tested_BJT.Ib_uA;
 
             } else if (tested_BJT.base_channel == MCP4728_CHANNEL_B) {
-                //Kolektor na kanalu A
+                //Kolektor na kanalu C
+                tested_BJT.collector_channel = MCP4728_CHANNEL_C;
                 da_val[0] = 4096;
                 da_val[1] = 4096;
                 da_val[2] = 0;
@@ -679,14 +697,14 @@ int main(void) {
                         // Chyba nastaveni napeti na kanalu
                         nextion_send_string("t0.txt=\"ERROR CHB SET\"");
                     }
+                    if(da_val[1]<100) break;
                     
                 }
 
                 tested_BJT.Ib_uA = measure_I_uA(INA_CH_B_R);
-
                 tested_BJT.Ic_mA = measure_I_mA(INA_CH_A_F);
 
-                //Kolektor na kanalu C
+                //Kolektor na kanalu A
                 da_val[0] = 0;
                 da_val[1] = 4096;
                 da_val[2] = 4096;
@@ -714,18 +732,21 @@ int main(void) {
                         // Chyba nastaveni napeti na kanalu
                         nextion_send_string("t0.txt=\"ERROR CHB SET\"");
                     }
+                    if(da_val[1]<100) break;
                     
                 }
 
                 if(tested_BJT.Ic_mA < measure_I_mA(INA_CH_C_F)){
+                    tested_BJT.collector_channel = MCP4728_CHANNEL_A;
+                    tested_BJT.Ib_uA = measure_I_uA(INA_CH_B_R);
                     tested_BJT.Ic_mA = measure_I_mA(INA_CH_C_F);
                 }
 
-                tested_BJT.h21 = tested_BJT.Ic_mA / tested_BJT.Ib_uA;
-                tested_BJT.h21 = tested_BJT.h21 / 1000;
+                tested_BJT.h21 = (tested_BJT.Ic_mA *1000) / tested_BJT.Ib_uA;
                 
             } else if (tested_BJT.base_channel == MCP4728_CHANNEL_C) {
-                //Kolektor na kanalu A
+                //Kolektor na kanalu B
+                tested_BJT.collector_channel = MCP4728_CHANNEL_B;
                 da_val[0] = 4096;
                 da_val[1] = 0;
                 da_val[2] = 4096;
@@ -753,6 +774,7 @@ int main(void) {
                         // Chyba nastaveni napeti na kanalu
                         nextion_send_string("t0.txt=\"ERROR CHC SET\"");
                     }
+                    if(da_val[2]<100) break;
                     
                 }
 
@@ -760,7 +782,7 @@ int main(void) {
 
                 tested_BJT.Ic_mA = measure_I_mA(INA_CH_A_F);
 
-                //Kolektor na kanalu B
+                //Kolektor na kanalu A
                 da_val[0] = 0;
                 da_val[1] = 4096;
                 da_val[2] = 4096;
@@ -788,15 +810,17 @@ int main(void) {
                         // Chyba nastaveni napeti na kanalu
                         nextion_send_string("t0.txt=\"ERROR CHC SET\"");
                     }
+                    if(da_val[2]<100) break;
                     
                 }
 
                 if(tested_BJT.Ic_mA < measure_I_mA(INA_CH_B_F)){
+                    tested_BJT.Ib_uA = measure_I_uA(INA_CH_C_R);
                     tested_BJT.Ic_mA = measure_I_mA(INA_CH_B_F);
+                    tested_BJT.collector_channel = MCP4728_CHANNEL_A;
                 }
 
-                tested_BJT.h21 = tested_BJT.Ic_mA / tested_BJT.Ib_uA;
-                tested_BJT.h21 = tested_BJT.h21 / 1000;
+                tested_BJT.h21 = (tested_BJT.Ic_mA *1000) / tested_BJT.Ib_uA;
 
             }
 
@@ -804,21 +828,46 @@ int main(void) {
 
 
         //Odeslani h21 do displeje
-        char h21_str[10];
-        sprintf(h21_str, "%d", tested_BJT.h21);
+        char str[10];
+        sprintf(str, "%d", tested_BJT.h21);
         uart1_send_string("n0.val=");
-        uart1_send_string(h21_str);
+        uart1_send_string(str);
         uart1_send_byte(0xff);
         uart1_send_byte(0xff);
         uart1_send_byte(0xff);
         
         if (tested_BJT.polarity==NPN) {
-            nextion_send_string("t0.txt=\"NPN\"");
+            nextion_send_string("t9.txt=\"NPN\"");
         } else if(tested_BJT.polarity==PNP){
-            nextion_send_string("t0.txt=\"PNP\"");
+            nextion_send_string("t9.txt=\"PNP\"");
         } else {
-            nextion_send_string("t0.txt=\"FAULTY OR UNRECOGNISED\"");
+            nextion_send_string("t9.txt=\"FAULTY OR UNRECOGNISED\"");
         }
+        
+        uart1_send_string("t");
+        sprintf(str, "%d", tested_BJT.base_channel);
+        uart1_send_string(str);
+        uart1_send_string(".txt=\"B\"");
+        uart1_send_byte(0xff);
+        uart1_send_byte(0xff);
+        uart1_send_byte(0xff);
+        
+        uart1_send_string("t");
+        sprintf(str, "%d", tested_BJT.collector_channel);
+        uart1_send_string(str);
+        uart1_send_string(".txt=\"C\"");
+        uart1_send_byte(0xff);
+        uart1_send_byte(0xff);
+        uart1_send_byte(0xff);
+        
+        uart1_send_string("t");
+        sprintf(str, "%d", (3-tested_BJT.collector_channel-tested_BJT.base_channel));
+        uart1_send_string(str);
+        uart1_send_string(".txt=\"E\"");
+        uart1_send_byte(0xff);
+        uart1_send_byte(0xff);
+        uart1_send_byte(0xff);
+        
         
     }
 
