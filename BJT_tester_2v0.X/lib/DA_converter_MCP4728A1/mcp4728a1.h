@@ -40,18 +40,18 @@ typedef enum {
 } mcp4728_vref_t;
 
 /**
- * Zesílení výstupu
+ * Zesileni vystupu
  */
 typedef enum {
-    MCP4728_GAIN_1X = 0,     // Zesílení 1x
-    MCP4728_GAIN_2X = 1      // Zesílení 2x
+    MCP4728_GAIN_1X = 0,     // Zesileni 1x
+    MCP4728_GAIN_2X = 1      // Zesileni 2x
 } mcp4728_gain_t;
 
 /**
- * Power-down módy
+ * Power-down mody
  */
 typedef enum {
-    MCP4728_PD_NORMAL = 0,       // Normální operace
+    MCP4728_PD_NORMAL = 0,       // Normalni operace
     MCP4728_PD_1K = 1,           // Power-down s 1 kOhm rezistorem na GND
     MCP4728_PD_100K = 2,         // Power-down se 100 kOhm rezistorem na GND
     MCP4728_PD_500K = 3          // Power-down s 500 kOhm rezistorem na GND
@@ -60,36 +60,36 @@ typedef enum {
 /**
  * Inicializace MCP4728A1
  * 
- * @param address I2C adresa za?ízení (0x60 + addrBits)
- * @return I2C_OK pokud byla inicializace úsp??ná
+ * @param address I2C adresa zarizeni (0x60 + addrBits)
+ * @return I2C_OK pokud byla inicializace uspesnana
  */
 i2c_status_t mcp4728_init(uint8_t address);
 
 /**
- * Nastavení hodnoty na jednom kanálu
+ * Nastavení hodnoty na jednom kanalu
  * 
- * @param channel Kanál (A, B, C nebo D)
+ * @param channel Kanal (A, B, C nebo D)
  * @param value Hodnota (0-4095)
- * @param vref Volba nap??ové reference (VDD nebo interní)
- * @param gain Volba zesílení (1x nebo 2x)
- * @param powerDown Volba power-down módu
- * @return I2C_OK pokud byla operace úsp??ná
+ * @param vref Volba napetove reference (VDD nebo interni)
+ * @param gain Volba zesileni (1x nebo 2x)
+ * @param powerDown Volba power-down modu
+ * @return I2C_OK pokud byla operace uspesna
  */
 i2c_status_t mcp4728_set_channel(mcp4728_channel_t channel, uint16_t value, 
                                 mcp4728_vref_t vref, mcp4728_gain_t gain,
                                 mcp4728_powerdown_t powerDown);
 
 /**
- * Rychlé nastavení hodnoty na jednom kanálu (pou?ije poslední nastavení pro vref, gain a power-down)
+ * Rychle nastaveni hodnoty na jednom kanálu (pouzije posledni nastaveni pro vref, gain a power-down)
  * 
- * @param channel Kanál (A, B, C nebo D)
+ * @param channel Kanal (A, B, C nebo D)
  * @param value Hodnota (0-4095)
- * @return I2C_OK pokud byla operace úsp??ná
+ * @return I2C_OK pokud byla operace uspesna
  */
 i2c_status_t mcp4728_fast_write(mcp4728_channel_t channel, uint16_t value);
 
 /**
- * Nastavení v?ech kanál? najednou
+ * Nastaveni vsech kanalu najednou
  * 
  * @param values Pole hodnot pro kanály A, B, C, D (0-4095)
  * @return I2C_OK pokud byla operace úsp??ná
@@ -97,16 +97,16 @@ i2c_status_t mcp4728_fast_write(mcp4728_channel_t channel, uint16_t value);
 i2c_status_t mcp4728_set_all_channels(uint16_t values[4]);
 
 /**
- * Obecný reset p?evodníku
+ * Obecny reset prevodniku
  * 
- * @return I2C_OK pokud byla operace úsp??ná
+ * @return I2C_OK pokud byla operace uspesna
  */
 i2c_status_t mcp4728_general_reset(void);
 
 /**
- * Provedení p?íkazu wakeup (probuzení z power-down re?imu)
+ * Provedení prikazu wakeup (probuzeni z power-down rezimu)
  * 
- * @return I2C_OK pokud byla operace úsp??ná
+ * @return I2C_OK pokud byla operace uspesna
  */
 i2c_status_t mcp4728_wakeup(void);
 
